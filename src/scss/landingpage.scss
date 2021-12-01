@@ -1,0 +1,239 @@
+$main-dark: rgb(36, 36, 36);
+$main-darker: rgb(27, 27, 27);
+$main-gold: rgb(255, 201, 53);
+$main-gold-dark: rgb(224, 162, 45);
+$main-light: rgb(230, 230, 230);
+
+@use "variables";
+@use "mixins";
+
+.landing-page-container {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;    
+    background-color: $main-dark;
+    color: $main-light;
+    font-size: 12pt;
+    .line {
+        background-color: $main-gold;
+        height: 2px;
+        box-shadow: 0 0 10px black;
+    }
+    header {
+        @include mixins.flex-h;
+        @include mixins.mpg(0, 0 20px, 20px);
+        font-family: 'Playball', cursive;
+        height: 65px;
+        align-items: center;
+        background-color: $main-darker;
+    }
+    .hamburger-button {
+        @include mixins.mpg();
+        background: none;
+        border: none;
+        color: $main-gold;
+        font-size: 1.7rem;
+        &:hover {
+            color: $main-gold-dark;
+            cursor: pointer;
+        }
+    }
+    .site-title {
+        font-size: 2rem;
+        flex-grow: 1;
+    }
+    nav {
+        @include mixins.flex-h;
+        @include mixins.mpg(0,0, 20px);
+        font-size: 1.5rem;
+    }
+    .hero {
+        font-family: 'Playball', cursive;
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+        @include mixins.flex-v;
+        justify-content: space-between;
+        font-size: 2rem;
+        text-shadow: 0 0 10px $main-dark;
+        align-items: center;
+        box-shadow: 0 0 750px black inset;
+        video {
+            object-fit: cover;
+            z-index: -1;
+            position: absolute;
+            filter: grayscale(1);
+            width: 100%;
+            height: 100%;
+        }
+        span {
+            margin: auto;
+        }
+    }
+    .main-nav {
+        font-size: 0.9rem;
+        color: $main-light;
+        margin-top: 15px;
+        justify-content: center;
+        cursor: default;
+        font-style: italic;
+        a {
+            color: $main-gold;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .main-container {
+        background: none;
+        padding: 0 0 30px
+    }
+    .category {
+        @include mixins.flex-v;
+        @include mixins.mpg(10px, 0, 10px);
+    }
+    .category-top {
+        @include mixins.flex-h;
+        @include mixins.mpg(20px 0, 0, 10px);
+        align-items: center;
+        font-size: 1.3rem;
+        .category-line {
+            height: 1.5px;
+            border-radius: 2px;
+            flex-grow: 1;
+            background-color: $main-gold;
+        }
+    }
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        @include mixins.mpg(0, 0, 30px);
+
+    }
+    .category-link {
+        align-self: flex-end;
+    }
+    .cell {
+        color: white;
+        @include mixins.mpg(0,0, 10px);
+        @include mixins.flex-v;
+        cursor: pointer;
+        &:hover {
+            .cell-cover {
+                i {
+                    opacity: 0.8;
+                    transform: translate(-10px, -10px);
+                }
+                .img-shadow-box {
+                    opacity: 1;
+                }
+            }
+        }
+        .cell-cover {
+            position: relative;
+            width: 100%;
+            img {
+                width: 100%;
+                display: block;
+                border-radius: 5px;
+            }
+            i {
+                opacity: 0;
+                display: block;
+                position: absolute;
+                transition: opacity 0.1s;
+                transition: transform 0.1s;
+                bottom: 20px;
+                right: 20px;
+                font-size: 2.5rem;
+                color: white;
+                text-shadow: 0 0 20px black;
+            }
+            .img-shadow-box {
+                opacity: 0;
+                box-shadow: 0 0 30px black inset;
+                transition: opacity 0.1s;
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 4.8px;
+            }
+        }
+        .cell-info-container {
+            @include mixins.flex-h;
+            justify-content: space-between;
+            .cell-info-left {
+                @include mixins.flex-v;
+                @include mixins.mpg(0, 0, 5px);
+                justify-content: space-between;
+                width: 75%;
+                .cell-title {
+                    font-weight: bold;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                .cell-artist {
+                    font-size: 0.8rem;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+            .cell-info-right {
+                @include mixins.flex-v;
+                @include mixins.mpg(0,0,5px);
+                text-align: end;
+                justify-content: space-between;
+                width: 25%;
+                .cell-type {
+                    font-weight: bold;
+                    font-size: 0.8rem;
+                    @include mixins.mpg(0, 3px);
+                    border-radius: 2px;
+                    align-self: flex-end;
+                }
+                .LP {
+                    background-color: rgb(243, 65, 65);
+                }
+                .EP {
+                    background-color: rgb(65, 148, 243);
+                }
+                .SI {
+                    background-color: rgb(84, 153, 19);
+                }
+                .cell-price {
+                    font-size: 0.8rem
+                }
+            }
+        }
+    }
+    footer {
+        background: linear-gradient(rgb(17, 17, 17) 0%, rgb(24, 24, 24) 20%);
+        color: white;
+        @include mixins.mpg(0, 20px, 200px);
+        @include mixins.flex-h;
+        justify-content: center; 
+    }
+    .footer-column {
+        @include mixins.flex-v;
+        @include mixins.mpg(0,0,10px);
+
+    }
+    @media screen and (min-width: 768px) {
+        .category-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .hero {
+            height: 600px;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .main-container {
+            margin: auto;
+            width: 1024px;
+        }
+    }
+}

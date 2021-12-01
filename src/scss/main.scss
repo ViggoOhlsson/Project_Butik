@@ -1,18 +1,8 @@
-@import "variables";
-@import "mixins";
+@use "variables";
+@use "mixins";
 
-@import "home_page.scss";
+@use "landingpage";
 
-
-
-// body {
-//     background-color: $red;
-//     background-color: red;
-//     margin: 0;
-// }
-// .box {
-//     @include makeLarge;
-// }
-// .main-button {
-//     @include mpg(10px, 2px, 5px);
-// }
+html {
+    scroll-behavior: smooth;
+}

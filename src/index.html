@@ -4,110 +4,142 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Homegrown Records | Home</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script type="module" src="ts/main.ts"></script>
     <link rel="stylesheet" href="scss/main.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="home-page-container">
+<body class="landing-page-container">
+    <div class="line"></div>
     <header>
-        <span class="site-title"><i class="fa fa-disc"></i> Project Butik</span>
+        <button class="hamburger-button">
+            <i class="fa fa-bars"></i>
+        </button>
+        <span class="site-title"><i class="fa fa-disc"></i>Homergrown Records</span>
         <nav>
-            <i class="fa fa-handshake-o"></i>
-            <i class="fa fa-youtube-play"></i>
-            <i class="fa fa-twitter"></i>
             <i class="fa fa-search"></i>
             <i class="fa fa-shopping-cart"></i>
         </nav>
     </header>
     <main>
         <div class="hero">
-            <span>Wow va coolt!</span>
+            <video autoplay muted loop id="heroVideo">
+                <source src="assets/record-player-stock-footage.mp4" type="video/mp4">
+            </video>
+            <span>
+                "Här har vi lite flavor text... Eller kanske ett citat..."<span style="color:rgb(155, 155, 155)"> - Viggo 2021</span>
+            </span>
         </div>
         <div class="main-container">
+            <nav class="main-nav"><a href="">Jazz</a> • <a href="">Pop</a> • <a href="">Rock</a> • <a href="">Rap</a> • <a href="">Electronic</a> • <a href="">Other</a></nav>
             <div class="category cat-nyankomster">
-                <span class="category-title">Nyankomster</span>
+                <div class="category-top">
+                    <span class="category-title">New Arrivals</span>
+                    <div class="category-line"></div>
+                </div>
                 <div class="category-grid">
                     <div class="cell">
                         <div class="cell-cover">
                             <img src="album.jpg">
+                            <i class="fa fa-cart-plus"></i>
+                            <div class="img-shadow-box"></div>
                         </div>
-                        <span class="cell-title">
-                            Album
-                        </span>
+                        <div class="cell-info-container">
+                            <div class="cell-info-left">
+                                <span class="cell-title">Polygondwanaland</span>
+                                <span class="cell-artist">King Gizzard & The Lizard Wizard</span>
+                            </div>
+                            <div class="cell-info-right">
+                                <span class="cell-type LP">LP</span>
+                                <span class="cell-price">239kr</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="cell">
                         <div class="cell-cover">
-                            <img src="album.jpg">
+                            <img src="assets/abbey-road.png">
+                            <i class="fa fa-cart-plus"></i>
+                            <div class="img-shadow-box"></div>
                         </div>
-                        <span class="cell-title">
-                            Album
-                        </span>
+                        <div class="cell-info-container">
+                            <div class="cell-info-left">
+                                <span class="cell-title">Abbey Road</span>
+                                <span class="cell-artist">The Beatles</span>
+                            </div>
+                            <div class="cell-info-right">
+                                <span class="cell-type LP">LP</span>
+                                <span class="cell-price">269kr</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="cell">
                         <div class="cell-cover">
-                            <img src="album.jpg">
+                            <img src="assets/american-idiot.png">
+                            <i class="fa fa-cart-plus"></i>
+                            <div class="img-shadow-box"></div>
                         </div>
-                        <span class="cell-title">
-                            Album
-                        </span>
+                        <div class="cell-info-container">
+                            <div class="cell-info-left">
+                                <span class="cell-title">American Idiot</span>
+                                <span class="cell-artist">Green Day</span>
+                            </div>
+                            <div class="cell-info-right">
+                                <span class="cell-type LP">LP</span>
+                                <span class="cell-price">319kr</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="cell">
                         <div class="cell-cover">
-                            <img src="album.jpg">
+                            <img src="assets/house-in-the-tall-grass.jpg">
+                            <i class="fa fa-cart-plus"></i>
+                            <div class="img-shadow-box"></div>
                         </div>
-                        <span class="cell-title">
-                            Album
-                        </span>
+                        <div class="cell-info-container">
+                            <div class="cell-info-left">
+                                <span class="cell-title">House In The Tall Grass</span>
+                                <span class="cell-artist">Kikagaku Moyo</span>
+                            </div>
+                            <div class="cell-info-right">
+                                <span class="cell-type LP">LP</span>
+                                <span class="cell-price">249kr</span>
+                            </div>
+                        </div>
                     </div>
+                    <!-- <div class="cell">
+                        <div class="cell-cover">
+                            <img src="assets/flying-microtonal-banana.jpg">
+                            <i class="fa fa-cart-plus"></i>
+                            <div class="img-shadow-box"></div>
+                        </div>
+                        <div class="cell-info-container">
+                            <div class="cell-info-left">
+                                <span class="cell-title">Flying Microtonal Banana</span>
+                                <span class="cell-artist">King Gizzard & The Lizard Wizard</span>
+                            </div>
+                            <div class="cell-info-right">
+                                <span class="cell-type LP">LP</span>
+                                <span class="cell-price">249kr</span>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
-                <span class="category-link"></span>
+                <span class="category-link">See more...</span>
             </div>
-            <div class="category cat-pop">
-                <span class="category-title">Pop</span>
-                <div class="category-grid">
-                    <div class="cell">
-                        <div class="cell-cover">
-                            <img src="album.jpg">
-                        </div>
-                        <span class="cell-title">
-                            Album
-                        </span>
-                    </div>
-                    <div class="cell">
-                        <div class="cell-cover">
-                            <img src="album.jpg">
-                        </div>
-                        <span class="cell-title">
-                            Album
-                        </span>
-                    </div>
-                    <div class="cell">
-                        <div class="cell-cover">
-                            <img src="album.jpg">
-                        </div>
-                        <span class="cell-title">
-                            Album
-                        </span>
-                    </div>
-                    <div class="cell">
-                        <div class="cell-cover">
-                            <img src="album.jpg">
-                        </div>
-                        <span class="cell-title">
-                            Album
-                        </span>
-                    </div>
-                </div>
-                <span class="category-link"></span>
-            </div>
-
         </div>
     </main>
     <footer>
-        <span>
-            Wow! Här Har vi grunden av en footer!
-        </span>
+        <div class="footer-column">
+            <span>Drottninggatan 20</span>
+            <span>111 51</span>
+            <span>Stockholm</span>
+        </div>
+        <div class="footer-column">
+            <span>Privacy Policy</span>
+            <span>Terms of Use</span>
+            <span>Contact</span>
+        </div>
     </footer>
 </body>
 </html>
