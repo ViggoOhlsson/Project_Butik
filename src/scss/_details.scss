@@ -1,14 +1,17 @@
+@use "variables";
+@use "mixins";
+
 .details {
   font-family: "Montserrat", sans-serif;
 
   margin: 0;
-  background-color: $main-dark;
-  color: $main-gold;
+  background-color: variables.$main-dark;
+  color: variables.$main-gold;
   font-size: 12pt;
   header {
     padding: 0 15px;
     height: 75px;
-    @include flex-h;
+    @include mixins.flex-h;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.3);
   }
