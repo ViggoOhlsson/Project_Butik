@@ -1,9 +1,8 @@
-@import "variables";
-@import "mixins";
+@use "variables";
+@use "mixins";
 
-@import "home_page.scss";
-
-
+@use "home_page";
+@use "checkout";
 
 // body {
 //     background-color: $red;

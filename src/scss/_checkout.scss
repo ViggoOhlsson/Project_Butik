@@ -1,0 +1,146 @@
+$smain-dark: rgb(36, 36, 36);
+$smain-darker: rgb(27, 27, 27);
+$smain-gold: rgb(255, 201, 53);
+$smain-gold-dark: rgb(224, 162, 45);
+$smain-light: rgb(230, 230, 230);
+
+@use "variables";
+@use "mixins";
+
+.checkout {
+  header {
+    height: 60%;
+    @include mixins.flex-v;
+    align-items: center;
+    .checkout-item {
+      background-image: url(../Abba-Voyage.jpg);
+      width: 200px;
+      height: 200px;
+      background-size: contain;
+    }
+    .control {
+      display: flex;
+      flex-direction: row;
+      .item-btn {
+        margin-left: 12px;
+        margin-right: 12px;
+        height: 30px;
+        margin-top: 12px;
+      }
+    }
+  }
+  main {
+    height: 60%;
+    @include mixins.flex-v;
+    align-items: center;
+    .headline {
+      text-align: center;
+    }
+    .extra {
+      display: flex;
+      flex-direction: column;
+    }
+    .tip-container {
+      @include mixins.flex-h;
+      align-items: center;
+    }
+    .second {
+      margin-top: 20px;
+    }
+    button {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+    .add-btn {
+      margin-top: 12px;
+    }
+    .addBtn-con {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .tips {
+      background-image: url(../album-ex.jpg);
+      background-size: contain;
+      width: 200px;
+      height: 200px;
+    }
+    .other-tip {
+      background-image: url(../nirvana-test.jpg);
+      background-size: contain;
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+    justify-content: space-around;
+    background-color: $smain-dark;
+    color: $smain-gold;
+    form {
+      margin: 10px;
+      padding: 5px 20px 15px 20px;
+    }
+    input {
+      display: flex;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .terms-con {
+      display: flex;
+      flex-direction: row;
+      #checkbox {
+        width: 5%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1024px) {
+    footer {
+      padding: 20px;
+      justify-content: space-around;
+      form {
+        margin: 10px;
+        padding: 5px 20px 15px 20px;
+      }
+      input {
+        width: 60%;
+      }
+    }
+  }
+}
+
+.container {
+  background-color: #f2f2f2;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: 0;
+    flex-wrap: wrap;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
