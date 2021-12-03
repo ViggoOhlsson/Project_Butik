@@ -2,7 +2,7 @@
 @use "mixins";
 
 .details {
-  background-color: rgb(36, 36, 36);
+  background-color: variables.$main-dark;
   margin: 0;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -10,73 +10,147 @@
   main {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
-  }
+    //row-gap: 40px;
 
-  .album-container {
-    background: rgb(4, 6, 6);
-    background: linear-gradient(
-      90deg,
-      rgba(4, 6, 6, 0.9070494409) 0%,
-      rgba(36, 36, 36, 0.5008869759) 72%,
-      rgba(4, 6, 6, 0.8258169479) 100%
-    );
-    display: flex;
-    justify-content: center;
-    width: 100%;
-
-    /*background-image: url(../images/Nevermind\ Stor.webp);
-  background-repeat: no-repeat;
-  background-size: cover;*/
-  }
-
-  .songlist-container li {
-    margin: 5px;
-  }
-
-  .content-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 60%;
-  }
-
-  .img-container {
-    width: 40%;
-
-    img {
+    .album-container {
+      background: rgb(4, 6, 6);
+      background: linear-gradient(
+        90deg,
+        rgba(4, 6, 6, 0.9070494409) 0%,
+        rgba(36, 36, 36, 0.5008869759) 72%,
+        rgba(4, 6, 6, 0.8258169479) 100%
+      );
+      display: flex;
+      justify-content: center;
       width: 100%;
+
+      .content-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        @include mixins.desktop() {
+          justify-content: space-around;
+          align-items: center;
+          width: 60%;
+        }
+
+        .img-container {
+          width: 40%;
+          margin-top: 20px;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      .img-container h4,
+      p {
+        margin: 5px;
+        width: 60%;
+      }
     }
   }
-
   .product-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
 
-    li {
-      list-style: none;
+      @include mixins.desktop() {
+        flex-direction: row;
+      }
+    }
+
+    h3 {
+      text-align: center;
+    }
+    .info-container {
+      display: flex;
+      justify-content: center;
+      @include mixins.desktop() {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+      }
+
+      .description-container li {
+        color: variables.$main-gold-dark;
+      }
+    }
+    ul {
       margin: 5px;
+      padding: 5px;
+      li {
+        list-style: none;
+      }
     }
-  }
+    .price-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 10pt;
+      @include mixins.desktop() {
+        align-items: flex-end;
+      }
 
-  .info-container {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-  }
+      .button-container {
+        display: flex;
+        column-gap: 15px;
+        align-items: center;
 
-  .price-container {
-    p {
-      text-align: end;
-    }
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    button {
-      width: 50px;
+        p {
+          font-size: large;
+          @include mixins.desktop() {
+            text-align: end;
+          }
+        }
+        #buybutton {
+          background-color: variables.$main-gold-dark;
+          color: black;
+          border: black;
+          border-radius: 3px;
+        }
+      }
     }
   }
 }
+// @media screen and (min-width: 768px) {
+//   .album-container {
+//     .product-container {
+//       display: flex;
+//       justify-content: center;
+//       flex-direction: column;
+//       align-items: center;
+
+//       .wrapper {
+//         flex-direction: column;
+
+//         .price-container {
+//           p {
+//             text-align: end;
+//           }
+
+//           display: flex;
+//           flex-direction: column;
+//           align-items: flex-end;
+
+//           button {
+//             width: 50px;
+//           }
+//         }
+//         .info-container {
+//           display: flex;
+//           flex-direction: row;
+//           justify-content: space-around;
+//           width: 100%;
+
+//           li {
+//             list-style: none;
+//             margin: 5px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
