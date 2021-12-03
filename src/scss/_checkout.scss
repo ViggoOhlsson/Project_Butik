@@ -32,6 +32,12 @@ $toMuchMargin: 200px;
       display: flex;
       flex-direction: column;
     }
+    .pitcure-second {
+      background-image: url(../assets/abbey-road.png);
+      background-size: contain;
+      width: 200px;
+      height: 200px;
+    }
   }
   .extra-con {
     height: 60%;
@@ -59,12 +65,6 @@ $toMuchMargin: 200px;
       }
     }
   }
-  .pitcure-second {
-    background-image: url(../assets/abbey-road.png);
-    background-size: contain;
-    width: 200px;
-    height: 200px;
-  }
 
   footer {
     display: flex;
@@ -73,6 +73,7 @@ $toMuchMargin: 200px;
     justify-content: space-around;
     background-color: variables.$main-dark;
     color: variables.$main-gold;
+    border: 1px solid #ffc935;
     form {
       margin: 10px;
       padding: 5px 20px 15px 20px;
@@ -84,6 +85,9 @@ $toMuchMargin: 200px;
       padding: 12px;
       border: 1px solid #ccc;
       border-radius: 3px;
+    }
+    .btn {
+      width: 81vw;
     }
     .terms-con {
       display: flex;
@@ -104,23 +108,36 @@ $toMuchMargin: 200px;
   }
 
   @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1024px) {
     // För Parcel fix
     // h3 {
-    //   background-color: salmon;
+    //      background-color: salmon;
     // }
     // Parcel fix
 
+    .container-order {
+      .extra-con {
+        height: 45vw;
+        .pitcure-first {
+          width: 240px;
+          height: 240px;
+        }
+      }
+    }
+
     .container-offer {
-      height: 60%;
+      height: 55vw;
       @include mixins.flex-v;
       align-items: initial;
       .extra {
         display: flex;
         flex-direction: row;
         justify-content: center;
+      }
+      .pitcure-second {
+        background-image: url(../assets/abbey-road.png);
+        background-size: contain;
+        width: 240px;
+        height: 240px;
       }
       .h3 h4 {
         text-align: initial;
@@ -144,6 +161,49 @@ $toMuchMargin: 200px;
       .pay-con {
         margin-left: $toMuchMargin;
         .btn {
+          width: 68%;
+        }
+      }
+      h3 {
+        margin-right: $toMuchMargin;
+      }
+      input {
+        width: 65%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    // För Parcel fix
+    // h3 {
+    //   background-color: greenyellow;
+    // }
+    // Parcel fix
+    .container-order {
+      .extra-con {
+        height: 30vw;
+        .pitcure-first {
+          width: 350px;
+          height: 350px;
+        }
+      }
+    }
+    .container-offer {
+      height: 45vw;
+      .pitcure-second {
+        width: 350px;
+        height: 350px;
+      }
+    }
+
+    footer {
+      .info-con {
+        width: 80vw;
+        margin-left: $toMuchMargin;
+      }
+      .pay-con {
+        margin-left: $toMuchMargin;
+        .btn {
           width: 82%;
         }
       }
@@ -152,8 +212,6 @@ $toMuchMargin: 200px;
       }
       input {
         width: 80%;
-      }
-      .terms-con {
       }
     }
   }
