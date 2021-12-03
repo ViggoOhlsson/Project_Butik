@@ -1,0 +1,88 @@
+ //@import "variables";
+// @import "mixins";
+
+// html {
+//     scroll-behavior: smooth;
+// }
+
+// .home-page-container {
+//     font-family: 'Montserrat', sans-serif;
+
+//     margin: 0;
+//     background-color: $main-dark;
+//     color: $main-gold;
+//     font-size: 12pt;
+//     header {
+//         padding: 0 15px;
+//         height: 75px;
+//         @include mixins.flex-h;
+//         align-items: center;
+//         background-color: rgba(0, 0, 0, 0.3);
+//     }
+//     .site-title {
+//         font-size: 1.4rem;
+//         flex-grow: 1;
+//     }
+//     nav {
+//         @include flex-h;
+//         @include mpg(0,0, 10px);
+//         font-size: 1.2rem;
+//     }
+//     .hero {
+//         width: 100%;
+//         height: 300px;
+//         background-image: url("../hero.png");
+//         background-position: center;
+//         background-size: cover;
+//         color: white;
+//         @include flex-h;
+//         align-items: center;
+//         justify-content: center;
+//         font-size: 2rem;
+//         font-weight: bold;
+//         text-shadow: 0 0 10px $main-gold;
+//     }
+//     .main-container {
+//     }
+//     .category {
+//         @include flex-v;
+//         @include mpg(10px, 0, 10px);
+//     }
+//     .category-grid {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         @include mpg(0, 0, 10px);
+//         .cell {
+//             .cell-cover {
+//                 width: 100%;
+//                 img {
+//                     width: 100%;
+//                 }
+//             }
+//             color: white;
+//         }
+//     }
+//     footer {
+//         background-color: black;
+//         color: white;
+//         @include mpg(0, 20px);
+//         @include flex-h;
+//         justify-content: center;
+
+//     }
+//     @media screen and (min-width: 768px) {
+//         .category-grid {
+//             grid-template-columns: repeat(4, 1fr);
+//             .hero {
+//                 height: 600px;
+//             }
+//         }
+//     }
+
+//     @media screen and (min-width: 1024px) {
+//         .main-container {
+//             margin: auto;
+//             width: 1024px;
+//         }
+//     }
+// }

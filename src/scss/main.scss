@@ -4,5 +4,19 @@
 @use "landingpage";
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
+@use "home_page";
+@use "details";
+
+// body {
+//     background-color: $red;
+//     background-color: red;
+//     margin: 0;
+// }
+// .box {
+//     @include makeLarge;
+// }
+// .main-button {
+//     @include mpg(10px, 2px, 5px);
+// }
