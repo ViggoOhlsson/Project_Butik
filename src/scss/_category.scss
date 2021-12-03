@@ -1,0 +1,135 @@
+@use "variables";
+@use "mixins";
+
+.category-container {
+    margin: 0;
+    background-color: variables.$main-dark;
+    font-family: 'Montserrat', sans-serif;
+    .hero {
+        @include mixins.flex-h;
+        height: 500px;
+        background-image: url("../assets/category-bgs/jazz.png");
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 0 100px black inset;
+        
+        .category-title {
+            align-self: center;
+            margin-left: 10%;
+            color: variables.$main-light;
+            font-size: 5rem;
+            font-family: 'Playball', cursive;
+            color: variables.$main-gold;
+            filter: grayscale(0);
+            text-shadow: 0 0 10px black ;
+        }
+    }
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        @include mixins.mpg(0, 0, 30px);
+        @include mixins.mpg(40px auto, 0, 40px);
+
+    }.cell {
+        color: white;
+        @include mixins.mpg(0,0, 10px);
+        @include mixins.flex-v;
+        cursor: pointer;
+        &:hover {
+            .cell-cover {
+                i {
+                    opacity: 0.8;
+                    transform: translate(-10px, -10px);
+                }
+                .img-shadow-box {
+                    opacity: 1;
+                }
+            }
+        }
+        .cell-cover {
+            position: relative;
+            width: 100%;
+            img {
+                width: 100%;
+                display: block;
+                border-radius: 5px;
+            }
+            i {
+                opacity: 0;
+                display: block;
+                position: absolute;
+                transition: opacity 0.1s;
+                transition: transform 0.1s;
+                bottom: 20px;
+                right: 20px;
+                font-size: 2.5rem;
+                color: white;
+                text-shadow: 0 0 20px black;
+            }
+            .img-shadow-box {
+                opacity: 0;
+                box-shadow: 0 0 30px black inset;
+                transition: opacity 0.1s;
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 4.8px;
+            }
+        }
+        .cell-info-container {
+            @include mixins.flex-h;
+            justify-content: space-between;
+            .cell-info-left {
+                @include mixins.flex-v;
+                @include mixins.mpg(0, 0, 5px);
+                justify-content: space-between;
+                width: 75%;
+                .cell-title {
+                    font-weight: bold;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                .cell-artist {
+                    font-size: 0.8rem;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+            .cell-info-right {
+                @include mixins.flex-v;
+                @include mixins.mpg(0,0,5px);
+                text-align: end;
+                justify-content: space-between;
+                width: 25%;
+                .cell-type {
+                    font-weight: bold;
+                    font-size: 0.8rem;
+                    @include mixins.mpg(0, 3px);
+                    border-radius: 2px;
+                    align-self: flex-end;
+                }
+                .LP {
+                    background-color: rgb(243, 65, 65);
+                }
+                .EP {
+                    background-color: rgb(65, 148, 243);
+                }
+                .SI {
+                    background-color: rgb(84, 153, 19);
+                }
+                .cell-price {
+                    font-size: 0.8rem
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        .category-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            width: 1024px;
+        }
+    }
+}

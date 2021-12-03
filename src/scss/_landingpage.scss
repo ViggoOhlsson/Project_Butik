@@ -16,11 +16,11 @@
         background-color: variables.$main-darker;
     }
     .hero {
+        @include mixins.flex-v;
         font-family: 'Playball', cursive;
         position: relative;
         height: 200px;
         overflow: hidden;
-        @include mixins.flex-v;
         justify-content: space-between;
         font-size: 2rem;
         text-shadow: 0 0 10px variables.$main-dark;
@@ -190,7 +190,6 @@
     .footer-column {
         @include mixins.flex-v;
         @include mixins.mpg(0,0,10px);
-
     }
     @media screen and (min-width: 768px) {
         .category-grid {

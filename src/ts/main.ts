@@ -1,7 +1,7 @@
 class Release {
     type:string; // album, EP, single.
-    title:string;
-    artist:string;
+    title:string = "Abbey Road";
+    artist:string = "The Beatles";
     year:number;
     genre:string;
     length:number;
@@ -9,6 +9,7 @@ class Release {
     tracklist:Track[];
     price:number;
     cover:string;
+    id:string = "the-beatles-abbey-road";
     constructor(type:string, title:string, artist:string, year:number, genre:string, tracklist:Track[], price:number, cover:string) {
         this.type = type;
         this.title = title;
