@@ -1,69 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Homegrown Records | Home</title>
-      <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-      <script type="module" src="../ts/main.ts"></script>
-      <link rel="stylesheet" href="../scss/main.scss">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homegrown Records | Home</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script type="module" src="../ts/main.ts"></script>
+    <link rel="stylesheet" href="../scss/main.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="checkout">
     <div class="line"></div>
     <header>
-        <button class="hamburger-button">
-            <i class="fa fa-bars"></i>
-        </button>
-        <span class="site-title"><i class="fa fa-disc"></i>Homegrown Records</span>
-        <nav>
-            <i class="fa fa-search"></i>
-            <i class="fa fa-shopping-cart"></i>
-        </nav>
+      <button class="hamburger-button">
+        <i class="fa fa-bars"></i>
+      </button>
+      <span class="site-title"
+        ><i class="fa fa-disc"></i>Homegrown Records</span
+      >
+      <nav>
+        <i class="fa fa-search"></i>
+        <i class="fa fa-shopping-cart"></i>
+      </nav>
     </header>
     <!-- Varukorg -->
 
-    <div class="container">
-      <h4>
+    <div class="container-order">
+      <h3>
         Din Order
-        <span class="order-cart" style="color: black">
+        <!-- <span class="order-cart" style="color: black">
           <i class="fa fa-shopping-cart"></i>
-          <b>1</b>
-        </span>
-      </h4>
+          <span>1</span>
+        </span> -->
+      </h3>
       <div class="extra-con">
         <ul>
           <li>
-            <div class="pitcure"></div>
-            Album item #1
+            <div class="pitcure-first"></div>
           </li>
+          <li class="headline">American Idiot, Green Day</li>
+          <li class="headline">Kostnad: 247 kr</li>
+
           <li>
-            <div class="pitcure"></div>
-            Album item #2
+            <div class="order-control">
+              <i class="fa minus-square">-</i>
+              <!-- <button type="button">-</button> -->
+              <input type="text" class="item-numb" value="1" />
+              <i class="fa plus-square-o">+</i>
+              <!-- <button type="button">+</button> -->
+            </div>
           </li>
         </ul>
       </div>
     </div>
 
-    <div class="container">
-      <main>
-        <div class="headline">
-          <h3>Lägg till Detta!</h3>
-          <h4>Extra erbjudanden</h4>
-        </div>
-        <div class="extra">
-          <ul>
-            <li>Add this</li>
-            <li>Add this to</li>
-          </ul>
-        </div>
-      </main>
+    <div class="container-offer">
+      <div class="headline">
+        <h3>Lägg till Detta!</h3>
+        <h4>Liknande</h4>
+      </div>
+      <div class="extra">
+        <ul>
+          <li>
+            <div class="pitcure-second"></div>
+            Abbey Road, The Beatles
+          </li>
+          <li>385kr</li>
+          <li><button type="button">Lägg till</button></li>
+        </ul>
+        <ul>
+          <li>
+            <div class="pitcure-second"></div>
+            Abbey Road, The Beatles
+          </li>
+          <li>385kr</li>
+          <li><button type="button">Lägg till</button></li>
+        </ul>
+      </div>
     </div>
-
     <footer>
       <form>
         <div class="info-con">

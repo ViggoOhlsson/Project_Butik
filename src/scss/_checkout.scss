@@ -3,27 +3,65 @@
 
 .checkout {
   margin: 0;
-  .extra-con {
-    height: 60%;
-    @include mixins.flex-v;
-    align-items: center;
+  ul {
+    list-style: none;
   }
-  main {
+  h3 {
+    text-align: center;
+  }
+  .headline {
+    text-align: center;
+  }
+  .container-order {
+    background-color: variables.$main-dark;
+    border: 1px solid #ffc935;
+    border-radius: 3px;
+    color: white;
+  }
+  .container-offer {
     height: 60%;
     @include mixins.flex-v;
     align-items: center;
-    .headline {
-      text-align: center;
-    }
+    background-color: variables.$main-dark;
+    border: 1px solid #ffc935;
+    border-radius: 3px;
+    color: white;
     .extra {
       display: flex;
       flex-direction: column;
     }
-    // .tips {
-    //   background-size: contain;
-    //   width: 200px;
-    //   height: 200px;
-    // }
+  }
+  .extra-con {
+    height: 60%;
+    @include mixins.flex-v;
+    align-items: center;
+    .pitcure-first {
+      background-image: url(../assets/american-idiot.png);
+      background-size: contain;
+      width: 200px;
+      height: 200px;
+    }
+    .order-control {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 30px;
+      i {
+        font-size: 30px;
+        color: white;
+      }
+      .item-numb {
+        text-align: center;
+        margin-top: 6px;
+        width: 85px;
+      }
+    }
+  }
+  .pitcure-second {
+    background-image: url(../assets/abbey-road.png);
+    background-size: contain;
+    width: 200px;
+    height: 200px;
   }
 
   footer {
@@ -54,12 +92,6 @@
     }
   }
 
-  .container {
-    background-color: #f2f2f2;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-  }
-
   .btn:hover {
     background-color: #45a049;
   }
@@ -69,10 +101,60 @@
     color: grey;
   }
 
+  // .checkout-cont {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  // }
+  // .box {
+  //   flex: 0 0 100%;
+  // }
+
+  // .order-cont {
+  //   flex: 1 0 100%;
+  //   background-color: royalblue;
+  //   height: 140px;
+  // }
+  // .offer-cont {
+  //   flex: 1 0 100%;
+  //   background-color: sandybrown;
+  // }
+
   @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1024px) {
+    .order-cont {
+      flex-basis: 40%;
+      display: block;
+    }
+    .offer-cont {
+      flex-basis: 40%;
+      display: block;
+    }
+    h3 {
+      // background-color: salmon;
+    }
+
+    .container-order {
+      height: 80vh;
+      h3 {
+        text-align: left;
+      }
+    }
+
+    .container-offer {
+      height: 60%;
+      @include mixins.flex-v;
+      align-items: initial;
+      background-color: variables.$main-dark;
+      border: 1px solid #ffc935;
+      border-radius: 3px;
+      color: white;
+      .extra {
+        display: flex;
+        flex-direction: row;
+      }
+    }
     footer {
       padding: 20px;
       justify-content: space-around;
