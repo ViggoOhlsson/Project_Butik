@@ -2,17 +2,81 @@
 @use "mixins";
 
 .details {
+  background-color: rgb(36, 36, 36);
+  margin: 0;
+  color: white;
   font-family: "Montserrat", sans-serif;
 
-  margin: 0;
-  background-color: variables.$main-dark;
-  color: variables.$main-gold;
-  font-size: 12pt;
-  header {
-    padding: 0 15px;
-    height: 75px;
-    @include mixins.flex-h;
+  main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .album-container {
+    background: rgb(4, 6, 6);
+    background: linear-gradient(
+      90deg,
+      rgba(4, 6, 6, 0.9070494409) 0%,
+      rgba(36, 36, 36, 0.5008869759) 72%,
+      rgba(4, 6, 6, 0.8258169479) 100%
+    );
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    /*background-image: url(../images/Nevermind\ Stor.webp);
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  }
+
+  .songlist-container li {
+    margin: 5px;
+  }
+
+  .content-container {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.3);
+    width: 60%;
+  }
+
+  .img-container {
+    width: 40%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    li {
+      list-style: none;
+      margin: 5px;
+    }
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .price-container {
+    p {
+      text-align: end;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    button {
+      width: 50px;
+    }
   }
 }
