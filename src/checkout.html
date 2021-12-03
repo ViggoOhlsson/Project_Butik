@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="../src/ts/checkout.ts"></script>
-    <link rel="stylesheet" href="../src/scss/main.scss" />
+    <link rel="stylesheet" href="scss/main.scss" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,56 +17,37 @@
 
     <div class="container">
       <h4>
-        Order
+        Din Order
         <span class="order-cart" style="color: black">
           <i class="fa fa-shopping-cart"></i>
           <b>1</b>
         </span>
       </h4>
-      <header>
-        <h2>Abba, Voyage</h2>
-        <div class="checkout-item">
-          <!-- <img src="./Abba-Voyage.jpg" alt="Abba album, Voyage" /> -->
-        </div>
-        <p>300kr</p>
-        <div class="control">
-          <button type="button" class="item-btn">-</button>
-          <p>Antal</p>
-          <button type="button" class="item-btn">+</button>
-        </div>
-      </header>
+      <div class="extra-con">
+        <ul>
+          <li>
+            <div class="pitcure"></div>
+            Album item #1
+          </li>
+          <li>
+            <div class="pitcure"></div>
+            Album item #2
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="container">
-      <h4>Cart</h4>
       <main>
         <div class="headline">
           <h3>Lägg till Detta!</h3>
-          <h4>Album</h4>
+          <h4>Extra erbjudanden</h4>
         </div>
         <div class="extra">
-          <div>
-            <div class="tip-container first">
-              <button type="button"><-</button>
-              <div class="tips"></div>
-              <button type="button">-></button>
-            </div>
-            <div class="addBtn-con">
-              <button type="button" class="add-btn">Lägg till</button>
-              <p>121 kr</p>
-            </div>
-          </div>
-          <div>
-            <div class="tip-container second">
-              <button type="button"><-</button>
-              <div class="other-tip"></div>
-              <button type="button">-></button>
-            </div>
-            <div class="addBtn-con">
-              <button type="button" class="add-btn">Lägg till</button>
-              <p>121 kr</p>
-            </div>
-          </div>
+          <ul>
+            <li>Add this</li>
+            <li>Add this to</li>
+          </ul>
         </div>
       </main>
     </div>
