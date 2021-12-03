@@ -1,6 +1,8 @@
 @use "variables";
 @use "mixins";
 
+$toMuchMargin: 200px;
+
 .checkout {
   margin: 0;
   ul {
@@ -101,69 +103,73 @@
     color: grey;
   }
 
-  // .checkout-cont {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  // }
-  // .box {
-  //   flex: 0 0 100%;
-  // }
-
-  // .order-cont {
-  //   flex: 1 0 100%;
-  //   background-color: royalblue;
-  //   height: 140px;
-  // }
-  // .offer-cont {
-  //   flex: 1 0 100%;
-  //   background-color: sandybrown;
-  // }
-
   @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1024px) {
-    .order-cont {
-      flex-basis: 40%;
-      display: block;
-    }
-    .offer-cont {
-      flex-basis: 40%;
-      display: block;
-    }
-    h3 {
-      // background-color: salmon;
-    }
-
+    // För Parcel fix
+    // h3 {
+    //   background-color: salmon;
+    // }
+    // Parcel fix
     .container-order {
-      height: 80vh;
-      h3 {
-        text-align: left;
-      }
     }
 
     .container-offer {
       height: 60%;
       @include mixins.flex-v;
       align-items: initial;
-      background-color: variables.$main-dark;
-      border: 1px solid #ffc935;
-      border-radius: 3px;
-      color: white;
       .extra {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+      }
+      .h3 h4 {
+        text-align: initial;
       }
     }
+
+    .extra-con {
+      .pitcure-first {
+      }
+      .order-control {
+      }
+      i {
+      }
+      .item-numb {
+      }
+    }
+
+    .pitcure-second {
+    }
+
     footer {
       padding: 20px;
-      justify-content: space-around;
+      justify-content: center;
+      display: flex;
+      align-items: center;
       form {
         margin: 10px;
+        margin-right: 10px;
         padding: 5px 20px 15px 20px;
       }
+      .info-con {
+        width: 80vw;
+        margin-left: $toMuchMargin;
+      }
+      .pay-con {
+        margin-left: $toMuchMargin;
+        .btn {
+          width: 82%;
+        }
+      }
+      h3 {
+        margin-right: 200px;
+      }
       input {
-        width: 60%;
+        width: 80%;
+      }
+      .terms-con {
       }
     }
   }
