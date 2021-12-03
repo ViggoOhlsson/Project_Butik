@@ -23,17 +23,23 @@ $toMuchMargin: 200px;
       height: 60%;
       @include mixins.flex-v;
       align-items: center;
+      @include mixins.desktop() {
+        height: 45vw;
+      }
 
       .pitcure-first {
         background-image: url(../assets/american-idiot.png);
         background-size: contain;
         width: 200px;
         height: 200px;
+        @include mixins.desktop() {
+          width: 240px;
+          height: 240px;
+        }
       }
     }
     .order-control {
-      display: flex;
-      flex-direction: row;
+      @include mixins.flex-h;
       justify-content: space-between;
       height: 30px;
       i {
@@ -55,21 +61,37 @@ $toMuchMargin: 200px;
     border: 1px solid #ffc935;
     border-radius: 3px;
     color: white;
+    @include mixins.desktop() {
+      height: 55vw;
+      @include mixins.flex-v;
+      align-items: initial;
+    }
     .extra {
-      display: flex;
-      flex-direction: column;
+      @include mixins.flex-v;
+      @include mixins.desktop() {
+        @include mixins.flex-h;
+      }
     }
     .pitcure-second {
       background-image: url(../assets/abbey-road.png);
       background-size: contain;
       width: 200px;
       height: 200px;
+      @include mixins.desktop() {
+        width: 240px;
+        height: 240px;
+      }
+    }
+    @include mixins.desktop() {
+      .h3 h4 {
+        text-align: initial;
+      }
     }
   }
 
   footer {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 20px;
     justify-content: space-around;
     background-color: variables.$main-dark;
@@ -77,6 +99,7 @@ $toMuchMargin: 200px;
     border: 1px solid #ffc935;
     form {
       margin: 10px;
+      margin-left: 5px;
       padding: 5px 20px 15px 20px;
       h3 {
         text-align: initial;
@@ -92,10 +115,12 @@ $toMuchMargin: 200px;
     }
     .btn {
       width: 81vw;
+      @include mixins.desktop() {
+        width: 88vw;
+      }
     }
     .terms-con {
-      display: flex;
-      flex-direction: row;
+      @include mixins.flex-h;
       #checkbox {
         width: 5%;
       }
@@ -109,72 +134,6 @@ $toMuchMargin: 200px;
   .order-cart {
     float: right;
     color: grey;
-  }
-
-  @media screen and (min-width: 768px) {
-    // För Parcel fix
-    // h3 {
-    //      background-color: salmon;
-    // }
-    // Parcel fix
-
-    .container-order {
-      .extra-con {
-        height: 45vw;
-        .pitcure-first {
-          width: 240px;
-          height: 240px;
-        }
-      }
-    }
-
-    .container-offer {
-      height: 55vw;
-      @include mixins.flex-v;
-      align-items: initial;
-      .extra {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-      }
-      .pitcure-second {
-        background-image: url(../assets/abbey-road.png);
-        background-size: contain;
-        width: 240px;
-        height: 240px;
-      }
-      .h3 h4 {
-        text-align: initial;
-      }
-    }
-
-    footer {
-      padding: 20px;
-      justify-content: center;
-      display: flex;
-      align-items: center;
-      form {
-        margin: 10px;
-        margin-right: 10px;
-        padding: 5px 20px 15px 20px;
-      }
-      .info-con {
-        width: 80vw;
-        //margin-left: $toMuchMargin;
-      }
-      .pay-con {
-        // margin-left: $toMuchMargin;
-        .btn {
-          width: 68%;
-        }
-      }
-      h3 {
-        //  margin-right: $toMuchMargin;
-      }
-      input {
-        width: 65%;
-      }
-    }
   }
 
   @media screen and (min-width: 1024px) {
@@ -203,16 +162,12 @@ $toMuchMargin: 200px;
     footer {
       .info-con {
         width: 80vw;
-        //margin-left: $toMuchMargin;
       }
       .pay-con {
-        //  margin-left: $toMuchMargin;
+        width: 80vw;
         .btn {
           width: 82%;
         }
-      }
-      h3 {
-        // margin-right: 200px;
       }
       input {
         width: 80%;
