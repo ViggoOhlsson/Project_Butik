@@ -2,6 +2,7 @@
 @use "mixins";
 
 .checkout {
+  margin: 0;
   .extra-con {
     height: 60%;
     @include mixins.flex-v;
