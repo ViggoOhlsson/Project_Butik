@@ -19,6 +19,33 @@ $toMuchMargin: 200px;
     border: 1px solid #ffc935;
     border-radius: 3px;
     color: white;
+    .extra-con {
+      height: 60%;
+      @include mixins.flex-v;
+      align-items: center;
+
+      .pitcure-first {
+        background-image: url(../assets/american-idiot.png);
+        background-size: contain;
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .order-control {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 30px;
+      i {
+        font-size: 30px;
+        color: white;
+      }
+      .item-numb {
+        text-align: center;
+        margin-top: 6px;
+        width: 85px;
+      }
+    }
   }
   .container-offer {
     height: 60%;
@@ -39,32 +66,6 @@ $toMuchMargin: 200px;
       height: 200px;
     }
   }
-  .extra-con {
-    height: 60%;
-    @include mixins.flex-v;
-    align-items: center;
-    .pitcure-first {
-      background-image: url(../assets/american-idiot.png);
-      background-size: contain;
-      width: 200px;
-      height: 200px;
-    }
-    .order-control {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      height: 30px;
-      i {
-        font-size: 30px;
-        color: white;
-      }
-      .item-numb {
-        text-align: center;
-        margin-top: 6px;
-        width: 85px;
-      }
-    }
-  }
 
   footer {
     display: flex;
@@ -77,6 +78,9 @@ $toMuchMargin: 200px;
     form {
       margin: 10px;
       padding: 5px 20px 15px 20px;
+      h3 {
+        text-align: initial;
+      }
     }
     input {
       display: flex;
