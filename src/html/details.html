@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Homegrown Records | Home</title>
-      <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-      <script type="module" src="../ts/main.ts"></script>
-      <link rel="stylesheet" href="../scss/main.scss">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homegrown Records | Home</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script type="module" src="../ts/main.ts"></script>
+    <link rel="stylesheet" href="../scss/main.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="details">
     <div class="line"></div>
     <header>
-        <button class="hamburger-button">
-            <i class="fa fa-bars"></i>
-        </button>
-        <span class="site-title"><i class="fa fa-disc"></i>Homegrown Records</span>
-        <nav>
-            <i class="fa fa-search"></i>
-            <i class="fa fa-shopping-cart"></i>
-        </nav>
+      <button class="hamburger-button">
+        <i class="fa fa-bars"></i>
+      </button>
+      <span class="site-title"
+        ><i class="fa fa-disc"></i>Homegrown Records</span
+      >
+      <nav>
+        <i class="fa fa-search"></i>
+        <i class="fa fa-shopping-cart"></i>
+      </nav>
     </header>
     <main>
       <div class="album-container">
         <div class="content-container">
           <div class="img-container">
-            <img src="../assets/abbey-road.png" alt="Albumcover" />
+            <img src="../assets/Ex LP.jpg" alt="Albumcover" />
+            <h4>Smells Like Teen Spirit</h4>
+            <p>Nirvana</p>
           </div>
           <div class="songlist-container">
             <ol>
@@ -50,18 +60,31 @@
         </div>
       </div>
       <div class="product-container">
-        <h4>Produktinformation</h4>
-        <div class="info-container">
-          <div class="facts-container">
-            <ul>
-              <li>Artist: Nirvana</li>
-              <li>Titel: Nevermind</li>
-              <li>År: 1991</li>
-              <li>Typ: LP</li>
-              <li>Genre: Grunge</li>
-              <li>Låtar: 12</li>
-              <li>Längd: 10 h 42 min</li>
-            </ul>
+        <h3>Produktinformation</h3>
+        <div class="wrapper">
+          <div class="info-container">
+            <div class="description-container">
+              <ul>
+                <li>Artist:</li>
+                <li>Titel:</li>
+                <li>År:</li>
+                <li>Typ:</li>
+                <li>Genre:</li>
+                <li>Låtar:</li>
+                <li>Längd:</li>
+              </ul>
+            </div>
+            <div class="facts-container">
+              <ul>
+                <li>Nirvana</li>
+                <li>Nevermind</li>
+                <li>1991</li>
+                <li>LP</li>
+                <li>Rock</li>
+                <li>12</li>
+                <li>10 h 42 min</li>
+              </ul>
+            </div>
           </div>
           <div class="price-container">
             <ul>
@@ -71,11 +94,10 @@
             </ul>
             <p>298:-</p>
             <button onclick="window.location.href='checkout.html'" type="button" id="buybutton">Köp</button>
-            </ul>
+            </div>
           </div>
         </div>
       </div>
     </main>
-
   </body>
 </html>
