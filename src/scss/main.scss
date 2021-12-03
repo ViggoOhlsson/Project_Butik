@@ -3,12 +3,11 @@
 
 @use "landingpage";
 @use "header";
+@use "details";
 
 html {
   scroll-behavior: smooth;
 }
-@use "home_page";
-@use "details";
 
 // body {
 //     background-color: $red;
