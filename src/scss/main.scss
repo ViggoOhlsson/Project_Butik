@@ -2,12 +2,12 @@
 @use "mixins";
 
 @use "landingpage";
+@use "checkout";
+@use "details";
 
 html {
   scroll-behavior: smooth;
 }
-@use "home_page";
-@use "details";
 
 // body {
 //     background-color: $red;
