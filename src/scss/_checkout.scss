@@ -1,0 +1,87 @@
+@use "variables";
+@use "mixins";
+
+.checkout {
+  .extra-con {
+    height: 60%;
+    @include mixins.flex-v;
+    align-items: center;
+  }
+  main {
+    height: 60%;
+    @include mixins.flex-v;
+    align-items: center;
+    .headline {
+      text-align: center;
+    }
+    .extra {
+      display: flex;
+      flex-direction: column;
+    }
+    // .tips {
+    //   background-size: contain;
+    //   width: 200px;
+    //   height: 200px;
+    // }
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+    justify-content: space-around;
+    background-color: variables.$main-dark;
+    color: variables.$main-gold;
+    form {
+      margin: 10px;
+      padding: 5px 20px 15px 20px;
+    }
+    input {
+      display: flex;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .terms-con {
+      display: flex;
+      flex-direction: row;
+      #checkbox {
+        width: 5%;
+      }
+    }
+  }
+
+  .container {
+    background-color: #f2f2f2;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+
+  .btn:hover {
+    background-color: #45a049;
+  }
+
+  .order-cart {
+    float: right;
+    color: grey;
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1024px) {
+    footer {
+      padding: 20px;
+      justify-content: space-around;
+      form {
+        margin: 10px;
+        padding: 5px 20px 15px 20px;
+      }
+      input {
+        width: 60%;
+      }
+    }
+  }
+}
