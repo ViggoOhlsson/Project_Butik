@@ -25,6 +25,7 @@ $toMuchMargin: 200px;
       align-items: center;
       @include mixins.desktop() {
         height: 45vw;
+        @include mixins.flex-h;
       }
 
       .pitcure-first {
