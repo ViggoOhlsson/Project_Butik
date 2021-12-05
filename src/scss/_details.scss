@@ -10,7 +10,6 @@
   main {
     display: flex;
     flex-direction: column;
-    //row-gap: 40px;
 
     .album-container {
       background: rgb(4, 6, 6);
@@ -31,21 +30,30 @@
 
         @include mixins.desktop() {
           justify-content: space-around;
-          align-items: center;
-          width: 60%;
+          width: 1024px;
+
+          li {
+            margin: 5px;
+          }
         }
 
         .img-container {
           width: 40%;
           margin-top: 20px;
+          @include mixins.desktop() {
+            width: 25%;
+          }
 
           img {
             width: 100%;
           }
         }
+        ol {
+          margin-top: 15px;
+        }
       }
 
-      .img-container h4,
+      .img-container h5,
       p {
         margin: 5px;
         width: 60%;
@@ -62,16 +70,16 @@
       }
     }
 
-    h3 {
+    h5 {
       text-align: center;
+      margin-top: 20px;
     }
     .info-container {
       display: flex;
       justify-content: center;
       @include mixins.desktop() {
         flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
+        width: 50%;
       }
 
       .description-container li {
@@ -91,66 +99,70 @@
       align-items: center;
       font-size: 10pt;
       @include mixins.desktop() {
-        align-items: flex-end;
+        align-items: center;
+        width: 50%;
+        row-gap: 20px;
       }
 
       .button-container {
         display: flex;
         column-gap: 15px;
         align-items: center;
+        color: blue($color: #000000);
+        margin-top: 20px;
+      }
 
-        p {
-          font-size: large;
-          @include mixins.desktop() {
-            text-align: end;
-          }
+      p {
+        font-size: large;
+        margin: 0;
+        @include mixins.desktop() {
+          text-align: end;
         }
-        #buybutton {
-          background-color: variables.$main-gold-dark;
-          color: black;
-          border: black;
-          border-radius: 3px;
+      }
+      #buybutton {
+        background-color: variables.$main-gold-dark;
+        color: black;
+        font-style: unset;
+        border: black;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .modal-content {
+    background-color: black;
+    opacity: 0.9;
+
+    .modal-header {
+      .close {
+        color: white;
+      }
+    }
+
+    .modal-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      img {
+        width: 10%;
+      }
+      svg {
+        margin-bottom: 15px;
+      }
+      .quantity {
+        margin-bottom: 15px;
+        button {
+          appearance: none;
+          background: none;
+          border: none;
+          border-radius: 0;
+          color: white;
         }
       }
     }
   }
+
+  .btn {
+    background-color: variables.$main-gold-dark;
+  }
 }
-// @media screen and (min-width: 768px) {
-//   .album-container {
-//     .product-container {
-//       display: flex;
-//       justify-content: center;
-//       flex-direction: column;
-//       align-items: center;
-
-//       .wrapper {
-//         flex-direction: column;
-
-//         .price-container {
-//           p {
-//             text-align: end;
-//           }
-
-//           display: flex;
-//           flex-direction: column;
-//           align-items: flex-end;
-
-//           button {
-//             width: 50px;
-//           }
-//         }
-//         .info-container {
-//           display: flex;
-//           flex-direction: row;
-//           justify-content: space-around;
-//           width: 100%;
-
-//           li {
-//             list-style: none;
-//             margin: 5px;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
