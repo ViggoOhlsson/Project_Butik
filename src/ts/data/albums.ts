@@ -4,7 +4,7 @@ import { Track } from "../models/Track";
 export let albums:Release[] = [];
 
 //Nevermind - Nirvana
-albums.push(new Release("Nevermind", "Nirvana", 1991, "Rock", "49:15", 249, "LP", [
+albums.push(new Release("Nevermind", "Nirvana", 1991, "rock", "49:15", 249, "LP", [
     new Track("Smells Like teen Spirit", "5:01"),
     new Track("In bloom", "4:15"),
     new Track("come As You Are", "3:38"),
@@ -21,7 +21,7 @@ albums.push(new Release("Nevermind", "Nirvana", 1991, "Rock", "49:15", 249, "LP"
 ]));
 
 //Polygondwanaland - King Gizzard
-albums.push(new Release("Polygondwanaland", "King Gizzard & The Lizard Wizard", 2017, "Rock", "43:52", 239, "LP", [
+albums.push(new Release("Polygondwanaland", "King Gizzard & The Lizard Wizard", 2017, "rock", "43:52", 239, "LP", [
     new Track("Crumbling Castle", "10:44"),
     new Track("Polygondwanaland", "3:32"),
     new Track("the Castle In The Air", "2:47"),
@@ -35,7 +35,7 @@ albums.push(new Release("Polygondwanaland", "King Gizzard & The Lizard Wizard", 
 ]));
 
 //House In The tall Grass
-albums.push(new Release("House In The Tall Grass", "Kikagaku Moyo", 2016, "Rock", "48:31", 219, "LP", [
+albums.push(new Release("House In The Tall Grass", "Kikagaku Moyo", 2016, "rock", "48:31", 219, "LP", [
     new Track("Green Sugar", "7:54"),
     new Track("Kogarashi", "4:41"),
     new Track("Old Snow, White Sun", "3:25"),
@@ -48,7 +48,7 @@ albums.push(new Release("House In The Tall Grass", "Kikagaku Moyo", 2016, "Rock"
 ]));
 
 //American Idiot
-albums.push(new Release("American Idiot", "Green Day", 2004, "Rock", "57:23", 279, "LP", [
+albums.push(new Release("American Idiot", "Green Day", 2004, "rock", "57:23", 279, "LP", [
     new Track("American Idiot", "2:56"),
     new Track("Jesus Of Suburbia", "9:08"),
     new Track("Holiday / Boulevard Of Broken Dreams", "8:13"),
@@ -61,7 +61,7 @@ albums.push(new Release("American Idiot", "Green Day", 2004, "Rock", "57:23", 27
 ]));
 
 //Abbey Road - The Beatles
-albums.push(new Release("Abbey Road", "The Beatles", 1969, "Rock", "47:29", 299, "LP", [
+albums.push(new Release("Abbey Road", "The Beatles", 1969, "rock", "47:29", 299, "LP", [
     new Track("Come Together", "4:19"),
     new Track("Something", "3:02"),
     new Track("Maxwell's Silver Hammer", "3:27"),
@@ -82,7 +82,7 @@ albums.push(new Release("Abbey Road", "The Beatles", 1969, "Rock", "47:29", 299,
 ]));
 
 //Flying Microtonal Banana
-albums.push(new Release("Flying Microtonal Banana", "King Gizzard & The Lizard Wizard", 2017, "Rock", "41:56", 259, "LP", [
+albums.push(new Release("Flying Microtonal Banana", "King Gizzard & The Lizard Wizard", 2017, "rock", "41:56", 259, "LP", [
     new Track("Rattlesnake", "7:48"),
     new Track("Melting", "5:27"),
     new Track("Open Water", "7:13"),

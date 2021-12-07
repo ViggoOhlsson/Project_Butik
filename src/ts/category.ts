@@ -2,12 +2,11 @@ import { albums } from "./data/albums";
 import { Release } from "./models/release";
 
 window.onload = () => {
-    console.log(albums);
-    printReleaseCells("catRock", "rock", 4);
+    console.log(urlGet("c"));
+    printReleaseCells("catGrid", urlGet("c"), 50);
 }
 
 function printReleaseCells(targetId:string, category:string, amount:number) {
-    console.log("printReleaseCelss körs");
     let targetGrid:HTMLElement = document.getElementById(targetId) as HTMLElement;
     // for (let release of albums) {
     for (let i = 0; i < amount; i++) {
@@ -15,14 +14,14 @@ function printReleaseCells(targetId:string, category:string, amount:number) {
             let cellWrapper = document.createElement("div");
             cellWrapper.className = "cell";
             cellWrapper.addEventListener("click", () => {
-                window.location.href = "html/details.html?r=" + albums[i].id;
+                window.location.href = "html/details.html?release=" + albums[i].id;
             });
 
             let cellCover = document.createElement("div");
             cellCover.className = "cell-cover";
             
             let coverImg = document.createElement("img");
-            coverImg.src = albums[i].cover;
+            coverImg.src = "../" + albums[i].cover;
             cellCover.appendChild(coverImg);
             let icon = document.createElement("i");
             icon.className = "fa fa-cart-plus";
@@ -64,4 +63,8 @@ function printReleaseCells(targetId:string, category:string, amount:number) {
             targetGrid.appendChild(cellWrapper);
         }
     }
+}
+
+function urlGet(param:string):string {
+    return new URLSearchParams(window.location.search).get(param);
 }
