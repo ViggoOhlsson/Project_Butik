@@ -9,19 +9,21 @@ function validate(e) {
   // Prevents the default validation.
   e.preventDefault();
 
+  // Finds the input element.
   let firstname = document.getElementById("fnamn");
   let valid = true;
 
+  // If input empty find <span> and change class.
   if (!firstname.value) {
     let nameError = document.getElementById("nameError");
     nameError.classList.add("visible");
     firstname.classList.add("invalid");
-    nameError.setAttribute("aria-hidden", false);
-    nameError.setAttribute("aria-invalid", true);
   }
+  // If input is okay.
   return valid;
 }
 
+// Quantity count.
 let p: number = 247;
 let price: any = "$" + `<span>${p}</span>`;
 
