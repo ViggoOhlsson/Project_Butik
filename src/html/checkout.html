@@ -49,7 +49,7 @@
           <li>
             <div class="order-control">
               <i class="fa minus-square" id="removeItem">-</i>
-              <input type="text" class="item-numb" value="1" />
+              <input type="text" class="item-numb" value="1" id="item-numb" />
               <i class="fa plus-square-o" id="addItem">+</i>
             </div>
           </li>
@@ -81,18 +81,20 @@
         </ul>
       </div>
     </div>
+
     <footer>
       <form>
         <div class="info-con">
           <h3>Personlig information</h3>
           <label for="fnamn">Förnamn</label>
           <input
-            type="text"
             id="fnamn"
+            type="text"
             placeholder="N"
             required
             title="Du måste skriva in ett namn!"
           />
+          <p id="testFnamn"></p>
 
           <label for="enamn">Efternamn</label>
           <input type="text" id="enamn" placeholder="N" required />
