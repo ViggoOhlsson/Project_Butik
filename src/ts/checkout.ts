@@ -4,29 +4,6 @@ window.onload = function () {
   document.getElementById("submit").addEventListener("click", ValidationForm);
 };
 
-//let submit = document.getElementById("submit");
-// function validate(e) {
-//   // Prevents the default validation.
-//   e.preventDefault();
-
-//   // Finds the input element.
-//   let firstname: HTMLInputElement = document.getElementById(
-//     "fnamn"
-//   ) as HTMLInputElement;
-//   let valid = true;
-
-//   // If input empty find <span> and change class.
-//   if (!firstname.value) {
-//     let nameError: HTMLSpanElement = document.getElementById(
-//       "nameError"
-//     ) as HTMLSpanElement;
-//     nameError.classList.add("visible");
-//     nameError.classList.add("invalid");
-//   }
-//   // If input is okay.
-//   return valid;
-// }
-
 function ValidationForm() {
   // Finds the input from the form.
   let firstname = document.forms["checkForm"]["fnamn"];
