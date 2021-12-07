@@ -31,7 +31,6 @@
       >
       <nav>
         <i class="fa fa-search"></i>
-        <i class="fa fa-shopping-cart"></i>
       </nav>
     </header>
 
@@ -49,7 +48,13 @@
           <li>
             <div class="order-control">
               <i class="fa minus-square" id="removeItem">-</i>
-              <input type="text" class="item-numb" value="1" id="item-numb" />
+              <input
+                type="text"
+                class="item-numb"
+                value="1"
+                id="item-numb"
+                autocomplete="off"
+              />
               <i class="fa plus-square-o" id="addItem">+</i>
             </div>
           </li>
@@ -86,15 +91,11 @@
       <form>
         <div class="info-con">
           <h3>Personlig information</h3>
+          <span role="alert" id="nameError">
+            Du måste skriva in ett förnamn
+          </span>
           <label for="fnamn">Förnamn</label>
-          <input
-            id="fnamn"
-            type="text"
-            placeholder="N"
-            required
-            title="Du måste skriva in ett namn!"
-          />
-          <span role="alert" id="nameError"> Please enter a first name. </span>
+          <input id="fnamn" type="text" placeholder="N" required />
 
           <label for="enamn">Efternamn</label>
           <input type="text" id="enamn" placeholder="N" required />
