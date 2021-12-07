@@ -53,8 +53,3 @@ function remVal() {
   price = `Kostnad: <span>${p * val}</span> kr`;
   document.getElementById("price-cont").innerHTML = price;
 }
-
-function formCreation() {
-  let info = document.createElement("div");
-  info.id = "info-con";
-}
