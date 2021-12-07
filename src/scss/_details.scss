@@ -150,6 +150,8 @@
         margin-bottom: 15px;
       }
       .quantity {
+        display: flex;
+        column-gap: 15px;
         margin-bottom: 15px;
         button {
           appearance: none;
