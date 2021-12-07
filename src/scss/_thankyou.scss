@@ -1,6 +1,9 @@
 @use "variables";
 @use "mixins";
 
-.thankYou {
+.thankyou {
   background-color: grey;
+  color: yellow;
+  text-align: center;
+  font-family: "Playball", cursive;
 }
