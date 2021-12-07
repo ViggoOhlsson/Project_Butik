@@ -4,14 +4,14 @@ window.onload = function () {
 };
 
 let p = "247";
-let price = " Kostnad: $" + `<span>${p}</span>`;
+let price = "$" + `<span>${p}</span>`;
 
 function addValue() {
   let val = parseInt(document.getElementById("item-numb").value, 10);
   val = isNaN(val) ? 0 : val;
   val++;
   document.getElementById("item-numb").value = val;
-  price = "$" + `<span>${p * val}</span>`;
+  price = `Kostnad: <span>${p * val}</span> kr`;
   document.getElementById("price-cont").innerHTML = price;
 }
 
@@ -21,6 +21,6 @@ function remVal() {
   val < 1 ? (val = 1) : "";
   val--;
   document.getElementById("item-numb").value = val;
-  price = "$" + `<span>${p * val}</span>`;
+  price = `Kostnad: <span>${p * val}</span> kr`;
   document.getElementById("price-cont").innerHTML = price;
 }
