@@ -1,9 +1,22 @@
 import { albums } from "./data/albums";
+import { CartItem } from "./models/CartItem";
 import { Release } from "./models/release";
 
 window.onload = () => {
-    console.log(albums);
     printReleaseCells("catRock", "rock", 4);
+    
+    let cart:CartItem[] = [];
+    if (localStorage.getItem("cart") != undefined) {
+        let cart:CartItem[] = JSON.parse(localStorage.getItem("cart"));
+    } else {
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    
+    cart.push(new CartItem(albums[2], 1));
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+
 }
 
 function printReleaseCells(targetId:string, category:string, amount:number) {
