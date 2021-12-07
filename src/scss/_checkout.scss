@@ -108,6 +108,21 @@ $toMuchMargin: 200px;
       h3 {
         text-align: initial;
       }
+      #nameError {
+        display: none;
+        font-size: 0.8em;
+      }
+
+      #nameError.visible {
+        display: block;
+      }
+
+      input.invalid {
+        border-color: red;
+      }
+      span {
+        color: red;
+      }
     }
     input {
       display: flex;

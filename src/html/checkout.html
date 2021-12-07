@@ -94,7 +94,9 @@
             required
             title="Du måste skriva in ett namn!"
           />
-          <p id="testFnamn"></p>
+          <span role="alert" id="nameError" aria-hidden="true">
+            Please enter a first name.
+          </span>
 
           <label for="enamn">Efternamn</label>
           <input type="text" id="enamn" placeholder="N" required />
