@@ -1,6 +1,6 @@
-// import { albums } from "./data/albums";
-// import { CartItem } from "./models/CartItem";
-// import { Release } from "./models/Release";
+import { albums } from "./data/albums";
+import { CartItem } from "./models/CartItem";
+import { Release } from "./models/Release";
 
 window.onload = function () {
   document.getElementById("addItem").addEventListener("click", addValue);
@@ -106,6 +106,13 @@ let price: string = "$" + `<span>${p}</span>`;
 //     }
 //   }
 // }
+
+function changeQ(release: Release) {
+  let price: HTMLParagraphElement = document.getElementById(
+    "priceTest"
+  ) as HTMLParagraphElement;
+  price.innerHTML = release.price.toString() + "kr";
+}
 
 function addValue() {
   // Converts to decimal number, 10 = Decimal number.
