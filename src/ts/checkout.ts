@@ -1,3 +1,7 @@
+// import { albums } from "./data/albums";
+// import { CartItem } from "./models/CartItem";
+// import { Release } from "./models/Release";
+
 window.onload = function () {
   document.getElementById("addItem").addEventListener("click", addValue);
   document.getElementById("removeItem").addEventListener("click", remVal);
@@ -90,7 +94,18 @@ function ValidationForm() {
 
 // Quantity count.
 let p: number = 247;
+// let t: number = Release[i].price;
 let price: string = "$" + `<span>${p}</span>`;
+
+// albums[i].price
+
+// function changeQuantity() {
+//   for (let i = 0; i < Release.length; i++) {
+//     if ( = ) {
+
+//     }
+//   }
+// }
 
 function addValue() {
   // Converts to decimal number, 10 = Decimal number.
