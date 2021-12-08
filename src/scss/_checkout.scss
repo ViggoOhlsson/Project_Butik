@@ -1,8 +1,6 @@
 @use "variables";
 @use "mixins";
 
-$toMuchMargin: 200px;
-
 .checkout {
   margin: 0;
   ul {
@@ -51,6 +49,9 @@ $toMuchMargin: 200px;
         text-align: center;
         margin-top: 6px;
         width: 85px;
+      }
+      .fa {
+        cursor: pointer;
       }
     }
   }
@@ -104,6 +105,21 @@ $toMuchMargin: 200px;
       padding: 5px 20px 15px 20px;
       h3 {
         text-align: initial;
+      }
+      #nameError {
+        display: none;
+        font-size: 0.8em;
+      }
+
+      #nameError.visible {
+        display: block;
+      }
+
+      input.invalid {
+        border-color: red;
+      }
+      span {
+        color: red;
       }
     }
     input {

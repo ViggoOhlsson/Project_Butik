@@ -7,6 +7,7 @@
     <title>Homegrown Records | Home</title>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
     <script type="module" src="../ts/main.ts"></script>
+    <script src="../ts/checkout.ts"></script>
     <link rel="stylesheet" href="../scss/main.scss" />
     <link
       rel="stylesheet"
@@ -30,7 +31,6 @@
       >
       <nav>
         <i class="fa fa-search"></i>
-        <i class="fa fa-shopping-cart"></i>
       </nav>
     </header>
 
@@ -42,13 +42,20 @@
             <div class="pitcure-first"></div>
           </li>
           <li class="headline">American Idiot, Green Day</li>
-          <li class="headline">Kostnad: 247 kr</li>
+          <li class="headline" id="price-cont">Kostnad: 247 kr</li>
+          <li><span></span></li>
 
           <li>
             <div class="order-control">
-              <i class="fa minus-square">-</i>
-              <input type="text" class="item-numb" value="1" />
-              <i class="fa plus-square-o">+</i>
+              <i class="fa minus-square" id="removeItem">-</i>
+              <input
+                type="text"
+                class="item-numb"
+                value="1"
+                id="item-numb"
+                autocomplete="off"
+              />
+              <i class="fa plus-square-o" id="addItem">+</i>
             </div>
           </li>
         </ul>
@@ -79,18 +86,17 @@
         </ul>
       </div>
     </div>
-    <footer>
-      <form>
+
+    <footer id="footer">
+      <form id="checkForm" name="checkForm">
         <div class="info-con">
           <h3>Personlig information</h3>
+
+          <!-- <span role="alert" id="nameError">
+            Du måste skriva in ett förnamn
+          </span> -->
           <label for="fnamn">Förnamn</label>
-          <input
-            type="text"
-            id="fnamn"
-            placeholder="N"
-            required
-            title="Du måste skriva in ett namn!"
-          />
+          <input id="fnamn" type="text" placeholder="N" required />
 
           <label for="enamn">Efternamn</label>
           <input type="text" id="enamn" placeholder="N" required />
