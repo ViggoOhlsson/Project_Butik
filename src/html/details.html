@@ -37,6 +37,7 @@
       <nav>
         <i class="fa fa-search"></i>
         <i
+          id="shopping-cart"
           class="fa fa-shopping-cart"
           type="button"
           class="btn btn-primary"
@@ -145,20 +146,8 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              <img
-                id="album-img"
-                src="../assets/covers/green-day-american-idiot.png"
-                alt="Albumcover"
-              />
-              <p id="artist-name"></p>
-              <p id="album-name"></p>
-              <div class="quantity">
-                <span id="minus">-</span>
-                <span class="quantity-number">2</span>
-                <span id="addition">+</span>
-              </div>
-              <p>298:-</p>
+            <div id="modal" class="modal-body">
+              <div id="quant" class="quantity"></div>
               <svg
                 id="svg"
                 xmlns="http://www.w3.org/2000/svg"

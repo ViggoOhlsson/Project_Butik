@@ -11,4 +11,9 @@ export class Cart {
     this.items.push(itemToAdd);
     console.log(this.items);
   }
+  /*removeFromCart(productToBeRemoved: Release){
+    let itemRemove = new CartItem(productToBeRemoved, 1);
+    this.items.splice(itemRemove);
+    console.log(this.items);
+  }*/
 }
