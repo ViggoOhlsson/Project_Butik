@@ -1,27 +1,46 @@
 import { albums } from "./data/albums";
-import { Release } from "./models/release";
+import { categories } from "./data/categories";
 
 window.onload = () => {
     console.log(urlGet("c"));
     printReleaseCells("catGrid", urlGet("c"), 50);
+    applyCategoryBanner(urlGet("c"));
+}
+
+function applyCategoryBanner(c:string) {
+    let title:HTMLSpanElement = document.getElementById("title") as HTMLSpanElement;
+    let hero:HTMLDivElement = document.getElementById("hero") as HTMLDivElement;
+
+    let done = false;
+    for (let category of categories) {
+        if (category.id == c) {
+            hero.style.backgroundImage = "../" + category.image;
+            title.innerHTML = category.name;
+
+            done = true;
+        }
+        if (!done) {
+            title.innerHTML = "This category does not exist :)";
+        }
+    }
 }
 
 function printReleaseCells(targetId:string, category:string, amount:number) {
     let targetGrid:HTMLElement = document.getElementById(targetId) as HTMLElement;
-    // for (let release of albums) {
-    for (let i = 0; i < amount; i++) {
-        if (albums[i].category == category) {
+    for (let album of albums) {
+        console.log(albums);
+        if (album.category == category) {
             let cellWrapper = document.createElement("div");
             cellWrapper.className = "cell";
             cellWrapper.addEventListener("click", () => {
-                window.location.href = "html/details.html?release=" + albums[i].id;
+                window.location.href = "../html/details.html?r=" + album.id;
             });
 
             let cellCover = document.createElement("div");
             cellCover.className = "cell-cover";
             
             let coverImg = document.createElement("img");
-            coverImg.src = "../" + albums[i].cover;
+            coverImg.src = "../" + album.cover;
             cellCover.appendChild(coverImg);
             let icon = document.createElement("i");
             icon.className = "fa fa-cart-plus";
@@ -39,11 +58,11 @@ function printReleaseCells(targetId:string, category:string, amount:number) {
 
             let cellTitle = document.createElement("span");
             cellTitle.className = "cell-title";
-            cellTitle.innerHTML = albums[i].title;
+            cellTitle.innerHTML = album.title;
             cellInfoLeft.appendChild(cellTitle);
             let cellArtist = document.createElement("span");
             cellArtist.className = "cell-artist";
-            cellArtist.innerHTML = albums[i].artist;
+            cellArtist.innerHTML = album.artist;
             cellInfoLeft.appendChild(cellArtist);
             cellInfoContainer.appendChild(cellInfoLeft);
 
@@ -51,12 +70,12 @@ function printReleaseCells(targetId:string, category:string, amount:number) {
             cellInfoRight.className = "cell-info-right";
 
             let cellType = document.createElement("span");
-            cellType.className = "cell-type " + albums[i].type;
-            cellType.innerHTML = albums[i].type;
+            cellType.className = "cell-type " + album.type;
+            cellType.innerHTML = album.type;
             cellInfoRight.appendChild(cellType);
             let cellPrice = document.createElement("span");
             cellPrice.className = "cell-price";
-            cellPrice.innerHTML = albums[i].price + "kr";
+            cellPrice.innerHTML = album.price + "kr";
             cellInfoRight.appendChild(cellPrice);
             cellInfoContainer.appendChild(cellInfoRight);
             cellWrapper.appendChild(cellInfoContainer);

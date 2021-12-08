@@ -21,7 +21,7 @@ albums.push(new Release("Nevermind", "Nirvana", 1991, "rock", "49:15", 249, "LP"
 ]));
 
 //Polygondwanaland - King Gizzard
-albums.push(new Release("Polygondwanaland", "King Gizzard & The Lizard Wizard", 2017, "rock", "43:52", 239, "LP", [
+albums.push(new Release("Polygondwanaland", "King Gizzard And The Lizard Wizard", 2017, "rock", "43:52", 239, "LP", [
     new Track("Crumbling Castle", "10:44"),
     new Track("Polygondwanaland", "3:32"),
     new Track("the Castle In The Air", "2:47"),
@@ -82,7 +82,7 @@ albums.push(new Release("Abbey Road", "The Beatles", 1969, "rock", "47:29", 299,
 ]));
 
 //Flying Microtonal Banana
-albums.push(new Release("Flying Microtonal Banana", "King Gizzard & The Lizard Wizard", 2017, "rock", "41:56", 259, "LP", [
+albums.push(new Release("Flying Microtonal Banana", "King Gizzard And The Lizard Wizard", 2017, "rock", "41:56", 259, "LP", [
     new Track("Rattlesnake", "7:48"),
     new Track("Melting", "5:27"),
     new Track("Open Water", "7:13"),

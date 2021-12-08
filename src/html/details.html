@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-    <script type="module" src="../ts/main.ts"></script>
+    <script type="module" src="../ts/details.ts"></script>
     <link rel="stylesheet" href="../scss/main.scss" />
     <link
       rel="stylesheet"
@@ -49,24 +49,12 @@
       <div class="album-container">
         <div class="content-container">
           <div class="img-container">
-            <img src="../assets/covers/nirvana-nevermind.png" alt="Albumcover" />
-            <h5>Smells Like Teen Spirit</h5>
-            <p>Nirvana</p>
+            <img id="cover" alt="Albumcover" />
+            <h5 id="releaseTitle"></h5>
+            <p id="releaseArtist"></p>
           </div>
           <div class="songlist-container">
-            <ol>
-              <li>Smells Like Teen Spirit</li>
-              <li>In Bloom</li>
-              <li>Come As You Are</li>
-              <li>Breed</li>
-              <li>Lithium</li>
-              <li>Polly</li>
-              <li>Territorial Pissings</li>
-              <li>Drain You</li>
-              <li>Lounge Act</li>
-              <li>Stay Away</li>
-              <li>On A Plain</li>
-              <li>Something In The Way</li>
+            <ol id="tracklist">
             </ol>
           </div>
         </div>
@@ -88,13 +76,13 @@
             </div>
             <div class="facts-container">
               <ul>
-                <li>Nirvana</li>
-                <li>Nevermind</li>
-                <li>1991</li>
-                <li>LP</li>
-                <li>Rock</li>
-                <li>12</li>
-                <li>10 h 42 min</li>
+                <li id="artist"></li>
+                <li id="title"></li>
+                <li id="year"></li>
+                <li id="type"></li>
+                <li id="genre"></li>
+                <li id="listlength"></li>
+                <li id="length"></li>
               </ul>
             </div>
           </div>
@@ -107,16 +95,8 @@
               </ul>
             </div>
             <div class="button-container">
-              <p>298:-</p>
-              <button
-                id="buybutton"
-                type="button"
-                class="btn btn-primary"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-                Köp
-              </button>
+              <p id="price"></p>
+              <button id="buybutton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Köp</button>
             </div>
           </div>
         </div>
