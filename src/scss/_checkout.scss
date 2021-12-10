@@ -13,124 +13,125 @@
   .headline {
     text-align: center;
   }
-  .container-order {
+  #form_part1 {
     background-color: variables.$main-dark;
+    color: white;
     border: 1px solid #ffc935;
     border-radius: 3px;
-    color: white;
-    .extra-con {
-      height: 60%;
-      @include mixins.flex-v;
+    .order-con {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
       align-items: center;
-      @include mixins.desktop() {
-        height: 45vw;
-        @include mixins.flex-h;
-      }
-      @include mixins.bigScreen() {
-        height: 30vw;
-      }
-
-      .pitcure-first {
-        background-image: url(../assets/covers/green-day-american-idiot.png);
-        background-size: contain;
-        width: 200px;
-        height: 200px;
-        @include mixins.desktop() {
-          width: 240px;
-          height: 240px;
-        }
-        @include mixins.bigScreen() {
-          width: 350px;
-          height: 350px;
-        }
-      }
+      margin: 10px;
     }
-    .order-control {
-      @include mixins.flex-h;
-      justify-content: space-between;
-      height: 30px;
-      i {
-        font-size: 30px;
-        color: white;
-      }
-      .item-numb {
-        text-align: center;
-        margin-top: 6px;
-        width: 85px;
+    .order-img {
+      background-image: url(../assets/covers/green-day-american-idiot.png);
+      background-size: contain;
+      width: 220px;
+      height: 130px;
+    }
+    .headline {
+      font-size: 0.9rem;
+    }
+    #price-cont {
+      font-size: 0.8rem;
+    }
+
+    .order-btn-cont {
+      display: flex;
+      justify-content: space-evenly;
+      input {
+        width: 50px;
       }
       .fa {
         cursor: pointer;
       }
     }
-  }
-  .container-offer {
-    height: 60%;
-    @include mixins.flex-v;
-    align-items: center;
-    background-color: variables.$main-dark;
-    border: 1px solid #ffc935;
-    border-radius: 3px;
-    color: white;
-    @include mixins.desktop() {
-      height: 55vw;
-      @include mixins.flex-v;
-      align-items: initial;
-    }
-    @include mixins.bigScreen() {
-      height: 45vw;
-    }
-    .extra {
-      @include mixins.flex-v;
-      @include mixins.desktop() {
-        @include mixins.flex-h;
+    .offerCont {
+      border: 1px solid #ffc935;
+      border-radius: 3px;
+      font-size: 0.9rem;
+
+      .offerOne {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 10px;
+        .pitcureOne {
+          background-image: url(../assets/covers/the-beatles-abbey-road.png);
+          background-size: contain;
+          width: 130px;
+          height: 130px;
+        }
+        .controlOne {
+        }
+      }
+      .offerTwo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 10px;
+        .pitcureTwo {
+          background-image: url(../assets/covers/nirvana-nevermind.png);
+          background-size: contain;
+          width: 130px;
+          height: 130px;
+        }
+        .controlTwo {
+        }
       }
     }
-    .pitcure-second {
-      background-image: url(../assets/covers/the-beatles-abbey-road.png);
-      background-size: contain;
-      width: 200px;
-      height: 200px;
+    .offer-navigator {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  #form_part2 {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$main-dark;
+    color: variables.$main-gold;
+
+    .info-con {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+    input {
+      display: flex;
+      width: 80%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      @include mixins.bigScreen() {
+        width: 80%;
+      }
+    }
+    button {
+      width: 81vw;
       @include mixins.desktop() {
-        width: 240px;
-        height: 240px;
+        width: 88vw;
       }
       @include mixins.bigScreen() {
-        width: 350px;
-        height: 350px;
-      }
-    }
-    @include mixins.desktop() {
-      .h3 h4 {
-        text-align: initial;
+        width: 82%;
       }
     }
   }
 
-  footer {
+  #form_part3 {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    justify-content: space-around;
     background-color: variables.$main-dark;
     color: variables.$main-gold;
-    border: 1px solid #ffc935;
-    .info-con {
-      @include mixins.bigScreen() {
-        width: 80vw;
-      }
-      .fa {
-        margin-right: 4px;
-        color: variables.$main-gold-dark;
-      }
-      .fa-home,
-      .fa-mobile {
-        font-size: 1.6rem;
-      }
-    }
     .pay-con {
-      @include mixins.bigScreen() {
-        width: 80vw;
-      }
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
       .card-cont {
         margin-top: -6px;
         margin-bottom: 10px;
@@ -151,33 +152,9 @@
         }
       }
     }
-
-    form {
-      margin: 10px;
-      margin-left: 5px;
-      padding: 5px 20px 15px 20px;
-      h3 {
-        text-align: initial;
-      }
-      #nameError {
-        display: none;
-        font-size: 0.8em;
-      }
-
-      #nameError.visible {
-        display: block;
-      }
-
-      input.invalid {
-        border-color: red;
-      }
-      span {
-        color: red;
-      }
-    }
     input {
       display: flex;
-      width: 100%;
+      width: 80%;
       margin-bottom: 20px;
       padding: 12px;
       border: 1px solid #ccc;
@@ -186,7 +163,7 @@
         width: 80%;
       }
     }
-    .btn {
+    button {
       width: 81vw;
       @include mixins.desktop() {
         width: 88vw;
@@ -195,20 +172,9 @@
         width: 82%;
       }
     }
-    .terms-con {
-      @include mixins.flex-h;
-      #checkbox {
-        width: 5%;
-      }
-    }
   }
 
   .btn:hover {
     background-color: #45a049;
-  }
-
-  .order-cart {
-    float: right;
-    color: grey;
   }
 }
