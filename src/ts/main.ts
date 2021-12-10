@@ -21,7 +21,7 @@ function printReleaseCells(targetId: string, category: string, amount: number) {
   let targetGrid: HTMLElement = document.getElementById(
     targetId
   ) as HTMLElement;
-  // for (let release of albums) {
+
   for (let i = 0; i < amount; i++) {
     if (albums[i].category == category) {
       let cellWrapper = document.createElement("div");
@@ -73,7 +73,7 @@ function printReleaseCells(targetId: string, category: string, amount: number) {
       cellInfoRight.appendChild(cellPrice);
       cellInfoContainer.appendChild(cellInfoRight);
       cellWrapper.appendChild(cellInfoContainer);
-      //targetGrid.appendChild(cellWrapper);
+      targetGrid.appendChild(cellWrapper);
     }
   }
 }

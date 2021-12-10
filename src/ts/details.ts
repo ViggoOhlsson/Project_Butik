@@ -34,41 +34,46 @@ function createCartHtml() {
   for (let i = 0; i < cart.items.length; i++) {
     let cartitem = cart.items[i];
 
+    let div = document.createElement("div");
+    div.className = "modal-div";
+
     let img = document.createElement("img");
+    img.className = "img";
     img.src = cartitem.item.cover;
 
     let p1 = document.createElement("p");
+    p1.className = "p1";
     p1.innerHTML = cartitem.item.artist;
 
     let p2 = document.createElement("p");
+    p2.className = "p2";
     p2.innerHTML = cartitem.item.title;
-
-    let modal = document.getElementById("modal");
-    modal.appendChild(img);
-    modal.appendChild(p1);
-    modal.appendChild(p2);
 
     let spanMinus = document.createElement("span");
     spanMinus.innerHTML = "-";
 
     let spanQuantity = document.createElement("span");
-    spanQuantity.innerHTML = " ";
+    spanQuantity.innerHTML = "2";
 
     let spanPlus = document.createElement("span");
     spanPlus.innerHTML = "+";
 
-    let quantity = document.getElementById("quant");
-    quantity.appendChild(spanMinus);
-    quantity.appendChild(spanQuantity);
-    quantity.appendChild(spanPlus);
-
-    modal.appendChild(quantity);
-
     let price = document.createElement("p");
-    price.innerHTML = " ";
+    price.innerHTML = "0";
 
-    modal.appendChild(price);
+    let trash = document.createElement("i");
+    trash.className = "fa fa-trash";
 
-    let svg = document.createElement("svg");
+    div.appendChild(img);
+    div.appendChild(p1);
+    div.appendChild(p2);
+    div.appendChild(spanMinus);
+    div.appendChild(spanQuantity);
+    div.appendChild(spanPlus);
+    div.appendChild(price);
+    div.appendChild(trash);
+
+    let modal = document.getElementById("modal");
+    modal.appendChild(div);
   }
 }
