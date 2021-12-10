@@ -4,6 +4,8 @@
 .checkout {
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  // Parcel color
+  color: #ccc;
   ul {
     list-style: none;
   }
@@ -13,6 +15,10 @@
   .headline {
     text-align: center;
   }
+  button {
+    cursor: pointer;
+    padding: 10px;
+  }
   #form_part1 {
     background-color: variables.$main-dark;
     color: white;
@@ -20,38 +26,60 @@
     border-radius: 3px;
     .order-con {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
       margin: 10px;
+      @include mixins.desktop() {
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+      }
     }
     .order-img {
       background-image: url(../assets/covers/green-day-american-idiot.png);
       background-size: contain;
-      width: 220px;
-      height: 130px;
+      width: 200px;
+      height: 189px;
+      @include mixins.desktop() {
+        width: 300px;
+        height: 290px;
+      }
     }
     .headline {
-      font-size: 0.9rem;
+      font-size: 1.2rem;
+      @include mixins.desktop() {
+        font-size: 1.8rem;
+      }
     }
     #price-cont {
-      font-size: 0.8rem;
+      font-size: 1rem;
+      @include mixins.desktop() {
+        font-size: 1.4rem;
+      }
     }
 
     .order-btn-cont {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       input {
-        width: 50px;
+        width: 100px;
+        @include mixins.desktop() {
+          width: 168px;
+        }
       }
       .fa {
         cursor: pointer;
+        font-size: 30px;
+        @include mixins.desktop() {
+          font-size: 60px;
+        }
       }
     }
     .offerCont {
       border: 1px solid #ffc935;
       border-radius: 3px;
-      font-size: 0.9rem;
+      font-size: 1rem;
 
       .offerOne {
         display: flex;
@@ -59,14 +87,15 @@
         justify-content: space-evenly;
         align-items: center;
         margin: 10px;
+
         .pitcureOne {
           background-image: url(../assets/covers/the-beatles-abbey-road.png);
           background-size: contain;
-          width: 130px;
-          height: 130px;
+          width: 200px;
+          height: 200px;
         }
-        .controlOne {
-        }
+        // .controlOne {
+        // }
       }
       .offerTwo {
         display: flex;
@@ -74,14 +103,15 @@
         justify-content: space-evenly;
         align-items: center;
         margin: 10px;
+
         .pitcureTwo {
           background-image: url(../assets/covers/nirvana-nevermind.png);
           background-size: contain;
-          width: 130px;
-          height: 130px;
+          width: 180px;
+          height: 180px;
         }
-        .controlTwo {
-        }
+        // .controlTwo {
+        // }
       }
     }
     .offer-navigator {
@@ -100,20 +130,23 @@
       display: flex;
       flex-direction: column;
       padding: 10px;
-    }
-    input {
-      display: flex;
-      width: 80%;
-      margin-bottom: 20px;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      @include mixins.bigScreen() {
+      justify-content: center;
+      input {
+        display: flex;
         width: 80%;
+        margin-bottom: 20px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        justify-content: center;
+        @include mixins.desktop() {
+          width: 80%;
+        }
       }
     }
     button {
       width: 81vw;
+      padding: 10px;
       @include mixins.desktop() {
         width: 88vw;
       }
@@ -132,46 +165,81 @@
       display: flex;
       flex-direction: column;
       padding: 10px;
+      @include mixins.desktop() {
+        align-items: center;
+        h3 {
+          @include mixins.desktop() {
+            font-size: 1.9rem;
+          }
+        }
+      }
       .card-cont {
         margin-top: -6px;
         margin-bottom: 10px;
+        text-align: center;
+        font-size: 1.6rem;
+        @include mixins.desktop() {
+          font-size: 2rem;
+        }
         .fa-cc-mastercard {
           color: red;
           background-color: variables.$main-light;
-          font-size: 1.6rem;
         }
         .fa-cc-visa {
           color: navy;
           background-color: variables.$main-light;
-          font-size: 1.6rem;
         }
         .fa-cc-amex {
           color: blue;
           background-color: variables.$main-light;
-          font-size: 1.6rem;
+        }
+      }
+      .termsCon {
+        display: flex;
+        @include mixins.desktop() {
+          width: 16%;
+        }
+        #checkbox {
+          width: 10%;
+        }
+      }
+      #lastPrev,
+      #submit {
+        width: 37vh;
+        @include mixins.desktop() {
+          width: 70%;
+        }
+      }
+      #submit {
+        margin-top: 10px;
+        cursor: pointer;
+        @include mixins.desktop() {
+          margin-top: 20px;
+        }
+      }
+      label {
+        @include mixins.desktop() {
+          font-size: 1.2rem;
         }
       }
     }
     input {
       display: flex;
-      width: 80%;
+      width: 90%;
       margin-bottom: 20px;
       padding: 12px;
       border: 1px solid #ccc;
       border-radius: 3px;
-      @include mixins.bigScreen() {
-        width: 80%;
-      }
-    }
-    button {
-      width: 81vw;
       @include mixins.desktop() {
-        width: 88vw;
-      }
-      @include mixins.bigScreen() {
-        width: 82%;
+        width: 70%;
       }
     }
+    // button {
+    //   width: 81vw;
+    //   @include mixins.desktop() {
+    //     width: 60%;
+    //   }
+    // }
   }
 
   .btn:hover {
