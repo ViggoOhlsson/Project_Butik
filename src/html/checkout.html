@@ -86,13 +86,13 @@
         <div class="info-con">
           <h3>Personlig information</h3>
 
-          <label for="fnamn">Förnamn</label>
+          <i class="fa fa-user"><label for="fnamn">Förnamn</label>
           <input id="fnamn" type="text" placeholder="N" required value="n" />
 
-          <label for="enamn">Efternamn</label>
+          <i class="fa fa-user"><label for="enamn">Efternamn</label>
           <input type="text" id="enamn" placeholder="N" required value="n" />
 
-          <label for="adress">Adress</label>
+          <i class="fa fa-address-card-o"><label for="adress">Adress</label>
           <input
             type="text"
             id="adress"
@@ -101,7 +101,7 @@
             value="s"
           />
 
-          <label for="postnr">Postnr</label>
+          <i class="fa fa-home"></i><label for="postnr">Postnr</label>
           <input
             type="text"
             id="postnr"
@@ -111,10 +111,10 @@
             value="11122"
           />
 
-          <label for="stad">Stad</label>
+          <i class="fa fa-building"></i><label for="stad">Stad</label>
           <input type="text" id="stad" placeholder="stad" required value="s" />
 
-          <label for="epost">Epost</label>
+          <i class="fa fa-envelope"><label for="epost">Epost</label>
           <input
             type="email"
             id="epost"
@@ -123,7 +123,7 @@
             value="n@n.com"
           />
 
-          <label for="mobil">Mobil</label>
+          <i class="fa fa-mobile"></i><label for="mobil">Mobil</label>
           <input
             type="text"
             id="mobil"
@@ -140,6 +140,11 @@
         <!--form elements 3-->
         <div class="pay-con">
           <h3>Betalning</h3>
+          div class="card-cont">
+            <i class="fa fa-cc-mastercard"></i>
+            <i class="fa fa-cc-visa"></i>
+            <i class="fa fa-cc-amex"></i>
+          </div>
           <label for="kortnamn">Namnet på kortet</label>
           <input
             type="text"
@@ -149,7 +154,7 @@
             value="n"
           />
 
-          <label for="kortnummer">Kortnummer</label>
+          <i class="fa fa-credit-card"><label for="kortnummer">Kortnummer</label>
           <input
             type="text"
             id="kortnummer"
@@ -182,136 +187,8 @@
           </div>
           <input type="submit" id="submit" value="Slutför köp" class="btn" />
         </div>
-        <button type="button" id="lastPrev">&laquo;</button>
-        <!-- <button type="button" onclick="testx2()">Submit</button> -->
+        <!-- <button type="button" id="lastPrev">&laquo;</button> -->
       </div>
     </form>
-    <!-- <div class="container-order">
-      <h3>Din Order</h3>
-      <div class="extra-con">
-        <ul>
-          <li>
-            <div class="pitcure-first"></div>
-          </li>
-          <li class="headline">American Idiot, Green Day</li>
-          <li class="headline" id="price-cont">Kostnad: 247 kr</li>
-          <li><span></span></li>
-
-          <li>
-            <div class="order-control">
-              <i class="fa minus-square" id="removeItem">-</i>
-              <input
-                type="text"
-                class="item-numb"
-                value="1"
-                id="item-numb"
-                autocomplete="off"
-              />
-              <i class="fa plus-square-o" id="addItem">+</i>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="container-offer">
-      <div class="headline">
-        <h3>Lägg till Detta!</h3>
-        <h4>Liknande</h4>
-      </div>
-      <div class="extra">
-        <ul>
-          <li>
-            <div class="pitcure-second"></div>
-            Abbey Road, The Beatles
-          </li>
-          <li>385kr</li>
-          <li><button type="button">Lägg till</button></li>
-        </ul>
-        <ul>
-          <li>
-            <div class="pitcure-second"></div>
-            Abbey Road, The Beatles
-          </li>
-          <li>385kr</li>
-          <li><button type="button">Lägg till</button></li>
-        </ul>
-      </div>
-    </div>
-
-    <footer id="footer">
-      <form
-        action="http://localhost:1234/html/thankyou.html"
-        id="checkForm"
-        name="checkForm"
-      >
-        <div class="info-con">
-          <h3>Personlig information</h3>
-
-          <label for="fnamn">Förnamn</label>
-          <input id="fnamn" type="text" placeholder="N" required />
-
-          <label for="enamn">Efternamn</label>
-          <input type="text" id="enamn" placeholder="N" required />
-
-          <label for="adress">Adress</label>
-          <input type="text" id="adress" placeholder="adress" required />
-
-          <label for="postnr">Postnr</label>
-          <input
-            type="text"
-            id="postnr"
-            placeholder="xxxxx"
-            pattern="[0-9]{3}[0-9]{2}"
-            required
-          />
-
-          <label for="stad">Stad</label>
-          <input type="text" id="stad" placeholder="stad" required />
-
-          <label for="epost">Epost</label>
-          <input type="email" id="epost" placeholder="N@N.com" required />
-
-          <label for="mobil">Mobil</label>
-          <input
-            type="text"
-            id="mobil"
-            placeholder="xxxxxxxxxx"
-            pattern="[0-9]{10}"
-            required
-          />
-        </div>
-        <div class="pay-con">
-          <h3>Betalning</h3>
-          <label for="kortnamn">Namnet på kortet</label>
-          <input type="text" id="kortnamn" placeholder="namn" required />
-
-          <label for="kortnummer">Kortnummer</label>
-          <input
-            type="text"
-            id="kortnummer"
-            placeholder="XXXXXXXXXXXXXXXX"
-            required
-          />
-
-          <label for="utgångsdatum">Utgångsdatum</label>
-          <input type="text" id="utgångsdatum" placeholder="MM/ÅÅ" required />
-
-          <label for="cvc">CVC</label>
-          <input
-            type="text"
-            id="cvc"
-            placeholder="123"
-            pattern="[0-9]{3}"
-            required
-          />
-          <div class="terms-con">
-            <input type="checkbox" id="checkbox" checked required />
-            <label for="checkbox">Godkänn våra villkor</label>
-          </div>
-          <input type="submit" id="submit" value="Slutför köp" class="btn" />
-        </div>
-      </form>
-    </footer> -->
-  </body>
+      </body>
 </html>
