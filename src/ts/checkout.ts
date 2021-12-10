@@ -7,7 +7,7 @@ window.onload = function () {
     shows_form_part(2);
   });
   document.getElementById("firstPrev").addEventListener("click", () => {
-    shows_form_part(2);
+    shows_form_part(1);
   });
   document.getElementById("secondNext").addEventListener("click", testx);
   document.getElementById("lastPrev").addEventListener("click", () => {
