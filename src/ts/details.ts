@@ -54,10 +54,18 @@ function displayReleaseInfo(release: Release) {
   let tracklist: HTMLOListElement = document.getElementById(
     "tracklist"
   ) as HTMLOListElement;
+  let loops = 1;
   for (let track of release.tracklist) {
     let row = document.createElement("li");
-    row.innerHTML = track.length + " " + track.title;
+    let trackTitle = document.createElement("span");
+
+    trackTitle.innerHTML = loops + ". " + track.title;
+    row.appendChild(trackTitle);
+    let trackLength = document.createElement("span");
+    trackLength.innerHTML = track.length;
+    row.appendChild(trackLength);
     tracklist.appendChild(row);
+    loops++;
   }
   let artist: HTMLLIElement = document.getElementById(
     "artist"
