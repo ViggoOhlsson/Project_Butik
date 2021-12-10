@@ -141,22 +141,18 @@
 
     .modal-body {
       display: flex;
-      align-items: center;
-      justify-content: space-around;
-      img {
-        width: 10%;
-      }
-      svg {
-        margin-bottom: 15px;
-      }
-      .quantity {
-        margin-bottom: 15px;
-        button {
-          appearance: none;
-          background: none;
-          border: none;
-          border-radius: 0;
+      flex-direction: column;
+
+      .modal-div {
+        display: flex;
+        justify-content: space-between;
+
+        .img {
+          width: 10%;
+        }
+        i {
           color: white;
+          padding-top: 3px;
         }
       }
     }
