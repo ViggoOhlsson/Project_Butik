@@ -4,10 +4,24 @@ import { CartItem } from "./models/CartItem";
 import { Release } from "./models/release";
 
 window.onload = () => {
+<<<<<<< HEAD
   addCategoriesToNav();
   addCategoryAnchors();
   printReleaseCells("catChristmas", "christmas", 4);
   printReleaseCells("catRock", "rock", 4);
+=======
+    addCategoriesToNav();
+    addCategoryAnchors();
+    printReleaseCells("catChristmas", "christmas", 4);
+    printReleaseCells("catRock", "rock", 4);
+
+    let cart:CartItem[] = [];
+    if (localStorage.getItem("cart") != undefined) {
+        let cart:CartItem[] = JSON.parse(localStorage.getItem("cart"));
+    } else {
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+>>>>>>> c57f807a92f92447043f4cfaa7c0e3cfbfefbfdf
 
   let cart: CartItem[] = [];
   if (localStorage.getItem("cart") != undefined) {

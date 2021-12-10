@@ -38,4 +38,34 @@ header {
     @include mixins.mpg(0, 0, 20px);
     font-size: 1.5rem;
   }
+  .dropdown-toggler {
+    display: none;
+  }
+  #dropdownToggler:checked ~ .dropdown {
+    height: 150px;
+  }
+  .dropdown {
+    height: 0px;
+    @include mixins.flex-v;
+    justify-content: space-evenly;
+    transition: height 0.2s ease-out;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 100%);
+    background-color: black;
+    color: white;
+    z-index: 2;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    .dropdown-item {
+      @include mixins.mpg(0,5px 10px);
+      &:hover {
+        background-color: rgb(27, 27, 27);
+        cursor: pointer;
+      }
+    }
+
+  }
 }
