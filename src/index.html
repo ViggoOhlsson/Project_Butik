@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homegrown Records | Home</title>
+    <title>Home | Homegrown Records</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script type="module" src="ts/main.ts"></script>
     <link rel="stylesheet" href="scss/main.scss">
@@ -35,13 +35,17 @@
             </span>
         </div>
         <div class="main-container">
-            <nav class="main-nav">
-                <a href="html/category.html">Jazz</a> • 
-                <a href="">Pop</a> • 
-                <a href="">Rock</a> • 
-                <a href="">Rap</a> • 
-                <a href="">Electronic</a>
+            <nav class="main-nav" id="nav">
             </nav>
+            <div class="category">
+                <div class="category-top">
+                    <span class="category-title">Christmas Music!</span>
+                    <div class="category-line"></div>
+                </div>
+                <div class="category-grid" id="catChristmas">
+                </div>
+                <span class="category-link" id="moreChristmas">See more...</span>
+            </div>
             <div class="category">
                 <div class="category-top">
                     <span class="category-title">Rock</span>
@@ -49,7 +53,7 @@
                 </div>
                 <div class="category-grid" id="catRock">
                 </div>
-                <span class="category-link">See more...</span>
+                <span class="category-link" id="moreRock">See more...</span>
             </div>
         </div>
     </main>

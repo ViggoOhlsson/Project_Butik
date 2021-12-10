@@ -24,7 +24,7 @@ export class Release {
         let tempTitle = title.replaceAll(" ", "-").toLowerCase();
         let tempArtist = artist.replaceAll(" ", "-").toLowerCase();
         this.id = tempArtist + "-" + tempTitle;
-        this.cover = "assets/covers/" + this.id + ".png";
+        this.cover = "assets/covers/" + category + "/" + this.id + ".png";
     }
 
 
