@@ -36,16 +36,22 @@
             margin: 5px;
           }
         }
+        .album-wrapper {
+          display: flex;
+          flex-direction: column;
+        }
 
         .img-container {
           width: 40%;
           margin-top: 20px;
+          flex-grow: 1;
           @include mixins.desktop() {
             width: 25%;
           }
 
           img {
-            width: 100%;
+            height: 100%;
+            border-radius: 2px;
           }
         }
         ol {
@@ -84,7 +90,7 @@
         justify-content: flex-start;
         flex-grow: 1;
       }
-      
+
       .description-container li {
         color: variables.$main-gold-dark;
       }
