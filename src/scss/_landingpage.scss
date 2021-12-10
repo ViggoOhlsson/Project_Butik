@@ -83,6 +83,11 @@
     }
     .category-link {
         align-self: flex-end;
+        &:hover {
+            color: variables.$main-gold;
+            cursor: pointer;
+            text-decoration: underline;
+        }
     }
     .cell {
         color: white;

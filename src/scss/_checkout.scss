@@ -3,6 +3,7 @@
 
 .checkout {
   margin: 0;
+  font-family: "Montserrat", sans-serif;
   ul {
     list-style: none;
   }
@@ -117,12 +118,40 @@
       @include mixins.bigScreen() {
         width: 80vw;
       }
+      .fa {
+        margin-right: 4px;
+        color: variables.$main-gold-dark;
+      }
+      .fa-home,
+      .fa-mobile {
+        font-size: 1.6rem;
+      }
     }
     .pay-con {
       @include mixins.bigScreen() {
         width: 80vw;
       }
+      .card-cont {
+        margin-top: -6px;
+        margin-bottom: 10px;
+        .fa-cc-mastercard {
+          color: red;
+          background-color: variables.$main-light;
+          font-size: 1.6rem;
+        }
+        .fa-cc-visa {
+          color: navy;
+          background-color: variables.$main-light;
+          font-size: 1.6rem;
+        }
+        .fa-cc-amex {
+          color: blue;
+          background-color: variables.$main-light;
+          font-size: 1.6rem;
+        }
+      }
     }
+
     form {
       margin: 10px;
       margin-left: 5px;

@@ -17,11 +17,28 @@
             align-self: center;
             margin-left: 10%;
             color: variables.$main-light;
-            font-size: 5rem;
+            font-size: 3rem;
             font-family: 'Playball', cursive;
             color: variables.$main-gold;
             filter: grayscale(0);
             text-shadow: 0 0 10px black ;
+        }
+    }
+    .main-nav {
+        @include mixins.flex-h;
+        @include mixins.mpg(0,0, 20px);
+        font-size: 0.9rem;
+        color: variables.$main-light;
+        margin-top: 15px;
+        justify-content: center;
+        cursor: default;
+        font-style: italic;
+        a {
+            color: variables.$main-gold;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
     .category-grid {
@@ -128,6 +145,9 @@
     @media screen and (min-width: 1024px) {
         .hero {
             height: 500px;
+            .category-title {  
+                font-size: 5rem;
+            }
         }
         .category-grid {
             grid-template-columns: repeat(4, minmax(0, 1fr));

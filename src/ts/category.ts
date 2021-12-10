@@ -2,7 +2,7 @@ import { albums } from "./data/albums";
 import { categories } from "./data/categories";
 
 window.onload = () => {
-    console.log(urlGet("c"));
+    addCategoriesToNav();
     printReleaseCells("catGrid", urlGet("c"), 50);
     applyCategoryBanner(urlGet("c"));
 }
@@ -14,13 +14,15 @@ function applyCategoryBanner(c:string) {
     let done = false;
     for (let category of categories) {
         if (category.id == c) {
-            hero.style.backgroundImage = "../" + category.image;
+            hero.style.backgroundImage = "url(" + category.image + ")";
             title.innerHTML = category.name;
+            document.title = category.name + " | Homegrown Records";
 
             done = true;
         }
         if (!done) {
-            title.innerHTML = "This category does not exist :)";
+            title.innerHTML = "This category does not exist :(";
+            hero.style.backgroundImage = "url(../assets/category-bgs/undefined.png)";
         }
     }
 }
@@ -86,4 +88,14 @@ function printReleaseCells(targetId:string, category:string, amount:number) {
 
 function urlGet(param:string):string {
     return new URLSearchParams(window.location.search).get(param);
+}
+
+export function addCategoriesToNav() {
+    let target:HTMLElement = document.getElementById("nav");
+    for (let category of categories) {
+        let a = document.createElement("a");
+        a.href = "category.html?c=" + category.id;
+        a.innerHTML = category.name;
+        target.appendChild(a);
+    } 
 }

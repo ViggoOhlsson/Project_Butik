@@ -114,20 +114,16 @@
       >
         <div class="info-con">
           <h3>Personlig information</h3>
-
-          <!-- <span role="alert" id="nameError">
-            Du måste skriva in ett förnamn
-          </span> -->
-          <label for="fnamn">Förnamn</label>
+          <i class="fa fa-user"></i><label for="fnamn">Förnamn</label>
           <input id="fnamn" type="text" placeholder="N" required />
 
-          <label for="enamn">Efternamn</label>
+          <i class="fa fa-user"></i><label for="enamn">Efternamn</label>
           <input type="text" id="enamn" placeholder="N" required />
 
-          <label for="adress">Adress</label>
+          <i class="fa fa-address-card-o"></i><label for="adress">Adress</label>
           <input type="text" id="adress" placeholder="adress" required />
 
-          <label for="postnr">Postnr</label>
+          <i class="fa fa-home"></i> <label for="postnr"> Postnr</label>
           <input
             type="text"
             id="postnr"
@@ -136,13 +132,13 @@
             required
           />
 
-          <label for="stad">Stad</label>
+          <i class="fa fa-building"></i> <label for="stad"> Stad</label>
           <input type="text" id="stad" placeholder="stad" required />
 
-          <label for="epost">Epost</label>
+          <i class="fa fa-envelope"></i> <label for="epost">Epost</label>
           <input type="email" id="epost" placeholder="N@N.com" required />
 
-          <label for="mobil">Mobil</label>
+          <i class="fa fa-mobile"></i> <label for="mobil">Mobil</label>
           <input
             type="text"
             id="mobil"
@@ -153,10 +149,17 @@
         </div>
         <div class="pay-con">
           <h3>Betalning</h3>
+          <div class="card-cont">
+            <i class="fa fa-cc-mastercard"></i>
+            <i class="fa fa-cc-visa"></i>
+            <i class="fa fa-cc-amex"></i>
+          </div>
           <label for="kortnamn">Namnet på kortet</label>
           <input type="text" id="kortnamn" placeholder="namn" required />
 
-          <label for="kortnummer">Kortnummer</label>
+          <label for="kortnummer"
+            ><i class="fa fa-credit-card"></i> Kortnummer</label
+          >
           <input
             type="text"
             id="kortnummer"
