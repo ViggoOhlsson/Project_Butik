@@ -36,16 +36,22 @@
             margin: 5px;
           }
         }
+        .album-wrapper {
+          display: flex;
+          flex-direction: column;
+        }
 
         .img-container {
           width: 40%;
           margin-top: 20px;
+          flex-grow: 1;
           @include mixins.desktop() {
             width: 25%;
           }
 
           img {
-            width: 100%;
+            height: 100%;
+            border-radius: 2px;
           }
         }
         ol {
@@ -65,8 +71,10 @@
       display: flex;
       flex-direction: column;
 
-      @include mixins.desktop() {
+      @include mixins.bigScreen() {
         flex-direction: row;
+        width: 1004px;
+        margin: 0 auto;
       }
     }
 
@@ -79,7 +87,8 @@
       justify-content: center;
       @include mixins.desktop() {
         flex-direction: row;
-        width: 50%;
+        justify-content: flex-start;
+        flex-grow: 1;
       }
 
       .description-container li {
@@ -87,8 +96,8 @@
       }
     }
     ul {
-      margin: 5px;
-      padding: 5px;
+      margin: 0px 10px 0 0;
+      padding: 0px;
       li {
         list-style: none;
       }
@@ -99,11 +108,18 @@
       align-items: center;
       font-size: 10pt;
       @include mixins.desktop() {
-        align-items: center;
+        align-items: flex-end;
         width: 50%;
         row-gap: 20px;
+        flex-grow: 1;
       }
-
+      .article-container {
+        text-align: right;
+        ul {
+          margin: 0;
+          padding: 0;
+        }
+      }
       .button-container {
         display: flex;
         column-gap: 15px;
@@ -141,22 +157,19 @@
 
     .modal-body {
       display: flex;
-      align-items: center;
-      justify-content: space-around;
-      img {
-        width: 10%;
-      }
-      svg {
-        margin-bottom: 15px;
-      }
-      .quantity {
-        margin-bottom: 15px;
-        button {
-          appearance: none;
-          background: none;
-          border: none;
-          border-radius: 0;
+      flex-direction: column;
+
+      .modal-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .img {
+          width: 10%;
+        }
+        i {
           color: white;
+          padding-top: 3px;
         }
       }
     }
