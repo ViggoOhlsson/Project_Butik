@@ -8,6 +8,7 @@ window.onload = () => {
     displayReleaseInfo(selectRelease(urlID));
     document.title = selectRelease(urlID).artist + " | " + selectRelease(urlID).title;
 }
+
 function displayReleaseInfo(release:Release) {
     let coverImg:HTMLImageElement = document.getElementById("cover") as HTMLImageElement;
     coverImg.src = "../" + release.cover;

@@ -8,7 +8,7 @@ window.onload = () => {
     addCategoryAnchors();
     printReleaseCells("catChristmas", "christmas", 4);
     printReleaseCells("catRock", "rock", 4);
-    
+
     let cart:CartItem[] = [];
     if (localStorage.getItem("cart") != undefined) {
         let cart:CartItem[] = JSON.parse(localStorage.getItem("cart"));
