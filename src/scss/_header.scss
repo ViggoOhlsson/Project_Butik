@@ -2,37 +2,40 @@
 @use "mixins";
 
 .line {
-    background-color: variables.$main-gold;
-    height: 2px;
-    box-shadow: 0 0 10px black;
+  background-color: variables.$main-gold;
+  height: 2px;
+  box-shadow: 0 0 10px black;
 }
 header {
+  @include mixins.flex-h;
+  @include mixins.mpg(0, 0 20px, 20px);
+  font-family: "Playball", cursive;
+  height: 65px;
+  align-items: center;
+  background-color: variables.$main-darker;
+  color: variables.$main-light;
+  .hamburger-button {
+    @include mixins.mpg();
+    background: none;
+    border: none;
+    color: variables.$main-gold;
+    font-size: 1.7rem;
+    &:hover {
+      color: variables.$main-gold-dark;
+      cursor: pointer;
+    }
+  }
+  .site-title {
+    font-size: 2rem;
+    flex-grow: 1;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  nav {
     @include mixins.flex-h;
-    @include mixins.mpg(0, 0 20px, 20px);
-    font-family: 'Playball', cursive;
-    height: 65px;
-    align-items: center;
-    background-color: variables.$main-darker;
-    color: variables.$main-light;
-    .hamburger-button {
-        @include mixins.mpg();
-        background: none;
-        border: none;
-        color: variables.$main-gold;
-        font-size: 1.7rem;
-        &:hover {
-            color: variables.$main-gold-dark;
-            cursor: pointer;
-        }
-    }
-    .site-title {
-        font-size: 2rem;
-        flex-grow: 1;
-        
-    }
-    nav {
-        @include mixins.flex-h;
-        @include mixins.mpg(0,0, 20px);
-        font-size: 1.5rem;
-    }
+    @include mixins.mpg(0, 0, 20px);
+    font-size: 1.5rem;
+  }
 }

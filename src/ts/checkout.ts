@@ -1,3 +1,6 @@
+// import { albums } from "./data/albums";
+// import { Release } from "./models/release";
+
 window.onload = function () {
   document.getElementById("addItem").addEventListener("click", addValue);
   document.getElementById("removeItem").addEventListener("click", remVal);
@@ -90,6 +93,7 @@ function ValidationForm() {
 
 // Quantity count.
 let p: number = 247;
+// let t: number = Release[i].price;
 let price: string = "$" + `<span>${p}</span>`;
 
 function addValue() {
