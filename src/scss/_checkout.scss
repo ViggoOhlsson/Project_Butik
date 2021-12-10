@@ -15,6 +15,10 @@
   .headline {
     text-align: center;
   }
+  button {
+    cursor: pointer;
+    padding: 10px;
+  }
   #form_part1 {
     background-color: variables.$main-dark;
     color: white;
@@ -137,6 +141,7 @@
       .card-cont {
         margin-top: -6px;
         margin-bottom: 10px;
+        text-align: center;
         .fa-cc-mastercard {
           color: red;
           background-color: variables.$main-light;
@@ -152,6 +157,20 @@
           background-color: variables.$main-light;
           font-size: 1.6rem;
         }
+      }
+      .termsCon {
+        display: flex;
+        #checkbox {
+          width: 10%;
+        }
+      }
+      #lastPrev,
+      #submit {
+        width: 37vh;
+      }
+      #submit {
+        margin-top: 10px;
+        cursor: pointer;
       }
     }
     input {
