@@ -1,29 +1,29 @@
 window.onload = function () {
-  shows_form_part(1);
+  form_part(1);
   document.getElementById("addItem").addEventListener("click", addValue);
   document.getElementById("removeItem").addEventListener("click", remVal);
   //  document.getElementById("submit").addEventListener("click", ValidationForm);
   document.getElementById("firstNext").addEventListener("click", () => {
-    shows_form_part(2);
+    form_part(2);
   });
   document.getElementById("firstPrev").addEventListener("click", () => {
-    shows_form_part(1);
+    form_part(1);
   });
   document.getElementById("secondNext").addEventListener("click", testx);
   document.getElementById("lastPrev").addEventListener("click", () => {
-    shows_form_part(2);
+    form_part(2);
   });
   // document.getElementById("submit").addEventListener("click", testx2);
 };
 
 function validate1() {
-  let firstname = document.forms["checkForm"]["fnamn"];
-  let lastname = document.forms["checkForm"]["enamn"];
-  let address = document.forms["checkForm"]["adress"];
-  let postNb = document.forms["checkForm"]["postnr"];
-  let city = document.forms["checkForm"]["stad"];
-  let epost = document.forms["checkForm"]["epost"];
-  let phone = document.forms["checkForm"]["mobil"];
+  let firstname: HTMLFormElement = document.forms["checkForm"]["fnamn"];
+  let lastname: HTMLFormElement = document.forms["checkForm"]["enamn"];
+  let address: HTMLFormElement = document.forms["checkForm"]["adress"];
+  let postNb: HTMLFormElement = document.forms["checkForm"]["postnr"];
+  let city: HTMLFormElement = document.forms["checkForm"]["stad"];
+  let epost: HTMLFormElement = document.forms["checkForm"]["epost"];
+  let phone: HTMLFormElement = document.forms["checkForm"]["mobil"];
 
   // If input empty do alert and focus on it.
   if (firstname.value == "") {
@@ -72,10 +72,10 @@ function validate1() {
 
 function validate2() {
   // Finds the input from the form.
-  let cardName = document.forms["checkForm"]["kortnamn"];
-  let cardNb = document.forms["checkForm"]["kortnummer"];
-  let expDate = document.forms["checkForm"]["utgångsdatum"];
-  let cvc = document.forms["checkForm"]["cvc"];
+  let cardName: HTMLFormElement = document.forms["checkForm"]["kortnamn"];
+  let cardNb: HTMLFormElement = document.forms["checkForm"]["kortnummer"];
+  let expDate: HTMLFormElement = document.forms["checkForm"]["utgångsdatum"];
+  let cvc: HTMLFormElement = document.forms["checkForm"]["cvc"];
 
   if (cardName.value == "") {
     alert("Skriv in ett kortnamn.");
@@ -106,7 +106,7 @@ function validate2() {
 
 function testx() {
   if (validate1()) {
-    shows_form_part(3);
+    form_part(3);
   }
 }
 
@@ -115,9 +115,11 @@ function testx2() {
   }
 }
 
-function shows_form_part(n) {
+function form_part(n) {
   let i = 1,
-    p = document.getElementById("form_part" + 1);
+    p: HTMLFormElement = document.getElementById(
+      "form_part" + 1
+    ) as HTMLFormElement;
   while (p !== null) {
     if (i === n) {
       p.style.display = "";
@@ -125,7 +127,7 @@ function shows_form_part(n) {
       p.style.display = "none";
     }
     i++;
-    p = document.getElementById("form_part" + i);
+    p = document.getElementById("form_part" + i) as HTMLFormElement;
   }
 }
 
