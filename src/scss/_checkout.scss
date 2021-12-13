@@ -125,33 +125,64 @@
     flex-direction: column;
     background-color: variables.$main-dark;
     color: variables.$main-gold;
-
     .info-con {
       display: flex;
       flex-direction: column;
       padding: 10px;
       justify-content: center;
+      @include mixins.desktop() {
+        align-items: center;
+        h3 {
+          @include mixins.desktop() {
+            font-size: 1.9rem;
+          }
+        }
+      }
       input {
         display: flex;
         width: 80%;
-        margin-bottom: 20px;
+        margin-bottom: 14px;
         padding: 12px;
         border: 1px solid #ccc;
         border-radius: 3px;
         justify-content: center;
         @include mixins.desktop() {
-          width: 80%;
+          width: 70%;
+        }
+      }
+      .fa {
+        @include mixins.desktop() {
+          font-size: 1.4rem;
+        }
+      }
+      .fa-mobile {
+        @include mixins.desktop() {
+          font-size: 2rem;
+        }
+      }
+      label {
+        @include mixins.desktop() {
+          font-size: 1.2rem;
         }
       }
     }
-    button {
-      width: 81vw;
-      padding: 10px;
-      @include mixins.desktop() {
-        width: 88vw;
+    .infoControlCon {
+      display: flex;
+      flex-direction: column;
+      button {
+        width: 83vw;
+        padding: 10px;
+
+        @include mixins.desktop() {
+          width: 68vw;
+          margin: 10px;
+        }
       }
-      @include mixins.bigScreen() {
-        width: 82%;
+      #firstPrev {
+        margin-top: 10px;
+      }
+      #secondNext {
+        margin-top: 16px;
       }
     }
   }
@@ -167,12 +198,13 @@
       padding: 10px;
       @include mixins.desktop() {
         align-items: center;
-        h3 {
-          @include mixins.desktop() {
-            font-size: 1.9rem;
-          }
+      }
+      h3 {
+        @include mixins.desktop() {
+          font-size: 1.9rem;
         }
       }
+
       .card-cont {
         margin-top: -6px;
         margin-bottom: 10px;
@@ -205,13 +237,13 @@
       }
       #lastPrev,
       #submit {
-        width: 37vh;
+        width: 41vh;
         @include mixins.desktop() {
           width: 70%;
         }
       }
       #submit {
-        margin-top: 10px;
+        margin-top: 16px;
         cursor: pointer;
         @include mixins.desktop() {
           margin-top: 20px;
