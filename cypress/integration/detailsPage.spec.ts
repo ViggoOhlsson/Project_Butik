@@ -7,6 +7,7 @@ describe("The Home Page", () => {
 
     cy.get("#shopping-cart").should("contain.value", "1");
   });
+
   it("clicks the buy button and adds item to cart", () => {
     cy.visit("/html/details.html");
     cy.get("#buybutton").click();

@@ -110,9 +110,8 @@ function testx() {
   }
 }
 
-// Last validate, using button submit.
 function testx2() {
-  if (validate2) {
+  if (validate2()) {
     window.location.href = "http://localhost:1234/html/thankyou.html";
   }
 }
