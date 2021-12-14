@@ -28,9 +28,23 @@ describe("The Home Page", () => {
     cy.get("#moreRock").click({ force: true });
   });
 
-  it("test the cart icon ", () => {
+  it("tests the click on album under the Christmas tab", () => {
     cy.visit("/");
 
-    cy.get(".fa fa-cart-plus").click;
+    // Finds the first Christmas album and clicks it.
+    cy.get(
+      "#catChristmas > :nth-child(1) > .cell-cover > .img-shadow-box"
+    ).click({ force: true });
+  });
+
+  it("tests the click on album under the Rock tab", () => {
+    cy.visit("/");
+    cy.get("#catRock > :nth-child(1) > .cell-cover > .img-shadow-box").click({
+      force: true,
+    });
+  });
+  it("tests the nav bar at the top", () => {
+    cy.visit("/");
+    cy.get("#hamburgerButton > .fa").click();
   });
 });
