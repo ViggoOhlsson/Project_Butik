@@ -4,7 +4,7 @@ import { Release } from "./release";
 export class Cart {
   items: CartItem[];
   constructor() {
-    this.items = JSON.parse(localStorage.get("cart"));
+    this.items = JSON.parse(localStorage.getItem("cart"));
   }
   addToCart(productToBeAdded: Release) {
     let itemToAdd = new CartItem(productToBeAdded, 1);
