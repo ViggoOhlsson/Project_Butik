@@ -1,5 +1,5 @@
 describe("The Category Page", () => {
-  it("It loads", () => {
+  it("It loadz", () => {
     cy.visit("/html/category.html");
   });
 });
