@@ -1,5 +1,5 @@
 describe("The Home Page", () => {
-  it("tests the Christmas category", () => {
+  it("should open the Christmas category", () => {
     cy.visit("/");
 
     // Finds the first <a> in the <nav id=nav>.
@@ -7,28 +7,28 @@ describe("The Home Page", () => {
     cy.get("#nav > a:first").click({ force: true });
   });
 
-  it("tests the Christmas Rock", () => {
+  it("should open the Rock category", () => {
     cy.visit("/");
 
     // eq(1) is the second element, eq(0) is the first.
     cy.get("#nav > a").eq(1).click({ force: true });
   });
 
-  it("tests the 'See more' button under Christmas", () => {
+  it("should open the Christmas category using the 'See more' button", () => {
     cy.visit("/");
 
     // Finds the moreChristmas id and clicks it.
     cy.get("#moreChristmas").click({ force: true });
   });
 
-  it("tests the 'See more' button under Rock.", () => {
+  it("should open the Rock category using the 'See more' button.", () => {
     cy.visit("/");
 
     // Finds the moreRock id and clicks it.
     cy.get("#moreRock").click({ force: true });
   });
 
-  it("tests the click on album under the Christmas tab", () => {
+  it("should open the details site for the first Christmas item.", () => {
     cy.visit("/");
 
     // Finds the first Christmas album and clicks it.
@@ -37,14 +37,18 @@ describe("The Home Page", () => {
     ).click({ force: true });
   });
 
-  it("tests the click on album under the Rock tab", () => {
+  it("should open the details site for the first rock item.", () => {
     cy.visit("/");
+    // Finds the first rock item and clicks it.
     cy.get("#catRock > :nth-child(1) > .cell-cover > .img-shadow-box").click({
       force: true,
     });
   });
-  it("tests the nav bar at the top", () => {
+
+  it("should open the top navigation bar.", () => {
     cy.visit("/");
-    cy.get("#hamburgerButton > .fa").click();
+    // Finds the top nav-bar and clicks it.
+    cy.get("#hamburgerButton > .fa").click({ force: true });
   });
+  // it(test);
 });
