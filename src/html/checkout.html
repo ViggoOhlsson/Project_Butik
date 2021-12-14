@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homegrown Records | Home</title>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-    <script src="../ts/checkout.ts"></script>
+    <script type="module" src="../ts/checkout.ts"></script>
     <!-- <script src="./test.js"></script> -->
     <link rel="stylesheet" href="../scss/main.scss" />
     <link
@@ -59,26 +59,34 @@
 
         <div class="offerCont">
           <div class="offerOne">
-            <div class="pitcureOne">
-              <img />
+            <div class="pictureOne">
+              <img
+                id="img1"
+                src="../assets/covers/nirvana-nevermind.png"
+                alt="AlbumCover"
+              />
             </div>
-            <span>Abbey Road: The Beatles</span>
+            <span>Abbey Road</span>
+            <span>The Beatles</span>
             <div class="controlOne">
               <button type="button">Lägg Till</button>
             </div>
           </div>
           <div class="offerTwo">
-            <div class="pitcureTwo">
-              <img />
+            <div class="pictureTwo">
+              <img
+                id="img2"
+                src="../assets/covers/nirvana-nevermind.png"
+                alt="AlbumCover"
+              />
             </div>
-            <span>Nirvana: Newermind</span>
-            <div class="controlTwo">
-              <button type="button">Lägg Till</button>
-            </div>
+            <span>Nevermind</span>
+            <span>Nirvana</span>
+            <button type="button">Lägg Till</button>
           </div>
-          <div class="offer-navigator">
-            <button type="button" id="firstNext">Nästa</button>
-          </div>
+        </div>
+        <div class="offer-navigator">
+          <button type="button" id="firstNext">Nästa</button>
         </div>
       </div>
       <div id="form_part2">

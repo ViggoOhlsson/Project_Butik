@@ -1,7 +1,12 @@
+import { albums } from "./data/albums";
+import { Cart } from "./models/cart";
+import { Release } from "./models/release";
+
 window.onload = function () {
+  sortCategory();
   shows_form_part(1);
-  document.getElementById("addItem").addEventListener("click", addValue);
-  document.getElementById("removeItem").addEventListener("click", remVal);
+  //document.getElementById("addItem").addEventListener("click", addValue);
+  //document.getElementById("removeItem").addEventListener("click", remVal);
   //  document.getElementById("submit").addEventListener("click", ValidationForm);
   document.getElementById("firstNext").addEventListener("click", () => {
     shows_form_part(2);
@@ -134,25 +139,33 @@ let pn: number = 247;
 // let t: number = Release[i].price;
 let price: string = "$" + `<span>${pn}</span>`;
 
-function addValue() {
-  // Converts to decimal number, 10 = Decimal number.
-  let val = parseInt(document.getElementById("item-numb").value, 10);
-  // Checks if input value is a number, if it is use 0.
-  //Conditional operator =  condition ? exprIfTrue : exprIfFalse
-  val = isNaN(val) ? 0 : val;
-  val++;
-  document.getElementById("item-numb").value = val;
-  price = `Kostnad: <span>${pn * val}</span> kr`;
-  document.getElementById("price-cont").innerHTML = price;
-}
+// function addValue() {
+//   // Converts to decimal number, 10 = Decimal number.
+//   let val = parseInt(document.getElementById("item-numb").value, 10);
+//   // Checks if input value is a number, if it is use 0.
+//   //Conditional operator =  condition ? exprIfTrue : exprIfFalse
+//   val = isNaN(val) ? 0 : val;
+//   val++;
+//   document.getElementById("item-numb").value = val;
+//   price = `Kostnad: <span>${pn * val}</span> kr`;
+//   document.getElementById("price-cont").innerHTML = price;
+// }
 
-function remVal() {
-  let val = parseInt(document.getElementById("item-numb").value, 10);
-  // Checks if val is a number;
-  val = isNaN(val) ? 0 : val;
-  val < 1 ? (val = 1) : "";
-  val--;
-  document.getElementById("item-numb").value = val;
-  price = `Kostnad: <span>${pn * val}</span> kr`;
-  document.getElementById("price-cont").innerHTML = price;
+// function remVal() {
+//   let val = parseInt(document.getElementById("item-numb").value, 10);
+//   // Checks if val is a number;
+//   val = isNaN(val) ? 0 : val;
+//   val < 1 ? (val = 1) : "";
+//   val--;
+//   document.getElementById("item-numb").value = val;
+//   price = `Kostnad: <span>${pn * val}</span> kr`;
+//   document.getElementById("price-cont").innerHTML = price;
+// }
+
+function sortCategory() {
+  let cat = albums[6].category;
+  console.log(albums);
+
+  let albumsInCategory = albums.filter((album) => album.category === cat);
+  console.log(albumsInCategory);
 }

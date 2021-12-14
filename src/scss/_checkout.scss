@@ -1,6 +1,10 @@
 @use "variables";
 @use "mixins";
 
+body {
+  background-color: variables.$main-dark;
+}
+
 .checkout {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -17,7 +21,7 @@
   }
   button {
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
   }
   #form_part1 {
     background-color: variables.$main-dark;
@@ -77,46 +81,71 @@
       }
     }
     .offerCont {
+      display: flex;
+      justify-content: center;
       border: 1px solid #ffc935;
       border-radius: 3px;
       font-size: 1rem;
 
+      button {
+        background-color: variables.$main-gold-dark;
+        border-radius: 3px;
+        border: none;
+      }
+
       .offerOne {
+        width: 45%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         margin: 10px;
+        row-gap: 20px;
 
-        .pitcureOne {
-          background-image: url(../assets/covers/the-beatles-abbey-road.png);
-          background-size: contain;
-          width: 200px;
-          height: 200px;
+        .pictureOne {
+          width: 100px;
+          @include mixins.desktop() {
+            width: 200px;
+          }
+          #img1 {
+            width: 100%;
+            border-radius: 3px;
+            margin-top: 10px;
+          }
         }
-        // .controlOne {
-        // }
       }
       .offerTwo {
+        width: 45%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         margin: 10px;
+        row-gap: 20px;
 
-        .pitcureTwo {
-          background-image: url(../assets/covers/nirvana-nevermind.png);
-          background-size: contain;
-          width: 180px;
-          height: 180px;
+        .pictureTwo {
+          width: 100px;
+          @include mixins.desktop() {
+            width: 200px;
+          }
+          #img2 {
+            width: 100%;
+            border-radius: 3px;
+            margin-top: 10px;
+          }
         }
-        // .controlTwo {
-        // }
       }
     }
     .offer-navigator {
       display: flex;
       justify-content: center;
+
+      button {
+        margin: 20px;
+        background-color: variables.$main-gold-dark;
+        border-radius: 3px;
+        border: none;
+      }
     }
   }
 
