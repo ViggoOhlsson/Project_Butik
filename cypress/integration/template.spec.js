@@ -17,3 +17,19 @@
 //   cy.get(li).should("have.value", 12);
 // });
 //})
+
+// The Home Page
+
+// The Category Page
+
+// The Details Page
+
+// The Checkout Page
+
+// The Thankyou Page
+//cy.visit("/html/details.html");
+//cy.visit("/html/details.html");
+//cy.visit("/html/details.html");
+//cy.visit("/html/details.html");
+//cy.visit("/html/details.html");
+//cy.visit("/html/details.html");
