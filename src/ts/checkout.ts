@@ -13,7 +13,7 @@ window.onload = function () {
   document.getElementById("lastPrev").addEventListener("click", () => {
     shows_form_part(2);
   });
-  // document.getElementById("submit").addEventListener("click", testx2);
+  document.getElementById("submit").addEventListener("click", testx2);
 };
 
 function validate1() {
@@ -110,8 +110,10 @@ function testx() {
   }
 }
 
+// Last validate, using button submit.
 function testx2() {
   if (validate2) {
+    window.location.href = "http://localhost:1234/html/thankyou.html";
   }
 }
 
