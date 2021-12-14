@@ -19,17 +19,16 @@
 //})
 
 // The Home Page
+//cy.visit("/");
 
 // The Category Page
+//cy.visit("/html/category.html");
 
 // The Details Page
+//cy.visit("/html/details.html");
 
 // The Checkout Page
+//cy.visit("/html/checkout.html");
 
-// The Thankyou Page
-//cy.visit("/html/details.html");
-//cy.visit("/html/details.html");
-//cy.visit("/html/details.html");
-//cy.visit("/html/details.html");
-//cy.visit("/html/details.html");
-//cy.visit("/html/details.html");
+// The Thank you Page
+//cy.visit("/html/thankyou.html");
