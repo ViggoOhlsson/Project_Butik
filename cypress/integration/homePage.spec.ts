@@ -5,12 +5,6 @@ describe("The Home Page", () => {
     cy.get("#hamburgerButton > .fa").click({ force: true });
   });
 
-  // // testing video/mp4
-  // //source src= assets/record-player-stock-footage.mp4
-  // it("should load the image", () => {
-  //   cy.visit("/");
-  // });
-
   it("should open the Christmas category", () => {
     cy.visit("/");
     // Finds the first <a> in the <nav id=nav>.
