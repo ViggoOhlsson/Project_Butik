@@ -2,8 +2,12 @@ import { albums } from "./data/albums";
 import { Cart } from "./models/Cart";
 import { CartItem } from "./models/CartItem";
 import { Release } from "./models/release";
+let cart = new Cart();
 
 window.onload = function () {
+  init();
+};
+function init() {
   sortCategory();
   shows_form_part(1);
   //document.getElementById("addItem").addEventListener("click", addValue);
@@ -20,7 +24,7 @@ window.onload = function () {
     shows_form_part(2);
   });
   document.getElementById("submit").addEventListener("click", testx2);
-};
+}
 
 function validate1() {
   let firstname = document.forms["checkForm"]["fnamn"];
@@ -166,19 +170,23 @@ let price: string = "$" + `<span>${pn}</span>`;
 
 function sortCategory() {
   //Hämta varukorgen från local storage
-  let cartItems = JSON.parse(localStorage.getItem("cart"));
+  //let cartItems = JSON.parse(localStorage.getItem("cart"));
 
   //Slumpa en random position från varukorgslistan
   let randomCartItem: number =
-    Math.floor(Math.random() * cartItems.items.length) + 0;
+    Math.floor(Math.random() * cart.items.length) + 0;
 
   //Lagra objektets kategori i en variabel
-  let cat: string = cartItems.items[randomCartItem].item.category;
+  let cat: string = cart.items[randomCartItem].item.category;
 
   //Filtrerar alla album och plockar ut kategorin från variabeln cat
   let albumsInCategory: Release[] = albums.filter(
     (album) => album.category === cat
   );
+  let wrapper: HTMLDivElement = document.getElementById(
+    "random-container"
+  ) as HTMLDivElement;
+  wrapper.innerHTML = "";
 
   for (let i = 0; i < albumsInCategory.length; i++) {
     //Plockar ut ett slumpmässigt tal från listan som loopas
@@ -187,10 +195,6 @@ function sortCategory() {
 
     //Skapar variabel baserat på den angivna positionen
     let randomRelease = albumsInCategory[randomPosition];
-
-    let wrapper: HTMLDivElement = document.getElementById(
-      "random-container"
-    ) as HTMLDivElement;
 
     let releaseContainer = document.createElement("div");
     releaseContainer.className = "release-container";
@@ -212,6 +216,10 @@ function sortCategory() {
     let button: HTMLSpanElement = document.createElement("span");
     button.className = "btn";
     button.innerHTML = "Lägg till";
+    button.addEventListener("click", () => {
+      cart.addToCart(albumsInCategory[i]);
+      init();
+    });
 
     releaseContainer.appendChild(imgContainer);
     releaseContainer.appendChild(title);

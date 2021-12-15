@@ -10,9 +10,9 @@ export class Cart {
     let itemToAdd = new CartItem(productToBeAdded, 1);
     this.items.push(itemToAdd);
     console.log(this.items);
-    localStorage.setItem("cart", JSON.stringify(this));
+    localStorage.setItem("cart", JSON.stringify(this.items));
   }
   putInLocalStorage() {
-    localStorage.setItem("cart", JSON.stringify(this));
+    localStorage.setItem("cart", JSON.stringify(this.items));
   }
 }
