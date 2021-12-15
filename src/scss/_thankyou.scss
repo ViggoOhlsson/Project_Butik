@@ -6,4 +6,11 @@
   color: yellow;
   text-align: center;
   font-family: "Playball", cursive;
+  font-size: 20px;
+  @include mixins.desktop() {
+    font-size: 26px;
+  }
+  @include mixins.bigScreen() {
+    font-size: 30px;
+  }
 }
