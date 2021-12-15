@@ -165,10 +165,15 @@ let price: string = "$" + `<span>${pn}</span>`;
 // }
 
 function sortCategory() {
-  //Detta ska bytas ut mot en produkts kategori från local storage
-  let cat: string = albums[6].category;
-  //et cartItems: CartItem[] = JSON.parse(localStorage.getItem("cart"));
-  //console.log(cartItems);
+  //Hämta varukorgen från local storage
+  let cartItems = JSON.parse(localStorage.getItem("cart"));
+
+  //Slumpa en random position från varukorgslistan
+  let randomCartItem: number =
+    Math.floor(Math.random() * cartItems.items.length) + 0;
+
+  //Lagra objektets kategori i en variabel
+  let cat: string = cartItems.items[randomCartItem].item.category;
 
   //Filtrerar alla album och plockar ut kategorin från variabeln cat
   let albumsInCategory: Release[] = albums.filter(
@@ -214,9 +219,11 @@ function sortCategory() {
     releaseContainer.appendChild(button);
 
     wrapper.appendChild(releaseContainer);
+    //Säkerställer att inte samma objekt kan köras två gånger
+    albumsInCategory.splice(randomPosition, 1);
 
     //om if är lika med 1, avsluta loopen
-    if (i == 1) {
+    if (i == 2) {
       return;
     }
   }
