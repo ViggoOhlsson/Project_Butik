@@ -54,10 +54,18 @@ function displayReleaseInfo(release: Release) {
   let tracklist: HTMLOListElement = document.getElementById(
     "tracklist"
   ) as HTMLOListElement;
+  let loops = 1;
   for (let track of release.tracklist) {
     let row = document.createElement("li");
-    row.innerHTML = track.length + " " + track.title;
+    let trackTitle = document.createElement("span");
+
+    trackTitle.innerHTML = loops + ". " + track.title;
+    row.appendChild(trackTitle);
+    let trackLength = document.createElement("span");
+    trackLength.innerHTML = track.length;
+    row.appendChild(trackLength);
     tracklist.appendChild(row);
+    loops++;
   }
   let artist: HTMLLIElement = document.getElementById(
     "artist"
@@ -97,31 +105,31 @@ function createCartHtml() {
   for (let i = 0; i < cart.items.length; i++) {
     let cartitem = cart.items[i];
 
-    let div = document.createElement("div");
+    let div: HTMLDivElement = document.createElement("div");
     div.className = "modal-div";
 
-    let img = document.createElement("img");
+    let img: HTMLImageElement = document.createElement("img");
     img.className = "img";
     img.src = "../" + cartitem.item.cover;
 
-    let p1 = document.createElement("p");
+    let p1: HTMLParagraphElement = document.createElement("p");
     p1.className = "p1";
     p1.innerHTML = cartitem.item.artist;
 
-    let p2 = document.createElement("p");
+    let p2: HTMLParagraphElement = document.createElement("p");
     p2.className = "p2";
     p2.innerHTML = cartitem.item.title;
 
-    let spanMinus = document.createElement("span");
+    let spanMinus: HTMLSpanElement = document.createElement("span");
     spanMinus.innerHTML = "-";
 
-    let spanQuantity = document.createElement("span");
+    let spanQuantity: HTMLSpanElement = document.createElement("span");
     spanQuantity.innerHTML = "2";
 
-    let spanPlus = document.createElement("span");
+    let spanPlus: HTMLSpanElement = document.createElement("span");
     spanPlus.innerHTML = "+";
 
-    let price = document.createElement("p");
+    let price: HTMLParagraphElement = document.createElement("p");
     price.innerHTML = "0";
 
     let trash = document.createElement("i");
@@ -136,7 +144,9 @@ function createCartHtml() {
     div.appendChild(price);
     div.appendChild(trash);
 
-    let modal = document.getElementById("modal");
+    let modal: HTMLDivElement = document.getElementById(
+      "modal"
+    ) as HTMLDivElement;
     modal.appendChild(div);
   }
 }

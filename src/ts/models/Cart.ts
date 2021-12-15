@@ -14,9 +14,4 @@ export class Cart {
   putInLocalStorage() {
     localStorage.setItem("cart", JSON.stringify(this));
   }
-  /*removeFromCart(productToBeRemoved: Release){
-    let itemRemove = new CartItem(productToBeRemoved, 1);
-    this.items.splice(itemRemove);
-    console.log(this.items);
-  }*/
 }
