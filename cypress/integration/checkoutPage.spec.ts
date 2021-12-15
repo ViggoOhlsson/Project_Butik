@@ -1,11 +1,16 @@
 // Under construction
 describe("The Home Page", () => {
+  it("should press 'Lägg till' button to add to the checkout.", () => {
+    cy.visit("/html/checkout.html");
+    cy.get("#random-container > .btn:first").click();
+  });
+
   it("should send the user to the first form and then back", () => {
     cy.visit("/html/checkout.html");
 
     cy.get("#firstNext").click({ force: true });
 
-    cy.get("#firstPrev").click();
+    cy.get("#firstPrev").click({ force: true });
   });
 
   it("should fill every input except one in the first, and last form", () => {
@@ -37,7 +42,7 @@ describe("The Home Page", () => {
     cy.get("#epost").click({ force: true }).type("john@doe.com");
     cy.get("#mobil").click({ force: true }).type("0701700272");
 
-    cy.get("#secondNext").click();
+    cy.get("#secondNext").click({ force: true });
 
     cy.get("#kortnamn").click({ force: true }).type("John");
     // It will not fill the card number input.
@@ -45,7 +50,7 @@ describe("The Home Page", () => {
     cy.get("#utgångsdatum").click({ force: true }).type("01/01");
     cy.get("#cvc").click({ force: true }).type("123");
 
-    cy.get("#submit").click();
+    cy.get("#submit").click({ force: true });
   });
 
   it("should fill out the forms and press submit.", () => {
@@ -61,13 +66,13 @@ describe("The Home Page", () => {
     cy.get("#epost").click({ force: true }).type("john@doe.com");
     cy.get("#mobil").click({ force: true }).type("0701700272");
 
-    cy.get("#secondNext").click();
+    cy.get("#secondNext").click({ force: true });
 
     cy.get("#kortnamn").click({ force: true }).type("John");
     cy.get("#kortnummer").click({ force: true }).type("1234567812345678");
     cy.get("#utgångsdatum").click({ force: true }).type("01/01");
     cy.get("#cvc").click({ force: true }).type("123");
 
-    cy.get("#submit").click();
+    cy.get("#submit").click({ force: true });
   });
 });
