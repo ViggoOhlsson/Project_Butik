@@ -16,12 +16,12 @@ describe("The Category Page", () => {
   it("should click on Rock to move to the rock category.", () => {
     cy.visit("/html/category.html?c=christmas");
 
-    cy.get("#nav > a").eq(1).click();
+    cy.get("#nav > a").eq(1).click({ force: true });
   });
 
   it("should click on Christmas to move to the christmas category", () => {
     cy.visit("/html/category.html?c=christmas");
 
-    cy.get("#nav > a").eq(0).click();
+    cy.get("#nav > a").eq(0).click({ force: true });
   });
 });

@@ -75,19 +75,16 @@
           <h3>Personlig information</h3>
 
           <i class="fa fa-user"></i><label for="fnamn">Förnamn</label>
-          <input id="fnamn" type="text" placeholder="N" required value="n" />
+          <input id="fnamn" type="text" placeholder="N" required />
+          <!-- value="n" -->
 
           <i class="fa fa-user"></i><label for="enamn">Efternamn</label>
-          <input type="text" id="enamn" placeholder="N" required value="n" />
+          <input type="text" id="enamn" placeholder="N" required />
+          <!-- value="n" -->
 
           <i class="fa fa-address-card-o"></i><label for="adress">Adress</label>
-          <input
-            type="text"
-            id="adress"
-            placeholder="adress"
-            required
-            value="s"
-          />
+          <input type="text" id="adress" placeholder="adress" required />
+          <!-- value="s" -->
 
           <i class="fa fa-home"></i><label for="postnr">Postnr</label>
           <input
@@ -96,11 +93,12 @@
             placeholder="xxxxx"
             pattern="[0-9]{3}[0-9]{2}"
             required
-            value="11122"
           />
+          <!-- value="11122" -->
 
           <i class="fa fa-building"></i><label for="stad">Stad</label>
-          <input type="text" id="stad" placeholder="stad" required value="s" />
+          <input type="text" id="stad" placeholder="stad" required />
+          <!-- value="s" -->
 
           <i class="fa fa-envelope"></i><label for="epost">Epost</label>
           <input
@@ -110,6 +108,7 @@
             required
             value="n@n.com"
           />
+          <!-- value="n@n.com" -->
 
           <i class="fa fa-mobile"></i><label for="mobil">Mobil</label>
           <input
@@ -118,8 +117,8 @@
             placeholder="xxxxxxxxxx"
             pattern="[0-9]{10}"
             required
-            value="0701700272"
           />
+          <!-- value="0701700272" -->
           <div class="infoControlCon">
             <button type="button" id="firstPrev">Föregående</button>
             <button type="button" id="secondNext">Nästa</button>
@@ -136,13 +135,8 @@
             <i class="fa fa-cc-amex"></i>
           </div>
           <label for="kortnamn">Namnet på kortet</label>
-          <input
-            type="text"
-            id="kortnamn"
-            placeholder="namn"
-            required
-            value="n"
-          />
+          <input type="text" id="kortnamn" placeholder="namn" required />
+          <!-- value="n" -->
 
           <i class="fa fa-credit-card"></i
           ><label for="kortnummer">Kortnummer</label>
@@ -151,17 +145,12 @@
             id="kortnummer"
             placeholder="XXXXXXXXXXXXXXXX"
             required
-            value="1234567812345678"
           />
+          <!-- value="1234567812345678" -->
 
           <label for="utgångsdatum">Utgångsdatum</label>
-          <input
-            type="text"
-            id="utgångsdatum"
-            placeholder="MM/ÅÅ"
-            required
-            value="01/01"
-          />
+          <input type="text" id="utgångsdatum" placeholder="MM/ÅÅ" required />
+          <!-- value="01/01" -->
 
           <label for="cvc">CVC</label>
           <input
@@ -170,8 +159,8 @@
             placeholder="123"
             pattern="[0-9]{3}"
             required
-            value="123"
           />
+          <!-- value="123" -->
           <div class="termsCon">
             <input type="checkbox" id="checkbox" checked required />
             <label for="checkbox">Godkänn våra villkor</label>
