@@ -3,7 +3,7 @@ describe("The Home Page", () => {
   it("should send the user to the first form and then back", () => {
     cy.visit("/html/checkout.html");
 
-    cy.get("#firstNext").click();
+    cy.get("#firstNext").click({ force: true });
 
     cy.get("#firstPrev").click();
   });
@@ -11,7 +11,7 @@ describe("The Home Page", () => {
   it("should fill every input except one in the first, and last form", () => {
     cy.visit("/html/checkout.html");
 
-    cy.get("#firstNext").click();
+    cy.get("#firstNext").click({ force: true });
 
     cy.get("#fnamn").click({ force: true }).type("John");
     cy.get("#enamn").click({ force: true }).type("Doe");
@@ -21,7 +21,7 @@ describe("The Home Page", () => {
     cy.get("#stad").click({ force: true }).type("exStad");
     cy.get("#epost").click({ force: true }).type("john@doe.com");
     cy.get("#mobil").click({ force: true }).type("0701700272");
-    cy.get("#secondNext").click();
+    cy.get("#secondNext").click({ force: true });
   });
 
   it("should fill every input except one in the last form", () => {
