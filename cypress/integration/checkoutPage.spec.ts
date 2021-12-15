@@ -1,12 +1,23 @@
 // Under construction
 describe("The Home Page", () => {
-  it("It loads", () => {
+  it("should send the user to the first form and then back", () => {
     cy.visit("/html/checkout.html");
 
-    // cy.get('[type="submit"]').click();
-    // cy.get("input:invalid").should("have.length", 1);
-    // cy.get("#name").then(($input) => {
-    //   expect($input[0].validationMessage).to.eq("Please fill out this field.");
-    // });
+    cy.get("#firstNext").click();
+
+    cy.get("#firstPrev").click();
+  });
+  it("should send the users to the last form and then back", () => {
+    cy.visit("/html/checkout.html");
+
+    cy.get("#firstNext").click();
+    cy.get("#secondNext").click();
+    cy.get("#lastPrev").click();
+  });
+  it("should press on the submit button and go to thankyou.html", () => {
+    cy.visit("/html/checkout.html");
+    cy.get("#firstNext").click();
+    cy.get("#secondNext").click();
+    cy.get("#submit").click();
   });
 });
