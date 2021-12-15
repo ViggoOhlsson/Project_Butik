@@ -1,7 +1,13 @@
+import { albums } from "./data/albums";
+import { Cart } from "./models/Cart";
+import { CartItem } from "./models/CartItem";
+import { Release } from "./models/release";
+
 window.onload = function () {
+  sortCategory();
   shows_form_part(1);
-  document.getElementById("addItem").addEventListener("click", addValue);
-  document.getElementById("removeItem").addEventListener("click", remVal);
+  //document.getElementById("addItem").addEventListener("click", addValue);
+  //document.getElementById("removeItem").addEventListener("click", remVal);
   //  document.getElementById("submit").addEventListener("click", ValidationForm);
   document.getElementById("firstNext").addEventListener("click", () => {
     shows_form_part(2);
@@ -134,25 +140,83 @@ let pn: number = 247;
 // let t: number = Release[i].price;
 let price: string = "$" + `<span>${pn}</span>`;
 
-function addValue() {
-  // Converts to decimal number, 10 = Decimal number.
-  let val = parseInt(document.getElementById("item-numb").value, 10);
-  // Checks if input value is a number, if it is use 0.
-  //Conditional operator =  condition ? exprIfTrue : exprIfFalse
-  val = isNaN(val) ? 0 : val;
-  val++;
-  document.getElementById("item-numb").value = val;
-  price = `Kostnad: <span>${pn * val}</span> kr`;
-  document.getElementById("price-cont").innerHTML = price;
-}
+// function addValue() {
+//   // Converts to decimal number, 10 = Decimal number.
+//   let val = parseInt(document.getElementById("item-numb").value, 10);
+//   // Checks if input value is a number, if it is use 0.
+//   //Conditional operator =  condition ? exprIfTrue : exprIfFalse
+//   val = isNaN(val) ? 0 : val;
+//   val++;
+//   document.getElementById("item-numb").value = val;
+//   price = `Kostnad: <span>${pn * val}</span> kr`;
+//   document.getElementById("price-cont").innerHTML = price;
+// }
 
-function remVal() {
-  let val = parseInt(document.getElementById("item-numb").value, 10);
-  // Checks if val is a number;
-  val = isNaN(val) ? 0 : val;
-  val < 1 ? (val = 1) : "";
-  val--;
-  document.getElementById("item-numb").value = val;
-  price = `Kostnad: <span>${pn * val}</span> kr`;
-  document.getElementById("price-cont").innerHTML = price;
+// function remVal() {
+//   let val = parseInt(document.getElementById("item-numb").value, 10);
+//   // Checks if val is a number;
+//   val = isNaN(val) ? 0 : val;
+//   val < 1 ? (val = 1) : "";
+//   val--;
+//   document.getElementById("item-numb").value = val;
+//   price = `Kostnad: <span>${pn * val}</span> kr`;
+//   document.getElementById("price-cont").innerHTML = price;
+// }
+
+function sortCategory() {
+  //Detta ska bytas ut mot en produkts kategori från local storage
+  let cat: string = albums[6].category;
+  //et cartItems: CartItem[] = JSON.parse(localStorage.getItem("cart"));
+  //console.log(cartItems);
+
+  //Filtrerar alla album och plockar ut kategorin från variabeln cat
+  let albumsInCategory: Release[] = albums.filter(
+    (album) => album.category === cat
+  );
+
+  for (let i = 0; i < albumsInCategory.length; i++) {
+    //Plockar ut ett slumpmässigt tal från listan som loopas
+    let randomPosition: number =
+      Math.floor(Math.random() * albumsInCategory.length) + 0;
+
+    //Skapar variabel baserat på den angivna positionen
+    let randomRelease = albumsInCategory[randomPosition];
+
+    let wrapper: HTMLDivElement = document.getElementById(
+      "random-container"
+    ) as HTMLDivElement;
+
+    let releaseContainer = document.createElement("div");
+    releaseContainer.className = "release-container";
+
+    let imgContainer: HTMLDivElement = document.createElement("div");
+    imgContainer.className = "img-container";
+
+    let img: HTMLImageElement = document.createElement("img");
+    img.className = "random-img";
+    img.src = "../" + randomRelease.cover;
+    imgContainer.appendChild(img);
+
+    let title: HTMLSpanElement = document.createElement("span");
+    title.innerHTML = randomRelease.title;
+
+    let artist: HTMLSpanElement = document.createElement("span");
+    artist.innerHTML = randomRelease.artist;
+
+    let button: HTMLSpanElement = document.createElement("span");
+    button.className = "btn";
+    button.innerHTML = "Lägg till";
+
+    releaseContainer.appendChild(imgContainer);
+    releaseContainer.appendChild(title);
+    releaseContainer.appendChild(artist);
+    releaseContainer.appendChild(button);
+
+    wrapper.appendChild(releaseContainer);
+
+    //om if är lika med 1, avsluta loopen
+    if (i == 1) {
+      return;
+    }
+  }
 }

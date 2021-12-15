@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homegrown Records | Home</title>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-    <script src="../ts/checkout.ts"></script>
+    <script type="module" src="../ts/checkout.ts"></script>
     <!-- <script src="./test.js"></script> -->
     <link rel="stylesheet" href="../scss/main.scss" />
     <link
@@ -40,10 +40,14 @@
         <!-- Better layout -->
         <div class="order-con">
           <div class="order-img">
-            <img />
+            <img
+              id="imgOrder"
+              src="../assets/covers/green-day-american-idiot.png"
+              alt="Albumcover"
+            />
           </div>
           <span class="headline"> Amercian Idiot: Green Day</span>
-          <span id="price-cont">Kostnad: 247 kr</span>
+          <span id="price-cont">247 kr</span>
           <div class="order-btn-cont">
             <i class="fa minus-square" id="removeItem">-</i>
             <input
@@ -56,29 +60,12 @@
             <i class="fa plus-square-o" id="addItem">+</i>
           </div>
         </div>
-
-        <div class="offerCont">
-          <div class="offerOne">
-            <div class="pitcureOne">
-              <img />
-            </div>
-            <span>Abbey Road: The Beatles</span>
-            <div class="controlOne">
-              <button type="button">Lägg Till</button>
-            </div>
-          </div>
-          <div class="offerTwo">
-            <div class="pitcureTwo">
-              <img />
-            </div>
-            <span>Nirvana: Newermind</span>
-            <div class="controlTwo">
-              <button type="button">Lägg Till</button>
-            </div>
-          </div>
-          <div class="offer-navigator">
-            <button type="button" id="firstNext">Nästa</button>
-          </div>
+        <div id="related-wrapper">
+          <div class="related">Andra rekommenderade produkter</div>
+          <div id="random-container"></div>
+        </div>
+        <div class="offer-navigator">
+          <button type="button" id="firstNext">Gå vidare till betalning</button>
         </div>
       </div>
       <div id="form_part2">
