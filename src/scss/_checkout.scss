@@ -94,8 +94,13 @@ body {
       #random-container {
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+
+        @include mixins.desktop() {
+          flex-direction: row;
+          justify-content: space-evenly;
+        }
 
         .release-container {
           display: flex;
