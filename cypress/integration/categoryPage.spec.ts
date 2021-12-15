@@ -2,7 +2,9 @@ describe("The Category Page", () => {
   it("should click on the first album in the Christmas category site.", () => {
     cy.visit("/html/category.html?c=christmas");
 
-    cy.get(":nth-child(1) > .cell-cover > .img-shadow-box").click();
+    cy.get(":nth-child(1) > .cell-cover > .img-shadow-box").click({
+      force: true,
+    });
   });
 
   it("should click on the first album in the Rock category site", () => {
