@@ -6,6 +6,14 @@ describe("The Details page", () => {
     cy.get("#buyButton").click();
 
     // cy.get("#shopping-cart").click();
+    // // modal should show.
+    //cy.get("#cartModal").should("have.class", "display: show");
+
+    // //  Clicks the +, -, trash can and button.
+    // cy.get(".item-amount > .fa-pluss add").click();
+    // cy.get(".item-amount > fa-minus remove").click();
+    // cy.get(".item-amount > fa-trash delete").click();
+    // cy.get("button").click();
 
     // cy.get(".details").should("have.class", "modal-open");
 
