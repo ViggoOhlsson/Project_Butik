@@ -21,6 +21,7 @@ body {
     cursor: pointer;
     padding: 5px;
   }
+
   #formPart1 {
     background-color: variables.$main-dark;
     color: white;
@@ -48,38 +49,37 @@ body {
           border-radius: 3px;
         }
       }
-    }
-
-    .headline {
-      font-size: 1.2rem;
-      @include mixins.desktop() {
-        font-size: 1.3em;
+      .headline {
+        font-size: 1.2rem;
+        @include mixins.desktop() {
+          font-size: 1.3em;
+        }
       }
-    }
-    #priceCon {
-      font-size: 1.2em;
-      @include mixins.desktop() {
+      #priceCon {
         font-size: 1.2em;
+        @include mixins.desktop() {
+          font-size: 1.2em;
+        }
+      }
+      .orderBtnCon {
+        display: flex;
+        justify-content: space-between;
+        input {
+          width: 20px;
+          @include mixins.desktop() {
+            width: 50px;
+          }
+        }
+        .fa {
+          cursor: pointer;
+          font-size: 30px;
+          @include mixins.desktop() {
+            font-size: 30px;
+          }
+        }
       }
     }
 
-    .orderBtnCon {
-      display: flex;
-      justify-content: space-between;
-      input {
-        width: 20px;
-        @include mixins.desktop() {
-          width: 50px;
-        }
-      }
-      .fa {
-        cursor: pointer;
-        font-size: 30px;
-        @include mixins.desktop() {
-          font-size: 30px;
-        }
-      }
-    }
     #related-wrapper {
       border: 1px solid #ffc935;
 
@@ -193,26 +193,26 @@ body {
           font-size: 1.2rem;
         }
       }
-    }
-    .infoControlCon {
-      display: flex;
-      flex-direction: column;
-      button {
-        width: 83vw;
-        padding: 10px;
-        background-color: #e0a22d;
-        font-size: 1em;
+      .infoControlCon {
+        display: flex;
+        flex-direction: column;
+        button {
+          width: 83vw;
+          padding: 10px;
+          background-color: #e0a22d;
+          font-size: 1em;
 
-        @include mixins.desktop() {
-          width: 68vw;
-          margin: 10px;
+          @include mixins.desktop() {
+            width: 68vw;
+            margin: 10px;
+          }
         }
-      }
-      #firstPrev {
-        margin-top: 10px;
-      }
-      #lastNext {
-        margin-top: 16px;
+        #firstPrev {
+          margin-top: 10px;
+        }
+        #lastNext {
+          margin-top: 16px;
+        }
       }
     }
   }
@@ -286,26 +286,25 @@ body {
           margin-top: 20px;
         }
       }
+      #submit:hover {
+        background-color: #45a049;
+      }
       label {
         @include mixins.desktop() {
           font-size: 1.2rem;
         }
       }
-    }
-    input {
-      display: flex;
-      width: 90%;
-      margin-bottom: 20px;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      @include mixins.desktop() {
-        width: 70%;
+      input {
+        display: flex;
+        width: 90%;
+        margin-bottom: 20px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        @include mixins.desktop() {
+          width: 70%;
+        }
       }
     }
-  }
-
-  .btn:hover {
-    background-color: #45a049;
   }
 }
