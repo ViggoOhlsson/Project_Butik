@@ -1,5 +1,17 @@
 // Under construction
-describe("The Home Page", () => {
+describe("The Checkout page", () => {
+  // it("should change the price of the product.", () => {
+  //   // + button
+  //   cy.visit("/html/checkout.html");
+  //   cy.get("#addItem").click();
+
+  //   // - button
+  //   cy.get("#removeItem").click();
+
+  //   // Input
+  //   cy.get("#item-numb").click().type("2");
+  // });
+
   it("should send the user to the first form and then back", () => {
     cy.visit("/html/checkout.html");
 
