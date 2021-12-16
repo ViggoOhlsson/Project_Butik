@@ -5,8 +5,8 @@ describe("The Home Page", () => {
     cy.get("#hamburgerButton > .fa").click({ force: true });
     cy.get("#dropDown > :nth-child(1)").click({ force: true });
     cy.get("#dropDown > :nth-child(2)").click({ force: true });
-    cy.get("#dropDown > :nth-child(3)").click({ force: true });
-    cy.get("#dropDown > :nth-child(4)").click({ force: true });
+    // cy.get("#dropDown > :nth-child(3)").click({ force: true });
+    // cy.get("#dropDown > :nth-child(4)").click({ force: true });
   });
 
   it("should click on every category", () => {
@@ -18,13 +18,13 @@ describe("The Home Page", () => {
     // Finds the second category.
     cy.get("#nav > a").eq(1).click({ force: true });
 
-    cy.visit("/");
-    // Finds the third category.
-    cy.get("#nav > a").eq(2).click({ force: true });
+    // cy.visit("/");
+    // // Finds the third category.
+    // cy.get("#nav > a").eq(2).click({ force: true });
 
-    cy.visit("/");
-    // Finds the fourth category.
-    cy.get("#nav > a").eq(3).click({ force: true });
+    // cy.visit("/");
+    // // Finds the fourth category.
+    // cy.get("#nav > a").eq(3).click({ force: true });
   });
 
   it("should open the detail site for evey category", () => {
@@ -40,17 +40,17 @@ describe("The Home Page", () => {
       force: true,
     });
 
-    // Pop category
-    cy.visit("/");
-    cy.get("#catPop > :nth-child(1) > .cell-cover > .img-shadow-box").click({
-      force: true,
-    });
+    // // Pop category
+    // cy.visit("/");
+    // cy.get("#catPop > :nth-child(1) > .cell-cover > .img-shadow-box").click({
+    //   force: true,
+    // });
 
-    // Jazz category
-    cy.visit("/");
-    cy.get("#catJazz > :nth-child(1) > .cell-cover > .img-shadow-box").click({
-      force: true,
-    });
+    // // Jazz category
+    // cy.visit("/");
+    // cy.get("#catJazz > :nth-child(1) > .cell-cover > .img-shadow-box").click({
+    //   force: true,
+    // });
   });
 
   it("should open every category's 'See more' button", () => {
@@ -62,12 +62,12 @@ describe("The Home Page", () => {
     cy.visit("/");
     cy.get("#moreRock").click({ force: true });
 
-    // More pop
-    cy.visit("/");
-    cy.get("#morePop").click({ force: true });
+    // // More pop
+    // cy.visit("/");
+    // cy.get("#morePop").click({ force: true });
 
-    // More jazz
-    cy.visit("/");
-    cy.get("#moreJazz").click({ force: true });
+    // // More jazz
+    // cy.visit("/");
+    // cy.get("#moreJazz").click({ force: true });
   });
 });

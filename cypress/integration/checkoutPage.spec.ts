@@ -1,21 +1,16 @@
 // Under construction
 describe("The Checkout page", () => {
-  it("should change the price of the product.", () => {
-    // + button
-    cy.visit("/html/checkout.html");
-    cy.get("#addItem").click();
+  // it("should change the price of the product.", () => {
+  //   // + button
+  //   cy.visit("/html/checkout.html");
+  //   cy.get("#addItem").click();
 
-    // - button
-    cy.get("#removeItem").click();
+  //   // - button
+  //   cy.get("#removeItem").click();
 
-    // Input
-    cy.get("#item-numb").click().type("2");
-  });
-
-  it("should press 'Lägg till' button to add to the checkout.", () => {
-    cy.visit("/html/checkout.html");
-    cy.get("#random-container > :nth-child(1) > .btn").click();
-  });
+  //   // Input
+  //   cy.get("#item-numb").click().type("2");
+  // });
 
   it("should send the user to the first form and then back", () => {
     cy.visit("/html/checkout.html");

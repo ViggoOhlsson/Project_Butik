@@ -8,22 +8,19 @@ let cart = new Cart();
 cart.SetStorage();
 
 window.onload = function () {
-
   // cart.items = [];
   // cart.items.push(new CartItem(albums[1], 1));
   let urlID = urlGet("r");
   console.log(urlID);
   displayReleaseInfo(selectRelease(urlID));
-  document.title = selectRelease(urlID).artist + " | " + selectRelease(urlID).title;
-
+  document.title =
+    selectRelease(urlID).artist + " | " + selectRelease(urlID).title;
 
   let shoppingCart = document.getElementById("shopping-cart");
   shoppingCart.addEventListener("click", () => {
     refreshCartHTML();
     displayCartModal();
   });
-
-
 
   let buyButton = document.getElementById("buyButton") as HTMLButtonElement;
   buyButton.addEventListener("click", () => {
@@ -33,11 +30,9 @@ window.onload = function () {
       cart.addToCart(release);
     }
     refreshCartHTML();
-    
   });
   refreshCartHTML();
 };
-
 
 function displayCartModal() {
   let modal = document.getElementById("cartModal") as HTMLDivElement;
@@ -48,17 +43,17 @@ function displayCartModal() {
   }
 }
 
-function refreshCartHTML():void {
+function refreshCartHTML(): void {
   if (cart.items != []) {
     console.log("cart refresh running");
     let cartList = document.getElementById("cartList") as HTMLDivElement;
     let cost = document.getElementById("cartCost") as HTMLSpanElement;
     cost.innerHTML = cart.calculateCost().toString() + "kr";
     cartList.innerHTML = null;
-    for(let i = 0; i < cart.items.length; i++) {
+    for (let i = 0; i < cart.items.length; i++) {
       console.log(i);
       let cartItem = document.createElement("div");
-      cartItem.className = ("cart-item");
+      cartItem.className = "cart-item";
 
       let itemThumb = document.createElement("div");
       itemThumb.className = "item-thumb";
@@ -87,7 +82,7 @@ function refreshCartHTML():void {
       itemAdd.addEventListener("click", () => {
         cart.increaseAmount(i);
         refreshCartHTML();
-      })
+      });
       itemAmount.appendChild(itemAdd);
 
       let itemNumber = document.createElement("span");
@@ -110,16 +105,17 @@ function refreshCartHTML():void {
       let itemDelete = document.createElement("i");
       itemDelete.className = "fa fa-trash delete";
       itemDelete.addEventListener("click", () => {
-        console.log("item at ", i, "deleted")
+        console.log("item at ", i, "deleted");
         cart.remove(i);
         refreshCartHTML();
-      })
+      });
       itemAmount.appendChild(itemDelete);
       cartItem.appendChild(itemAmount);
 
       let itemCost = document.createElement("span");
       itemCost.className = "item-cost";
-      itemCost.innerHTML = (cart.items[i].item.price * cart.items[i].amount).toString() + "kr";
+      itemCost.innerHTML =
+        (cart.items[i].item.price * cart.items[i].amount).toString() + "kr";
       cartItem.appendChild(itemCost);
       cartList.appendChild(cartItem);
     }
