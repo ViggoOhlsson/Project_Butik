@@ -20,10 +20,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap"rel="stylesheet"/>
   </head>
   <body class="details">
     <div class="line"></div>
@@ -38,7 +35,7 @@
         <i class="fa fa-search"></i>
         <i
           id="shopping-cart"
-          class="fa fa-shopping-cart"
+          class="fa fa-shopping-cart shopping-cart"
           type="button"
           class="btn btn-primary"
           data-toggle="modal"
@@ -100,46 +97,35 @@
             </div>
             <div class="button-container">
               <p id="price"></p>
-              <button id="buybutton" type="button">Köp</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"></h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div id="modal" class="modal-body"></div>
-            <div class="modal-footer">
-              <button
-                onclick="window.location.href='checkout.html'"
-                type="button"
-                class="btn"
-              >
-                Till Kassan
-              </button>
+              <button class="buy-button" id="buyButton" type="button"><i class="fa fa-plus"></i> Lägg i Varukorg</button>
             </div>
           </div>
         </div>
       </div>
     </main>
+    <div class="cart-modal" id="cartModal" style="display: none;">
+      <div class="cart-list" id="cartList">
+        <div class="cart-item">
+          <div class="item-thumb">
+            <img src="../assets/covers/rock/nirvana-nevermind.png">
+          </div>
+          <div class="item-text">
+            <span class="item-title">Nevermind - Nirvana</span>
+          </div>
+          <div class="item-amount">
+            <i class="fa fa-plus add"></i>
+            <span class="amount">1</span>
+            <i class="fa fa-minus remove"></i>
+            <i class="fa fa-trash delete"></i>
+          </div>
+          <span class="item-cost" id="itemCost">219kr</span>
+        </div>
+      </div>
+      <button>
+        Till Kassan
+      </button>
+      <span id="cartCost">219kr</span>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
