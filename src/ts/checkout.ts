@@ -9,24 +9,26 @@ window.onload = function () {
 };
 function init() {
   sortCategory();
-  shows_form_part(1);
+  shows_form(1);
   //document.getElementById("addItem").addEventListener("click", addValue);
   //document.getElementById("removeItem").addEventListener("click", remVal);
   //  document.getElementById("submit").addEventListener("click", ValidationForm);
   document.getElementById("firstNext").addEventListener("click", () => {
-    shows_form_part(2);
+    shows_form(2);
   });
   document.getElementById("firstPrev").addEventListener("click", () => {
-    shows_form_part(1);
+    shows_form(1);
   });
-  document.getElementById("secondNext").addEventListener("click", testx);
+  document
+    .getElementById("secondNext")
+    .addEventListener("click", infoFormFunction);
   document.getElementById("lastPrev").addEventListener("click", () => {
-    shows_form_part(2);
+    shows_form(2);
   });
-  document.getElementById("submit").addEventListener("click", testx2);
+  document.getElementById("submit").addEventListener("click", payFormFunction);
 }
 
-function validate1() {
+function infoValidate() {
   let firstname = document.forms["checkForm"]["fnamn"];
   let lastname = document.forms["checkForm"]["enamn"];
   let address = document.forms["checkForm"]["adress"];
@@ -80,7 +82,7 @@ function validate1() {
   return true;
 }
 
-function validate2() {
+function payValidate() {
   // Finds the input from the form.
   let cardName = document.forms["checkForm"]["kortnamn"];
   let cardNb = document.forms["checkForm"]["kortnummer"];
@@ -114,19 +116,19 @@ function validate2() {
   return true;
 }
 
-function testx() {
-  if (validate1()) {
-    shows_form_part(3);
+function infoFormFunction() {
+  if (infoValidate()) {
+    shows_form(3);
   }
 }
 
-function testx2() {
-  if (validate2()) {
+function payFormFunction() {
+  if (payValidate()) {
     window.location.href = "http://localhost:1234/html/thankyou.html";
   }
 }
 
-function shows_form_part(n) {
+function shows_form(n) {
   let i = 1,
     p = document.getElementById("form_part" + 1);
   while (p !== null) {
@@ -141,9 +143,9 @@ function shows_form_part(n) {
 }
 
 // Quantity count.
-let pn: number = 247;
-// let t: number = Release[i].price;
-let price: string = "$" + `<span>${pn}</span>`;
+// let pn: number = 247;
+// // let t: number = Release[i].price;
+// let price: string = "$" + `<span>${pn}</span>`;
 
 // function addValue() {
 //   // Converts to decimal number, 10 = Decimal number.

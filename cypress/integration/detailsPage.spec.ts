@@ -12,3 +12,5 @@ describe("The Home Page", () => {
     cy.get(".btn").click();
   });
 });
+
+// https://dev.to/walmyrlimaesilv/how-to-fill-out-and-submit-forms-with-cypress-4fm7
