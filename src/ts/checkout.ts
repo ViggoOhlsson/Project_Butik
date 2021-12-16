@@ -9,24 +9,23 @@ window.onload = function () {
 };
 function init() {
   sortCategory();
-  shows_form_part(1);
-  //document.getElementById("addItem").addEventListener("click", addValue);
-  //document.getElementById("removeItem").addEventListener("click", remVal);
-  //  document.getElementById("submit").addEventListener("click", ValidationForm);
+  showsForm(1);
   document.getElementById("firstNext").addEventListener("click", () => {
-    shows_form_part(2);
+    showsForm(2);
   });
   document.getElementById("firstPrev").addEventListener("click", () => {
-    shows_form_part(1);
+    showsForm(1);
   });
-  document.getElementById("secondNext").addEventListener("click", testx);
+  document
+    .getElementById("lastNext")
+    .addEventListener("click", infoFormFunction);
   document.getElementById("lastPrev").addEventListener("click", () => {
-    shows_form_part(2);
+    showsForm(2);
   });
-  document.getElementById("submit").addEventListener("click", testx2);
+  document.getElementById("submit").addEventListener("click", payFormFunction);
 }
 
-function validate1() {
+function infoValidate() {
   let firstname = document.forms["checkForm"]["fnamn"];
   let lastname = document.forms["checkForm"]["enamn"];
   let address = document.forms["checkForm"]["adress"];
@@ -80,12 +79,13 @@ function validate1() {
   return true;
 }
 
-function validate2() {
+function payValidate() {
   // Finds the input from the form.
   let cardName = document.forms["checkForm"]["kortnamn"];
   let cardNb = document.forms["checkForm"]["kortnummer"];
   let expDate = document.forms["checkForm"]["utgångsdatum"];
   let cvc = document.forms["checkForm"]["cvc"];
+  let check = document.forms["checkForm"]["checkbox"];
 
   if (cardName.value == "") {
     alert("Skriv in ett kortnamn.");
@@ -111,24 +111,30 @@ function validate2() {
     return false;
   }
 
+  if (check.checked == false) {
+    alert("Godkänn våra vilkor.");
+    check.focus();
+    return false;
+  }
+
   return true;
 }
 
-function testx() {
-  if (validate1()) {
-    shows_form_part(3);
+function infoFormFunction() {
+  if (infoValidate()) {
+    showsForm(3);
   }
 }
 
-function testx2() {
-  if (validate2()) {
+function payFormFunction() {
+  if (payValidate()) {
     window.location.href = "http://localhost:1234/html/thankyou.html";
   }
 }
 
-function shows_form_part(n) {
+function showsForm(n) {
   let i = 1,
-    p = document.getElementById("form_part" + 1);
+    p = document.getElementById("formPart" + 1);
   while (p !== null) {
     if (i === n) {
       p.style.display = "";
@@ -136,37 +142,9 @@ function shows_form_part(n) {
       p.style.display = "none";
     }
     i++;
-    p = document.getElementById("form_part" + i);
+    p = document.getElementById("formPart" + i);
   }
 }
-
-// Quantity count.
-let pn: number = 247;
-// let t: number = Release[i].price;
-let price: string = "$" + `<span>${pn}</span>`;
-
-// function addValue() {
-//   // Converts to decimal number, 10 = Decimal number.
-//   let val = parseInt(document.getElementById("item-numb").value, 10);
-//   // Checks if input value is a number, if it is use 0.
-//   //Conditional operator =  condition ? exprIfTrue : exprIfFalse
-//   val = isNaN(val) ? 0 : val;
-//   val++;
-//   document.getElementById("item-numb").value = val;
-//   price = `Kostnad: <span>${pn * val}</span> kr`;
-//   document.getElementById("price-cont").innerHTML = price;
-// }
-
-// function remVal() {
-//   let val = parseInt(document.getElementById("item-numb").value, 10);
-//   // Checks if val is a number;
-//   val = isNaN(val) ? 0 : val;
-//   val < 1 ? (val = 1) : "";
-//   val--;
-//   document.getElementById("item-numb").value = val;
-//   price = `Kostnad: <span>${pn * val}</span> kr`;
-//   document.getElementById("price-cont").innerHTML = price;
-// }
 
 function sortCategory() {
   //Hämta varukorgen från local storage
