@@ -37,6 +37,12 @@ header {
     @include mixins.flex-h;
     @include mixins.mpg(0, 0, 20px);
     font-size: 1.5rem;
+    .shopping-cart {
+      &:hover {
+        color: variables.$main-gold;
+        cursor: pointer;
+      }
+    }
   }
   .dropdown-toggler {
     display: none;

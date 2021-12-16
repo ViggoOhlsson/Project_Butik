@@ -154,15 +154,98 @@
           text-align: end;
         }
       }
-      #buybutton {
-        background-color: variables.$main-gold-dark;
+      .buy-button {
+        background-color: variables.$main-gold;
         color: black;
-        font-style: unset;
-        border: black;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        border: none;
         border-radius: 3px;
+        &:hover {
+          background-color: variables.$main-gold-dark;
+          cursor: pointer;
+        }
       }
     }
   }
+  .cart-modal {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    padding: 15px;
+    width: 768px;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+    .cart-list {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 15px;
+      gap: 15px;
+      .cart-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        height: 55px;
+        .item-thumb {
+          height: 55px;
+          border-radius: 2px;
+          overflow: hidden;
+          img {
+            height: 55px;
+          }
+        }
+        .item-text {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          .item-artist {
+            font-size: 0.8rem;
+            color: lightgray;
+          }
+        }
+        .item-amount {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          font-size: 1.5rem;
+          .add {
+            cursor: pointer;
+            &:hover {
+              color: greenyellow;
+            }
+          }
+          .remove {
+            cursor: pointer;
+            &:hover {
+              color: salmon;
+            }
+          }
+          .delete {
+            cursor: pointer;
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+
+    }
+    button {
+      background-color: variables.$main-gold;
+      border: none;
+      padding: 7px;
+      border-radius: 3px;
+      font-weight: bold;
+      &:hover{
+        background-color: variables.$main-gold-dark;
+        cursor: pointer;
+      }
+    }
+  }
+
 
   .modal-content {
     background-color: black;

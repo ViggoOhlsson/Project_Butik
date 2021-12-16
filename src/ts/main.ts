@@ -1,7 +1,10 @@
 import { albums } from "./data/albums";
 import { categories } from "./data/categories";
+import { Cart } from "./models/cart";
 import { CartItem } from "./models/CartItem";
 import { Release } from "./models/release";
+
+let cart = new Cart();
 
 window.onload = () => {
   addCategoriesToNav();
@@ -9,15 +12,6 @@ window.onload = () => {
   printReleaseCells("catChristmas", "christmas", 4);
   printReleaseCells("catRock", "rock", 4);
 
-  let cart: CartItem[] = [];
-  if (localStorage.getItem("cart") != undefined) {
-    let cart: CartItem[] = JSON.parse(localStorage.getItem("cart"));
-  } else {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
-
-  cart.push(new CartItem(albums[2], 1));
-  localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 function printReleaseCells(targetId: string, category: string, amount: number) {
