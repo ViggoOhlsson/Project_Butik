@@ -9,44 +9,65 @@ describe("The Home Page", () => {
     cy.get("#dropDown > :nth-child(4)").click({ force: true });
   });
 
-  it("should open the Christmas category", () => {
+  it("should click on every category", () => {
+    // Finds the first category.
     cy.visit("/");
-    // Finds the first <a> in the <nav id=nav>.
-    // {force: true} forces cypress to open the link.
-    cy.get("#nav > a:first").click({ force: true });
-  });
+    cy.get("#nav > a ").eq(0).click({ force: true });
 
-  it("should open the Rock category", () => {
     cy.visit("/");
-    // eq(1) is the second element, eq(0) is the first.
+    // Finds the second category.
     cy.get("#nav > a").eq(1).click({ force: true });
+
+    cy.visit("/");
+    // Finds the third category.
+    cy.get("#nav > a").eq(2).click({ force: true });
+
+    cy.visit("/");
+    // Finds the fourth category.
+    cy.get("#nav > a").eq(3).click({ force: true });
   });
 
-  it("should open the details site for the first Christmas item.", () => {
+  it("should open the detail site for evey category", () => {
+    // Christmas category
     cy.visit("/");
-    // Finds the first Christmas album and clicks it.
     cy.get(
       "#catChristmas > :nth-child(1) > .cell-cover > .img-shadow-box"
     ).click({ force: true });
-  });
 
-  it("should open the Christmas category using the 'See more' button", () => {
+    // Rock category
     cy.visit("/");
-    // Finds the moreChristmas id and clicks it.
-    cy.get("#moreChristmas").click({ force: true });
-  });
-
-  it("should open the details site for the first Rock item.", () => {
-    cy.visit("/");
-    // Finds the first rock item and clicks it.
     cy.get("#catRock > :nth-child(1) > .cell-cover > .img-shadow-box").click({
+      force: true,
+    });
+
+    // Pop category
+    cy.visit("/");
+    cy.get("#catPop > :nth-child(1) > .cell-cover > .img-shadow-box").click({
+      force: true,
+    });
+
+    // Jazz category
+    cy.visit("/");
+    cy.get("#catJazz > :nth-child(1) > .cell-cover > .img-shadow-box").click({
       force: true,
     });
   });
 
-  it("should open the Rock category using the 'See more' button.", () => {
+  it("should open every category's 'See more' button", () => {
+    // More christmas
     cy.visit("/");
-    // Finds the moreRock id and clicks it.
+    cy.get("#moreChristmas").click({ force: true });
+
+    // More rock
+    cy.visit("/");
     cy.get("#moreRock").click({ force: true });
+
+    // More pop
+    cy.visit("/");
+    cy.get("#morePop").click({ force: true });
+
+    // More jazz
+    cy.visit("/");
+    cy.get("#moreJazz").click({ force: true });
   });
 });
