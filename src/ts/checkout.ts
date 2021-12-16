@@ -17,7 +17,7 @@ function init() {
     showsForm(1);
   });
   document
-    .getElementById("secondNext")
+    .getElementById("lastNext")
     .addEventListener("click", infoFormFunction);
   document.getElementById("lastPrev").addEventListener("click", () => {
     showsForm(2);
@@ -85,6 +85,7 @@ function payValidate() {
   let cardNb = document.forms["checkForm"]["kortnummer"];
   let expDate = document.forms["checkForm"]["utgångsdatum"];
   let cvc = document.forms["checkForm"]["cvc"];
+  let check = document.forms["checkForm"]["checkbox"];
 
   if (cardName.value == "") {
     alert("Skriv in ett kortnamn.");
@@ -110,6 +111,12 @@ function payValidate() {
     return false;
   }
 
+  if (check.checked == false) {
+    alert("Godkänn våra vilkor.");
+    check.focus();
+    return false;
+  }
+
   return true;
 }
 
@@ -127,7 +134,7 @@ function payFormFunction() {
 
 function showsForm(n) {
   let i = 1,
-    p = document.getElementById("form_part" + 1);
+    p = document.getElementById("formPart" + 1);
   while (p !== null) {
     if (i === n) {
       p.style.display = "";
@@ -135,7 +142,7 @@ function showsForm(n) {
       p.style.display = "none";
     }
     i++;
-    p = document.getElementById("form_part" + i);
+    p = document.getElementById("formPart" + i);
   }
 }
 

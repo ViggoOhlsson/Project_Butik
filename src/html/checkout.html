@@ -37,10 +37,10 @@
       name="checkForm"
       novalidate
     >
-      <div id="form_part1">
+      <div id="formPart1">
         <!-- Better layout -->
-        <div class="order-con">
-          <div class="order-img">
+        <div class="orderCon">
+          <div class="orderImg">
             <img
               id="imgOrder"
               src="../assets/covers/green-day-american-idiot.png"
@@ -48,16 +48,10 @@
             />
           </div>
           <span class="headline"> Amercian Idiot: Green Day</span>
-          <span id="price-cont">247 kr</span>
-          <div class="order-btn-cont">
+          <span id="priceCon">247 kr</span>
+          <div class="orderBtnCon">
             <i class="fa minus-square" id="removeItem">-</i>
-            <input
-              type="text"
-              class="item-numb"
-              value="1"
-              id="item-numb"
-              autocomplete="off"
-            />
+            <input type="text" value="1" id="item-numb" autocomplete="off" />
             <i class="fa plus-square-o" id="addItem">+</i>
           </div>
         </div>
@@ -69,22 +63,24 @@
           <button type="button" id="firstNext">Gå vidare till betalning</button>
         </div>
       </div>
-      <div id="form_part2">
-        <!--form elements 2-->
-        <div class="info-con">
+      <div id="formPart2">
+        <div class="infoCon">
           <h3>Personlig information</h3>
 
           <i class="fa fa-user"></i><label for="fnamn">Förnamn</label>
-          <input id="fnamn" type="text" placeholder="N" required />
-          <!-- value="n" -->
+          <input id="fnamn" type="text" placeholder="N" required value="John" />
 
           <i class="fa fa-user"></i><label for="enamn">Efternamn</label>
-          <input type="text" id="enamn" placeholder="N" required />
-          <!-- value="n" -->
+          <input type="text" id="enamn" placeholder="N" required value="Doe" />
 
           <i class="fa fa-address-card-o"></i><label for="adress">Adress</label>
-          <input type="text" id="adress" placeholder="adress" required />
-          <!-- value="s" -->
+          <input
+            type="text"
+            id="adress"
+            placeholder="adress"
+            required
+            value="example 12"
+          />
 
           <i class="fa fa-home"></i><label for="postnr">Postnr</label>
           <input
@@ -93,22 +89,26 @@
             placeholder="xxxxx"
             pattern="[0-9]{3}[0-9]{2}"
             required
+            value="12345"
           />
-          <!-- value="11122" -->
 
           <i class="fa fa-building"></i><label for="stad">Stad</label>
-          <input type="text" id="stad" placeholder="stad" required />
-          <!-- value="s" -->
+          <input
+            type="text"
+            id="stad"
+            placeholder="stad"
+            required
+            value="exStad"
+          />
 
           <i class="fa fa-envelope"></i><label for="epost">Epost</label>
           <input
             type="email"
             id="epost"
-            placeholder="N@N.com"
+            placeholder="n@n.se"
             required
-            value="n@n.com"
+            value="john@doe.se"
           />
-          <!-- value="n@n.com" -->
 
           <i class="fa fa-mobile"></i><label for="mobil">Mobil</label>
           <input
@@ -117,26 +117,31 @@
             placeholder="xxxxxxxxxx"
             pattern="[0-9]{10}"
             required
+            value="0701234567"
           />
-          <!-- value="0701700272" -->
           <div class="infoControlCon">
             <button type="button" id="firstPrev">Föregående</button>
-            <button type="button" id="secondNext">Nästa</button>
+            <button type="button" id="lastNext">Nästa</button>
           </div>
         </div>
       </div>
-      <div id="form_part3">
+      <div id="formPart3">
         <!--form elements 3-->
-        <div class="pay-con">
+        <div class="payCon">
           <h3>Betalning</h3>
-          <div class="card-cont">
+          <div class="cardCon">
             <i class="fa fa-cc-mastercard"></i>
             <i class="fa fa-cc-visa"></i>
             <i class="fa fa-cc-amex"></i>
           </div>
           <label for="kortnamn">Namnet på kortet</label>
-          <input type="text" id="kortnamn" placeholder="namn" required />
-          <!-- value="n" -->
+          <input
+            type="text"
+            id="kortnamn"
+            placeholder="namn"
+            required
+            value="John"
+          />
 
           <i class="fa fa-credit-card"></i
           ><label for="kortnummer">Kortnummer</label>
@@ -145,12 +150,17 @@
             id="kortnummer"
             placeholder="XXXXXXXXXXXXXXXX"
             required
+            value="1234567891112131"
           />
-          <!-- value="1234567812345678" -->
 
           <label for="utgångsdatum">Utgångsdatum</label>
-          <input type="text" id="utgångsdatum" placeholder="MM/ÅÅ" required />
-          <!-- value="01/01" -->
+          <input
+            type="text"
+            id="utgångsdatum"
+            placeholder="MM/ÅÅ"
+            required
+            value="01/01"
+          />
 
           <label for="cvc">CVC</label>
           <input
@@ -159,11 +169,12 @@
             placeholder="123"
             pattern="[0-9]{3}"
             required
+            value="123"
           />
-          <!-- value="123" -->
+
           <div class="termsCon">
-            <input type="checkbox" id="checkbox" checked required />
-            <label for="checkbox">Godkänn våra villkor</label>
+            <input type="checkbox" id="checkbox" required />
+            <label for="checkbox" class="checkText">Godkänn våra villkor</label>
           </div>
           <button type="button" id="lastPrev">Föregående</button>
           <input type="button" id="submit" value="Slutför köp" class="btn" />
