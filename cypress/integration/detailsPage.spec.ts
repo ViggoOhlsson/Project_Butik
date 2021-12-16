@@ -1,5 +1,5 @@
 // Under construction
-describe("The Home Page", () => {
+describe("The Details page", () => {
   it("clicks the buy button, opens the shopping cart and goes to the checkout.", () => {
     cy.visit("/html/details.html");
 
@@ -11,6 +11,10 @@ describe("The Home Page", () => {
 
     cy.get(".btn").click();
   });
-});
+  it("should the quantity of the albums", () => {
+    cy.visit("/html/details.html");
+    cy.get("#shopping-cart").click();
 
-// https://dev.to/walmyrlimaesilv/how-to-fill-out-and-submit-forms-with-cypress-4fm7
+    cy.get(".details").should("have.class", "modal-open");
+  });
+});

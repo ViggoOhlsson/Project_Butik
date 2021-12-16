@@ -1,5 +1,5 @@
 // Under construction
-describe("The Home Page", () => {
+describe("The Checkout page", () => {
   it("should press 'Lägg till' button to add to the checkout.", () => {
     cy.visit("/html/checkout.html");
     cy.get("#random-container > .btn").click();
