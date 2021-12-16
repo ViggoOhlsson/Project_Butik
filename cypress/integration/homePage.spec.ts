@@ -1,8 +1,12 @@
 describe("The Home Page", () => {
-  it("should open the top navigation bar.", () => {
+  it("should open the top navigation bar and click on all the links ", () => {
     cy.visit("/");
     // Finds the top nav-bar and clicks it.
     cy.get("#hamburgerButton > .fa").click({ force: true });
+    cy.get("#dropDown > :nth-child(1)").click({ force: true });
+    cy.get("#dropDown > :nth-child(2)").click({ force: true });
+    cy.get("#dropDown > :nth-child(3)").click({ force: true });
+    cy.get("#dropDown > :nth-child(4)").click({ force: true });
   });
 
   it("should open the Christmas category", () => {
