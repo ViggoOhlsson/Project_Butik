@@ -19,135 +19,75 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   </head>
   <body class="checkout">
     <div class="line"></div>
     <header>
-      <button class="hamburger-button">
-        <i class="fa fa-bars"></i>
-      </button>
-      <span class="site-title"
-        ><i class="fa fa-disc"></i>
-        <a href="http://localhost:1234">Homegrown Records</a></span
-      >
+        <label for="dropdownToggler" id="hamburgerButton" class="hamburger-button">
+            <i class="fa fa-bars"></i>
+        </label>
+        <input type="checkbox" id="dropdownToggler" class="dropdown-toggler">
+        <span class="site-title"><i class="fa fa-disc"></i>Homegrown Records</span>
+        <nav>
+            <i class="fa fa-search"></i>
+            <i class="fa fa-shopping-cart"></i>
+        </nav>
+        <div class="dropdown" id="dropDown">
+            <a class="dropdown-item">Christmas</a>
+            <a class="dropdown-item">Rock</a>
+            <a class="dropdown-item">Pop</a>
+            <a class="dropdown-item">Jazz</a>
+        </div>
     </header>
-    <form
-      action="http://localhost:1234/html/thankyou.html"
-      id="checkForm"
-      name="checkForm"
-      novalidate
-    >
-      <div id="formPart1">
-        <!-- Better layout -->
-        <div class="orderCon">
-          <div class="orderImg">
-            <img
-              id="imgOrder"
-              src="../assets/covers/green-day-american-idiot.png"
-              alt="Albumcover"
-            />
+    <main>
+      <div class="main" id="main" style="display: block">
+        <div class="cart-container">
+          <span class="cart-title">Cart</span>
+          <div class="cart-list" id="cartList">
+            <div class="cart-item">
+              <div class="item-thumb">
+                <img src="../assets/covers/rock/nirvana-nevermind.png">
+              </div>
+              <div class="item-text">
+                <span class="item-title">Nevermind</span>
+                <span class="item-artist">Nirvana</span>
+              </div>
+              <span class="item-amount">1</span>
+              <span class="item-cost" id="itemCost">219kr</span>
+            </div>
           </div>
-          <span class="headline"> Amercian Idiot: Green Day</span>
-          <span id="priceCon">247 kr</span>
-          <div class="orderBtnCon">
-            <i class="fa minus-square" id="removeItem">-</i>
-            <input type="text" value="1" id="item-numb" autocomplete="off" />
-            <i class="fa plus-square-o" id="addItem">+</i>
-          </div>
+          <span class="cart-cost" id="cartCost">219kr</span>
         </div>
-        <div id="related-wrapper">
-          <div class="related">Andra rekommenderade produkter</div>
-          <div id="random-container"></div>
+        <div class="recommendations-container">
+          <span class="rec-title" id="recTitle">Since you seem to like King Gizzard & The Lizard Wizard's Polygondwanaland, We recommend...</span>
+          <div class="rec-wrapper" id="recWrapper">
+            <div class="cover-image">
+              <img id="recImg">
+            </div>
+            <span class="rec-title" id="recName"></span>
+            <span class="rec-artist" id="recArtist"></span>
+            <i class="fa fa-shopping-cart-plus"></i>
         </div>
-        <div class="offer-navigator">
-          <button type="button" id="firstNext">Gå vidare till betalning</button>
-        </div>
+        <button class="checkout-button" id="checkoutButton">To Payment <i class="fa fa-arrow-right"></i></button>
       </div>
-      <div id="formPart2">
-        <div class="infoCon">
-          <h3>Personlig information</h3>
-
-          <i class="fa fa-user"></i><label for="fnamn">Förnamn</label>
-          <input id="fnamn" type="text" placeholder="N" required />
-          <!-- value="John" -->
-          <i class="fa fa-user"></i><label for="enamn">Efternamn</label>
-          <input type="text" id="enamn" placeholder="N" required />
-          <!-- value="Doe" -->
-          <i class="fa fa-address-card-o"></i><label for="adress">Adress</label>
-          <input type="text" id="adress" placeholder="adress" required />
-          <!-- value="example 12" -->
-          <i class="fa fa-home"></i><label for="postnr">Postnr</label>
-          <input
-            type="text"
-            id="postnr"
-            placeholder="xxxxx"
-            pattern="[0-9]{3}[0-9]{2}"
-            required
-          />
-          <!-- value="12345" -->
-          <i class="fa fa-building"></i><label for="stad">Stad</label>
-          <input type="text" id="stad" placeholder="stad" required />
-          <!-- value="exStad" -->
-          <i class="fa fa-envelope"></i><label for="epost">Epost</label>
-          <input type="email" id="epost" placeholder="john@doe.se" required />
-          <!-- value="john@doe.se" -->
-
-          <i class="fa fa-mobile"></i><label for="mobil">Mobil</label>
-          <input
-            type="text"
-            id="mobil"
-            placeholder="xxxxxxxxxx"
-            pattern="[0-9]{10}"
-            required
-          />
-          <!-- value="0701234567" -->
-          <div class="infoControlCon">
-            <button type="button" id="firstPrev">Föregående</button>
-            <button type="button" id="lastNext">Nästa</button>
-          </div>
-        </div>
       </div>
-      <div id="formPart3">
-        <!--form elements 3-->
-        <div class="payCon">
-          <h3>Betalning</h3>
-          <div class="cardCon">
-            <i class="fa fa-cc-mastercard"></i>
-            <i class="fa fa-cc-visa"></i>
-            <i class="fa fa-cc-amex"></i>
+      <div class="payment" id="payment" style="display: none">
+        <button class="checkout-button" id="backButton"><i class="fa fa-arrow-left"></i> Back</button>
+        <form class="payment-form" id="paymentForm" method="get" action="thankyou.html">
+          <div class="name-container">
+            <label for="fname">First Name</label>
+            <label for="lname">Last Name Name</label>
+            <input type="text" name="fname" id="fname" class="text-input" placeholder="First Name">
+            <input type="text" name="lname" id="lname" class="text-input" placeholder="Last Name">
           </div>
-          <label for="kortnamn">Namnet på kortet</label>
-          <input type="text" id="kortnamn" placeholder="john" required />
-          <!-- value="John" -->
-          <i class="fa fa-credit-card"></i
-          ><label for="kortnummer">Kortnummer</label>
-          <input
-            type="text"
-            id="kortnummer"
-            placeholder="XXXXXXXXXXXXXXXX"
-            required
-          />
-          <!-- value="1234567891112131" -->
-          <label for="utgångsdatum">Utgångsdatum</label>
-          <input type="text" id="utgångsdatum" placeholder="MM/ÅÅ" required />
-          <!--  value="01/01" -->
-          <label for="cvc">CVC</label>
-          <input
-            type="text"
-            id="cvc"
-            placeholder="123"
-            pattern="[0-9]{3}"
-            required
-          />
-          <!-- value="123" -->
-          <div class="termsCon">
-            <input type="checkbox" id="checkbox" required />
-            <label for="checkbox" class="checkText">Godkänn våra villkor</label>
+          <div class="location-container">
+            <label for="adress">Adress</label>
+            <input type="text" name="adress" id="adress" class="text-input" placeholder="Placeholder Street 123">
           </div>
-          <button type="button" id="lastPrev">Föregående</button>
-          <input type="button" id="submit" value="Slutför köp" class="btn" />
-        </div>
+        </form>
       </div>
-    </form>
+    </main>
   </body>
 </html>

@@ -23,8 +23,6 @@ window.onload = function () {
     displayCartModal();
   });
 
-
-
   let buyButton = document.getElementById("buyButton") as HTMLButtonElement;
   buyButton.addEventListener("click", () => {
     let release = selectRelease(urlID);
@@ -33,8 +31,13 @@ window.onload = function () {
       cart.addToCart(release);
     }
     refreshCartHTML();
-    
   });
+
+  let toCheckout = document.getElementById("toCheckout") as HTMLButtonElement;
+  toCheckout.addEventListener("click", () => {
+    window.location.href = "checkout.html";
+  })
+
   refreshCartHTML();
 };
 

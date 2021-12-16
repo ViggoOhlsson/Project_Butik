@@ -1,309 +1,137 @@
 @use "variables";
 @use "mixins";
 
-body {
-  background-color: variables.$main-dark;
-}
-
 .checkout {
+  background-color: variables.$main-dark;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  ul {
-    list-style: none;
+  font-family: 'Quicksand', sans-serif;
+  main {
+    width: 100%;
+    @include mixins.bigScreen {
+      width: 1024px;
+      margin: auto;
+      
+    }
   }
-  h3 {
-    text-align: center;
+  .main {
+    margin: 10px;
   }
-  .headline {
-    text-align: center;
+  .cart-title {
+    color: variables.$main-gold;
+    font-size: 1.4rem;
   }
-  button {
-    cursor: pointer;
-    padding: 5px;
-  }
-
-  #formPart1 {
-    background-color: variables.$main-dark;
+  .cart-cost {
     color: white;
-    border: 1px solid #ffc935;
-    border-radius: 3px;
-    .orderCon {
+  }
+  .cart-list {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    gap: 10px;
+  }
+  .cart-item {
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    height: 55px;
+    .item-thumb {
+      height: 55px;
+      border-radius: 2px;
+      overflow: hidden;
+      img {
+        height: 55px;
+      }
+    }
+    .item-text {
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      margin: 10px;
-      @include mixins.desktop() {
-        display: flex;
-        flex-direction: row;
-        margin: 10px;
+      flex-grow: 1;
+      .item-artist {
+        font-size: 0.8rem;
+        color: lightgray;
       }
-      .orderImg {
-        width: 150px;
-        margin: 20px;
-        @include mixins.desktop() {
-          width: 200px;
-        }
+    }
+    .item-amount {
+      padding: 0 10px;
+    }
+  }
+  .recommendations-container {
+    margin: 10px;
+    color: white;
+    .gold {
+      color: variables.$main-gold;
+    }
+    .rec-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap:5px;
+      width: 150px;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.3);
+        
+      }
+      .cover-image {
+        width: 100%;
         img {
           width: 100%;
-          border-radius: 3px;
+          display: block;
+          border-radius: 5px;
         }
       }
-      .headline {
-        font-size: 1.2rem;
-        @include mixins.desktop() {
-          font-size: 1.3em;
-        }
-      }
-      #priceCon {
-        font-size: 1.2em;
-        @include mixins.desktop() {
-          font-size: 1.2em;
-        }
-      }
-      .orderBtnCon {
-        display: flex;
-        justify-content: space-between;
-        input {
-          width: 20px;
-          @include mixins.desktop() {
-            width: 50px;
-          }
-        }
-        .fa {
-          cursor: pointer;
-          font-size: 30px;
-          @include mixins.desktop() {
-            font-size: 30px;
-          }
-        }
+      .rec-artist {
+        font-size: 0.9rem;
+        color:lightgray;
       }
     }
-
-    #related-wrapper {
-      border: 1px solid #ffc935;
-
-      .related {
-        font-size: 1.2em;
-        text-align: center;
-        margin: 20px;
-      }
-
-      #random-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        @include mixins.desktop() {
-          flex-direction: row;
-          justify-content: space-evenly;
-        }
-
-        .release-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin: 10px;
-          row-gap: 20px;
-
-          .img-container {
-            width: 100px;
-            @include mixins.desktop() {
-              width: 200px;
-            }
-            .random-img {
-              width: 100%;
-              border-radius: 3px;
-              margin-top: 10px;
-            }
-          }
-          .btn {
-            padding: 5px;
-            background-color: variables.$main-gold-dark;
-            color: black;
-            border-radius: 3px;
-            border: none;
-          }
-        }
-      }
+  }
+  .checkout-button {
+    background-color: variables.$main-gold;
+    font-size: 1rem;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    margin: 10px 0;
+    &:hover {
+      background-color: variables.$main-gold-dark;
+      cursor: pointer;
     }
+  }
 
-    .offer-navigator {
+  .payment {
+    display: none;
+    flex-direction: column;
+    margin: 10px;
+    .payment-form {
+      color: white;
       display: flex;
-      justify-content: center;
-      @include mixins.desktop() {
-        justify-content: flex-end;
+      flex-direction: column;
+      gap: 40px;
+      label {
+        display: block;
       }
-
-      button {
-        margin: 20px;
-        padding: 5px;
-        background-color: variables.$main-gold-dark;
-        border-radius: 3px;
+      .text-input {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 10px;
         border: none;
-        font-family: "Montserrat", sans-serif;
-        font-size: 1em;
+        outline: none;
+        color: white;
+        border-radius: 5px;
       }
-    }
-  }
-
-  #formPart2 {
-    display: flex;
-    flex-direction: column;
-    background-color: variables.$main-dark;
-    color: variables.$main-gold;
-    .infoCon {
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      justify-content: center;
-      @include mixins.desktop() {
-        align-items: center;
-        h3 {
-          @include mixins.desktop() {
-            font-size: 1.9rem;
-          }
-        }
-      }
-      input {
-        display: flex;
-        width: 80%;
-        margin-bottom: 14px;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        justify-content: center;
-        @include mixins.desktop() {
-          width: 70%;
-        }
-      }
-      .fa {
-        @include mixins.desktop() {
-          font-size: 1.4rem;
-        }
-      }
-      .fa-mobile {
-        @include mixins.desktop() {
-          font-size: 2rem;
-        }
-      }
-      label {
-        @include mixins.desktop() {
-          font-size: 1.2rem;
-        }
-      }
-      .infoControlCon {
-        display: flex;
-        flex-direction: column;
-        button {
-          width: 83vw;
-          padding: 10px;
-          background-color: #e0a22d;
-          font-size: 1em;
-
-          @include mixins.desktop() {
-            width: 68vw;
-            margin: 10px;
-          }
-        }
-        #firstPrev {
-          margin-top: 10px;
-        }
-        #lastNext {
-          margin-top: 16px;
-        }
-      }
-    }
-  }
-
-  #formPart3 {
-    display: flex;
-    flex-direction: column;
-    background-color: variables.$main-dark;
-    color: variables.$main-gold;
-    .payCon {
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      @include mixins.desktop() {
-        align-items: center;
-      }
-      h3 {
-        @include mixins.desktop() {
-          font-size: 1.9rem;
-        }
-      }
-
-      .cardCon {
-        margin-top: -6px;
-        margin-bottom: 10px;
-        text-align: center;
-        font-size: 1.6rem;
-        @include mixins.desktop() {
-          font-size: 2rem;
-        }
-        .fa-cc-mastercard {
-          color: red;
-          background-color: variables.$main-light;
-        }
-        .fa-cc-visa {
-          color: navy;
-          background-color: variables.$main-light;
-        }
-        .fa-cc-amex {
-          color: blue;
-          background-color: variables.$main-light;
-        }
-      }
-      .termsCon {
-        display: flex;
-        @include mixins.desktop() {
-          width: 16%;
-        }
-        #checkbox {
-          width: 30%;
-          cursor: pointer;
-        }
-        .checkText {
-          font-size: 1rem;
-          margin-bottom: 16px;
-        }
-      }
-      #lastPrev,
-      #submit {
-        width: 41vh;
-        background-color: #e0a22d;
-        font-size: 1em;
-        @include mixins.desktop() {
-          width: 70%;
-        }
-      }
-      #submit {
-        margin-top: 16px;
-        cursor: pointer;
-        @include mixins.desktop() {
-          margin-top: 20px;
-        }
-      }
-      #submit:hover {
-        background-color: #45a049;
-      }
-      label {
-        @include mixins.desktop() {
-          font-size: 1.2rem;
-        }
-      }
-      input {
-        display: flex;
-        width: 90%;
-        margin-bottom: 20px;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        @include mixins.desktop() {
-          width: 70%;
-        }
+      .name-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
       }
     }
   }
