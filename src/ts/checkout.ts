@@ -9,18 +9,18 @@ window.onload = function () {
 };
 function init() {
   sortCategory();
-  shows_form(1);
+  showsForm(1);
   document.getElementById("firstNext").addEventListener("click", () => {
-    shows_form(2);
+    showsForm(2);
   });
   document.getElementById("firstPrev").addEventListener("click", () => {
-    shows_form(1);
+    showsForm(1);
   });
   document
     .getElementById("secondNext")
     .addEventListener("click", infoFormFunction);
   document.getElementById("lastPrev").addEventListener("click", () => {
-    shows_form(2);
+    showsForm(2);
   });
   document.getElementById("submit").addEventListener("click", payFormFunction);
 }
@@ -115,7 +115,7 @@ function payValidate() {
 
 function infoFormFunction() {
   if (infoValidate()) {
-    shows_form(3);
+    showsForm(3);
   }
 }
 
@@ -125,7 +125,7 @@ function payFormFunction() {
   }
 }
 
-function shows_form(n) {
+function showsForm(n) {
   let i = 1,
     p = document.getElementById("form_part" + 1);
   while (p !== null) {
