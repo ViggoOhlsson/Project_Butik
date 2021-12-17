@@ -1,4 +1,3 @@
-import { identity } from "cypress/types/lodash";
 import { albums } from "./data/albums";
 import { Cart } from "./models/Cart";
 import { CartItem } from "./models/CartItem";
@@ -9,26 +8,8 @@ let cart = new Cart();
 window.onload = function () {
   displayCart();
   displayRec();
-  let toCheckoutButton = document.getElementById(
-    "checkoutButton"
-  ) as HTMLButtonElement;
-  toCheckoutButton.addEventListener("click", toggleCheckout);
-  let backButton = document.getElementById("backButton") as HTMLButtonElement;
-  backButton.addEventListener("click", toggleCheckout);
   init();
 };
-
-function toggleCheckout() {
-  let main = document.getElementById("main") as HTMLDivElement;
-  let payment = document.getElementById("payment") as HTMLDivElement;
-  if (main.style.display == "block") {
-    main.style.display = "none";
-    payment.style.display = "block";
-  } else {
-    main.style.display = "block";
-    payment.style.display = "none";
-  }
-}
 
 function displayRec() {
   let recWrapper = document.getElementById("recWrapper") as HTMLDivElement;
@@ -114,21 +95,12 @@ function displayCart() {
 }
 function init() {
   sortCategory();
-  shows_form_part(1);
-  //document.getElementById("addItem").addEventListener("click", addValue);
-  //document.getElementById("removeItem").addEventListener("click", remVal);
-  //  document.getElementById("submit").addEventListener("click", ValidationForm);
-  document.getElementById("firstNext").addEventListener("click", () => {
-    shows_form_part(2);
-  });
-  document.getElementById("firstPrev").addEventListener("click", () => {
-    shows_form_part(1);
-  });
-  document.getElementById("lastNext").addEventListener("click", testx);
-  document.getElementById("lastPrev").addEventListener("click", () => {
-    shows_form_part(2);
-  });
-  document.getElementById("submit").addEventListener("click", testx2);
+  document
+    .getElementById("lastNext")
+    .addEventListener("click", validateAndNext);
+  document.getElementById("lastPrev").addEventListener("click", previouLast);
+  document.getElementById("firstPrev").addEventListener("click", previous);
+  document.getElementById("submit").addEventListener("click", Lastnext);
 }
 
 function validate1() {
@@ -219,59 +191,25 @@ function validate2() {
   return true;
 }
 
-function testx() {
+function previous() {
+  document.getElementById("cartList").scrollIntoView({ behavior: "smooth" });
+}
+
+function validateAndNext() {
   if (validate1()) {
-    shows_form_part(3);
+    document.getElementById("point").scrollIntoView({ behavior: "smooth" });
   }
 }
 
-function testx2() {
+function previouLast() {
+  document.getElementById("firstPrev").scrollIntoView({ behavior: "smooth" });
+}
+
+function Lastnext() {
   if (validate2()) {
     window.location.href = "http://localhost:1234/html/thankyou.html";
   }
 }
-
-function shows_form_part(n) {
-  let i = 1,
-    p = document.getElementById("form_part" + 1);
-  while (p !== null) {
-    if (i === n) {
-      p.style.display = "";
-    } else {
-      p.style.display = "none";
-    }
-    i++;
-    p = document.getElementById("form_part" + i);
-  }
-}
-
-// Quantity count.
-let pn: number = 247;
-// let t: number = Release[i].price;
-let price: string = "$" + `<span>${pn}</span>`;
-
-// function addValue() {
-//   // Converts to decimal number, 10 = Decimal number.
-//   let val = parseInt(document.getElementById("item-numb").value, 10);
-//   // Checks if input value is a number, if it is use 0.
-//   //Conditional operator =  condition ? exprIfTrue : exprIfFalse
-//   val = isNaN(val) ? 0 : val;
-//   val++;
-//   document.getElementById("item-numb").value = val;
-//   price = `Kostnad: <span>${pn * val}</span> kr`;
-//   document.getElementById("price-cont").innerHTML = price;
-// }
-
-// function remVal() {
-//   let val = parseInt(document.getElementById("item-numb").value, 10);
-//   // Checks if val is a number;
-//   val = isNaN(val) ? 0 : val;
-//   val < 1 ? (val = 1) : "";
-//   val--;
-//   document.getElementById("item-numb").value = val;
-//   price = `Kostnad: <span>${pn * val}</span> kr`;
-//   document.getElementById("price-cont").innerHTML = price;
-// }
 
 function sortCategory() {
   //Hämta varukorgen från local storage

@@ -4,7 +4,7 @@ describe("The Home Page", () => {
     // Finds the top nav-bar and clicks it.
     cy.get("#hamburgerButton > .fa").click({ force: true });
     cy.get("#dropDown > :nth-child(1)").click({ force: true });
-    cy.get("#dropDown > :nth-child(2)").click({ force: true });
+    //cy.get("#dropDown > :nth-child(2)").click({ force: true });
   });
 
   it("should test the categories", () => {
