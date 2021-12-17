@@ -204,6 +204,8 @@ function refreshCartHTML():void {
       itemCost.className = "item-cost";
       itemCost.innerHTML = (cart.items[i].item.price * cart.items[i].amount).toString() + "kr";
       cartItem.appendChild(itemCost);
+
+
       cartList.appendChild(cartItem);
     }
   }
