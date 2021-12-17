@@ -9,26 +9,8 @@ let cart = new Cart();
 window.onload = function () {
   displayCart();
   displayRec();
-  let toCheckoutButton = document.getElementById(
-    "checkoutButton"
-  ) as HTMLButtonElement;
-  toCheckoutButton.addEventListener("click", toggleCheckout);
-  let backButton = document.getElementById("backButton") as HTMLButtonElement;
-  backButton.addEventListener("click", toggleCheckout);
   init();
 };
-
-function toggleCheckout() {
-  let main = document.getElementById("main") as HTMLDivElement;
-  let payment = document.getElementById("payment") as HTMLDivElement;
-  if (main.style.display == "block") {
-    main.style.display = "none";
-    payment.style.display = "block";
-  } else {
-    main.style.display = "block";
-    payment.style.display = "none";
-  }
-}
 
 function displayRec() {
   let recWrapper = document.getElementById("recWrapper") as HTMLDivElement;
