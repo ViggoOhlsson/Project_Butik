@@ -124,7 +124,7 @@ function init() {
   document.getElementById("firstPrev").addEventListener("click", () => {
     shows_form_part(1);
   });
-  document.getElementById("secondNext").addEventListener("click", testx);
+  document.getElementById("lastNext").addEventListener("click", testx);
   document.getElementById("lastPrev").addEventListener("click", () => {
     shows_form_part(2);
   });
