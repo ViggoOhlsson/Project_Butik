@@ -124,7 +124,7 @@ function init() {
   document.getElementById("firstPrev").addEventListener("click", () => {
     shows_form_part(1);
   });
-  document.getElementById("secondNext").addEventListener("click", testx);
+  document.getElementById("lastNext").addEventListener("click", testx);
   document.getElementById("lastPrev").addEventListener("click", () => {
     shows_form_part(2);
   });
@@ -142,43 +142,43 @@ function validate1() {
 
   // If input empty do alert and focus on it.
   if (firstname.value == "") {
-    alert("Skriv in ett förnamn.");
+    alert("Enter a lastname.");
     firstname.focus();
     return false;
   }
 
   if (lastname.value == "") {
-    alert("Skriv in ett efternamn.");
+    alert("Enter a lastname.");
     lastname.focus();
     return false;
   }
 
   if (address.value == "") {
-    alert("Skriv in en adress.");
+    alert("Enter an address.");
     address.focus();
     return false;
   }
 
   if (postNb.value == "") {
-    alert("Skriv in ett postnummer");
+    alert("Enter a postal number");
     postNb.focus();
     return false;
   }
 
   if (city.value == "") {
-    alert("Skriv in en stad.");
+    alert("Enter a city.");
     city.focus();
     return false;
   }
 
   if (epost.value == "") {
-    alert("Skriv in en epost.");
+    alert("Email must be filled out.");
     epost.focus();
     return false;
   }
 
   if (phone.value == "") {
-    alert("Skriv in ett telefonnummer.");
+    alert("Enter a phone number.");
     phone.focus();
     return false;
   }
@@ -193,25 +193,25 @@ function validate2() {
   let cvc = document.forms["checkForm"]["cvc"];
 
   if (cardName.value == "") {
-    alert("Skriv in ett kortnamn.");
+    alert("Enter a card name.");
     cardName.focus();
     return false;
   }
 
   if (cardNb.value == "") {
-    alert("Skriv in ett kortnummer.");
+    alert("Enter a card number.");
     cardNb.focus();
     return false;
   }
 
   if (expDate.value == "") {
-    alert("Skriv in utgångsdatum.");
+    alert("Expiry date must be filled out.");
     expDate.focus();
     return false;
   }
 
   if (cvc.value == "") {
-    alert("Skriv in cvc koden.");
+    alert("CVC must be filled out.");
     cvc.focus();
     return false;
   }

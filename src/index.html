@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Homegrown Records</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script type="module" src="ts/header.ts"></script>
     <script type="module" src="ts/main.ts"></script>
     <link rel="stylesheet" href="scss/main.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,14 +23,9 @@
         <input type="checkbox" id="dropdownToggler" class="dropdown-toggler">
         <span class="site-title"><i class="fa fa-disc"></i>Homegrown Records</span>
         <nav>
-            <i class="fa fa-search"></i>
-            <i class="fa fa-shopping-cart"></i>
+            <i class="fa fa-shopping-cart shopping-cart" id="shopping-cart"></i>
         </nav>
         <div class="dropdown" id="dropDown">
-            <a class="dropdown-item">Christmas</a>
-            <a class="dropdown-item">Rock</a>
-            <a class="dropdown-item">Pop</a>
-            <a class="dropdown-item">Jazz</a>
         </div>
     </header>
     <main>
@@ -62,6 +58,15 @@
                 </div>
                 <span class="category-link" id="moreRock">See more...</span>
             </div>
+            <div class="category">
+                <div class="category-top">
+                    <span class="category-title">Jazz</span>
+                    <div class="category-line"></div>
+                </div>
+                <div class="category-grid" id="catJazz">
+                </div>
+                <span class="category-link" id="moreJazz">See more...</span>
+            </div>
         </div>
     </main>
     <footer>
@@ -76,5 +81,11 @@
             <span>Contact</span>
         </div>
     </footer>
+    <div class="cart-modal" id="cartModal" style="display: none;">
+      <div class="cart-list" id="cartList">
+      </div>
+      <button id="toCheckout">Till Kassan</button>
+      <span id="cartCost">219kr</span>
+    </div>
 </body>
 </html>
