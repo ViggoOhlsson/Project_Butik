@@ -15,7 +15,7 @@ describe("The Checkout page", () => {
   it("should send the user to the first form and then back", () => {
     cy.visit("/html/checkout.html");
 
-    cy.get("#firstNext").click({ force: true });
+    cy.get("#checkoutButton").click({ force: true });
 
     cy.get("#firstPrev").click({ force: true });
   });
@@ -23,7 +23,7 @@ describe("The Checkout page", () => {
   it("should fill every input except one in the first, and last form", () => {
     cy.visit("/html/checkout.html");
 
-    cy.get("#firstNext").click({ force: true });
+    cy.get("#checkoutButton").click({ force: true });
 
     cy.get("#fnamn").click({ force: true }).type("John");
     cy.get("#enamn").click({ force: true }).type("Doe");
@@ -40,7 +40,7 @@ describe("The Checkout page", () => {
     cy.visit("/html/checkout.html");
 
     // Click button to go to form.
-    cy.get("#firstNext").click();
+    cy.get("#checkoutButton").click();
     cy.get("#fnamn").click({ force: true }).type("John");
     cy.get("#enamn").click({ force: true }).type("Doe");
     cy.get("#adress").click({ force: true }).type("example 12");
@@ -64,7 +64,7 @@ describe("The Checkout page", () => {
     cy.visit("/html/checkout.html");
 
     // Click button to go to form.
-    cy.get("#firstNext").click();
+    cy.get("#checkoutButton").click();
     cy.get("#fnamn").click({ force: true }).type("John");
     cy.get("#enamn").click({ force: true }).type("Doe");
     cy.get("#adress").click({ force: true }).type("example 12");
