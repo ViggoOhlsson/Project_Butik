@@ -1,39 +1,60 @@
 // Under construction
 describe("The Details page", () => {
   it("clicks the buy button, opens the shopping cart and goes to the checkout.", () => {
-    cy.visit("/html/details.html");
+    cy.visit("/");
+
+    cy.get(
+      "#catChristmas > :nth-child(1) > .cell-cover > .img-shadow-box"
+    ).click({ force: true });
 
     cy.get("#buyButton").click();
 
-    // cy.get("#shopping-cart").click();
-    // // modal should show.
-    //cy.get("#cartModal").should("have.class", "display: show");
+    cy.get("#shopping-cart").click({ force: true });
 
-    // //  Clicks the +, -, trash can and button.
-    // cy.get(".item-amount > .fa-pluss add").click();
-    // cy.get(".item-amount > fa-minus remove").click();
-    // cy.get(".item-amount > fa-trash delete").click();
-    // cy.get("button").click();
+    cy.get("#cartModal").should("be.visible");
 
-    // cy.get(".details").should("have.class", "modal-open");
-
-    // cy.get(".btn").click();
+    cy.get("#toCheckout").click({ force: true });
   });
-  // it("should change the quantity of the albums", () => {
-  //   cy.visit("/html/details.html");
-  //   cy.get("#buybutton").click();
-  //   cy.get("#shopping-cart").click();
+  it("should change the quantity of the albums", () => {
+    cy.visit("/");
 
-  //   // the + button:
-  //   cy.get(".details").should("have.class", "modal-open");
-  //   cy.get("#modal > :nth-child(1) > :nth-child(6)");
+    cy.get(
+      "#catChristmas > :nth-child(1) > .cell-cover > .img-shadow-box"
+    ).click({ force: true });
 
-  //   // the - button
-  //   cy.get(".details").should("have.class", "modal-open");
-  //   cy.get("#modal > :nth-child(1) > :nth-child(4)");
+    cy.get("#buyButton").click();
 
-  //   // the trash can button:
-  //   cy.get(".details").should("have.class", "modal-open");
-  //   cy.get("#modal > :nth-child(1) > .fa");
+    cy.get("#shopping-cart").click({ force: true });
+
+    cy.get("#cartModal").should("be.visible");
+
+    cy.get(".item-amount > .fa-plus").click({ force: true });
+
+    cy.get(".fa-minus").click({ force: true });
+
+    cy.get(".fa-trash").click({ force: true });
+
+    cy.get("#shopping-cart").click({ force: true });
+
+    cy.get("#buyButton").click();
+
+    cy.get("#shopping-cart").click({ force: true });
+
+    cy.get("#cartModal").should("be.visible");
+
+    cy.get("#toCheckout").click({ force: true });
+  });
+  // it("should click the cart icon to add to cart and then add another item.", () => {
+  //   cy.visit("/");
+
+  //   cy.get("#catChristmas > :nth-child(1) > .cell-cover > .fa")
+  //     .trigger("mouseover", { force: true })
+  //     .click({ force: true });
+
+  //   cy.visit("/");
+
+  //   cy.get("#catChristmas > :nth-child(2) > .cell-cover > .fa")
+  //     .trigger("mouseover", { force: true })
+  //     .click({ force: true });
   // });
 });
