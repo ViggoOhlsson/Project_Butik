@@ -9,7 +9,9 @@ let cart = new Cart();
 window.onload = function () {
   displayCart();
   displayRec();
-  let toCheckoutButton = document.getElementById("checkoutButton") as HTMLButtonElement;
+  let toCheckoutButton = document.getElementById(
+    "checkoutButton"
+  ) as HTMLButtonElement;
   toCheckoutButton.addEventListener("click", toggleCheckout);
   let backButton = document.getElementById("backButton") as HTMLButtonElement;
   backButton.addEventListener("click", toggleCheckout);
@@ -30,12 +32,18 @@ function toggleCheckout() {
 
 function displayRec() {
   let recWrapper = document.getElementById("recWrapper") as HTMLDivElement;
-  let seedAlbum:Release = cart.items[Math.floor(Math.random() * cart.items.length)].item;
+  let seedAlbum: Release =
+    cart.items[Math.floor(Math.random() * cart.items.length)].item;
   let rec = selectRelease(seedAlbum);
   console.log(seedAlbum);
   console.log(rec);
   let recTitle = document.getElementById("recTitle") as HTMLSpanElement;
-  recTitle.innerHTML = "Since you enjoy <span class='gold'>" + seedAlbum.artist + "</span>'s <span class='gold'>" + seedAlbum.title + "</span> we recommend to you...";
+  recTitle.innerHTML =
+    "Since you enjoy <span class='gold'>" +
+    seedAlbum.artist +
+    "</span>'s <span class='gold'>" +
+    seedAlbum.title +
+    "</span> we recommend to you...";
 
   let recImg = document.getElementById("recImg") as HTMLImageElement;
   recImg.src = "../" + rec.cover;
@@ -49,10 +57,10 @@ function displayRec() {
   });
 }
 
-function selectRelease(seedAlbum:Release):Release {
-  let releases:Release[] = [];
+function selectRelease(seedAlbum: Release): Release {
+  let releases: Release[] = [];
   for (let release of albums) {
-    if(release.category == seedAlbum.category && release != seedAlbum) {
+    if (release.category == seedAlbum.category && release != seedAlbum) {
       releases.push(release);
     }
   }
@@ -60,16 +68,15 @@ function selectRelease(seedAlbum:Release):Release {
 }
 
 function displayCart() {
-
   if (cart.items != []) {
     let cartList = document.getElementById("cartList") as HTMLDivElement;
     let cost = document.getElementById("cartCost") as HTMLSpanElement;
     cost.innerHTML = cart.calculateCost().toString() + "kr";
     cartList.innerHTML = null;
-    for(let i = 0; i < cart.items.length; i++) {
+    for (let i = 0; i < cart.items.length; i++) {
       console.log(i);
       let cartItem = document.createElement("div");
-      cartItem.className = ("cart-item");
+      cartItem.className = "cart-item";
 
       let itemThumb = document.createElement("div");
       itemThumb.className = "item-thumb";
@@ -98,7 +105,8 @@ function displayCart() {
 
       let itemCost = document.createElement("span");
       itemCost.className = "item-cost";
-      itemCost.innerHTML = (cart.items[i].item.price * cart.items[i].amount).toString() + "kr";
+      itemCost.innerHTML =
+        (cart.items[i].item.price * cart.items[i].amount).toString() + "kr";
       cartItem.appendChild(itemCost);
       cartList.appendChild(cartItem);
     }
@@ -312,7 +320,7 @@ function sortCategory() {
 
     let button: HTMLSpanElement = document.createElement("span");
     button.className = "btn";
-    button.innerHTML = "Lägg till";
+    button.innerHTML = "Add";
     button.addEventListener("click", () => {
       cart.addToCart(albumsInCategory[i]);
       init();
