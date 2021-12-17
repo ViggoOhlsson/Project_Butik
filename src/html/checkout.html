@@ -19,29 +19,39 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
   </head>
   <body class="checkout">
     <div class="line"></div>
     <header>
-        <label for="dropdownToggler" id="hamburgerButton" class="hamburger-button">
-            <i class="fa fa-bars"></i>
-        </label>
-        <input type="checkbox" id="dropdownToggler" class="dropdown-toggler">
-        <span class="site-title"><i class="fa fa-disc"></i>Homegrown Records</span>
-        <nav>
-            <i class="fa fa-search"></i>
-            <i class="fa fa-shopping-cart"></i>
-        </nav>
-        <div class="dropdown" id="dropDown">
-            <a class="dropdown-item">Christmas</a>
-            <a class="dropdown-item">Rock</a>
-            <a class="dropdown-item">Pop</a>
-            <a class="dropdown-item">Jazz</a>
-        </div>
+      <label
+        for="dropdownToggler"
+        id="hamburgerButton"
+        class="hamburger-button"
+      >
+        <i class="fa fa-bars"></i>
+      </label>
+      <input type="checkbox" id="dropdownToggler" class="dropdown-toggler" />
+      <span class="site-title"
+        ><i class="fa fa-disc"></i>Homegrown Records</span
+      >
+      <nav>
+        <i class="fa fa-search"></i>
+        <i class="fa fa-shopping-cart"></i>
+      </nav>
+      <div class="dropdown" id="dropDown">
+        <a class="dropdown-item">Christmas</a>
+        <a class="dropdown-item">Rock</a>
+        <a class="dropdown-item">Pop</a>
+        <a class="dropdown-item">Jazz</a>
+      </div>
     </header>
-    
+
     <form
       action="http://localhost:1234/html/thankyou.html"
       id="checkForm"
@@ -112,13 +122,7 @@
           <!-- value="s" -->
 
           <i class="fa fa-envelope"></i><label for="epost">Epost</label>
-          <input
-            type="email"
-            id="epost"
-            placeholder="N@N.com"
-            required
-            value="n@n.com"
-          />
+          <input type="email" id="epost" placeholder="N@N.com" required />
           <!-- value="n@n.com" -->
 
           <i class="fa fa-mobile"></i><label for="mobil">Mobil</label>
@@ -187,7 +191,7 @@
           <div class="cart-list" id="cartList">
             <div class="cart-item">
               <div class="item-thumb">
-                <img src="../assets/covers/rock/nirvana-nevermind.png">
+                <img src="../assets/covers/rock/nirvana-nevermind.png" />
               </div>
               <div class="item-text">
                 <span class="item-title">Nevermind</span>
@@ -200,30 +204,60 @@
           <span class="cart-cost" id="cartCost">219kr</span>
         </div>
         <div class="recommendations-container">
-          <span class="rec-title" id="recTitle">Since you seem to like King Gizzard & The Lizard Wizard's Polygondwanaland, We recommend...</span>
+          <span class="rec-title" id="recTitle"
+            >Since you seem to like King Gizzard & The Lizard Wizard's
+            Polygondwanaland, We recommend...</span
+          >
           <div class="rec-wrapper" id="recWrapper">
             <div class="cover-image">
-              <img id="recImg">
+              <img id="recImg" />
             </div>
             <span class="rec-title" id="recName"></span>
             <span class="rec-artist" id="recArtist"></span>
             <i class="fa fa-shopping-cart-plus"></i>
+          </div>
+          <button class="checkout-button" id="checkoutButton">
+            To Payment <i class="fa fa-arrow-right"></i>
+          </button>
         </div>
-        <button class="checkout-button" id="checkoutButton">To Payment <i class="fa fa-arrow-right"></i></button>
-      </div>
       </div>
       <div class="payment" id="payment" style="display: none">
-        <button class="checkout-button" id="backButton"><i class="fa fa-arrow-left"></i> Back</button>
-        <form class="payment-form" id="paymentForm" method="get" action="thankyou.html">
+        <button class="checkout-button" id="backButton">
+          <i class="fa fa-arrow-left"></i> Back
+        </button>
+        <form
+          class="payment-form"
+          id="paymentForm"
+          method="get"
+          action="thankyou.html"
+        >
           <div class="name-container">
             <label for="fname">First Name</label>
             <label for="lname">Last Name Name</label>
-            <input type="text" name="fname" id="fname" class="text-input" placeholder="First Name">
-            <input type="text" name="lname" id="lname" class="text-input" placeholder="Last Name">
+            <input
+              type="text"
+              name="fname"
+              id="fname"
+              class="text-input"
+              placeholder="First Name"
+            />
+            <input
+              type="text"
+              name="lname"
+              id="lname"
+              class="text-input"
+              placeholder="Last Name"
+            />
           </div>
           <div class="location-container">
             <label for="adress">Adress</label>
-            <input type="text" name="adress" id="adress" class="text-input" placeholder="Placeholder Street 123">
+            <input
+              type="text"
+              name="adress"
+              id="adress"
+              class="text-input"
+              placeholder="Placeholder Street 123"
+            />
           </div>
         </form>
       </div>
