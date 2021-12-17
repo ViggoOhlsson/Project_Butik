@@ -288,3 +288,12 @@ albums.push(new Release("Giant Steps", "John Coltrane", 1960, "jazz", "37:32", 2
     new Track("Naima", "4:25"),
     new Track("Mr. P.C.", "6:58"),
 ]));
+
+//Giant Steps
+albums.push(new Release("At Last!", "Miles Davis", 1953, "jazz", "39:37", 259, "LP", [
+    new Track("At Last!", "5:47"),
+    new Track("'Round Midnight'", "5:47"),
+    new Track("A Night In Tunisia", "12:02"),
+    new Track("Drum Conversation", "4:07"),
+    new Track("At Last", "5:19"),
+]));
