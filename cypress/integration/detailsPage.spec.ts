@@ -44,4 +44,17 @@ describe("The Details page", () => {
 
     cy.get("#toCheckout").click({ force: true });
   });
+  // it("should click the cart icon to add to cart and then add another item.", () => {
+  //   cy.visit("/");
+
+  //   cy.get("#catChristmas > :nth-child(1) > .cell-cover > .fa")
+  //     .trigger("mouseover", { force: true })
+  //     .click({ force: true });
+
+  //   cy.visit("/");
+
+  //   cy.get("#catChristmas > :nth-child(2) > .cell-cover > .fa")
+  //     .trigger("mouseover", { force: true })
+  //     .click({ force: true });
+  // });
 });
