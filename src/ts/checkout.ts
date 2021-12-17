@@ -288,6 +288,7 @@ function sortCategory() {
   let albumsInCategory: Release[] = albums.filter(
     (album) => album.category === cat
   );
+
   let wrapper: HTMLDivElement = document.getElementById(
     "random-container"
   ) as HTMLDivElement;
@@ -321,8 +322,18 @@ function sortCategory() {
     let button: HTMLSpanElement = document.createElement("span");
     button.className = "btn";
     button.innerHTML = "Add";
+    button.setAttribute("data-value", randomRelease.id);
+
     button.addEventListener("click", () => {
-      cart.addToCart(albumsInCategory[i]);
+      let idx = (event.target as HTMLTextAreaElement).getAttribute(
+        "data-value"
+      );
+      let itemObject = albums.find((x) => {
+        return x.id === idx;
+      });
+
+      cart.addToCart(itemObject);
+      displayCart();
       init();
     });
 

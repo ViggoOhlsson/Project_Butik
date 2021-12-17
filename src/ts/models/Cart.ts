@@ -10,16 +10,16 @@ export class Cart {
     }
     this.items = JSON.parse(localStorage.getItem("cart"));
   }
-  
-  increaseAmount(index:number) {
+
+  increaseAmount(index: number) {
     this.items[index].amount++;
     this.SetStorage();
   }
-  decreaseAmount(index:number) {
+  decreaseAmount(index: number) {
     this.items[index].amount--;
     this.SetStorage();
   }
-  remove(index:number) {
+  remove(index: number) {
     this.items.splice(index, 1);
     this.SetStorage();
   }
@@ -33,7 +33,7 @@ export class Cart {
     localStorage.setItem("cart", JSON.stringify(this.items));
     this.items = JSON.parse(localStorage.getItem("cart"));
   }
-  contains(release:Release):boolean{
+  contains(release: Release): boolean {
     let contains = false;
     for (let i = 0; i < this.items.length; i++) {
       let item = this.items[i];
@@ -43,8 +43,8 @@ export class Cart {
     }
     return contains;
   }
-  calculateCost():number {
-    let total:number = 0;
+  calculateCost(): number {
+    let total: number = 0;
     for (let item of this.items) {
       total += item.item.price * item.amount;
     }
