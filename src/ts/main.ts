@@ -13,6 +13,11 @@ window.onload = () => {
   printReleaseCells("catRock", "rock", 4);
   printReleaseCells("catJazz", "jazz", 4);
   displayDropdownRows();
+
+  let toCheckout = document.getElementById("toCheckout") as HTMLButtonElement;
+  toCheckout.addEventListener("click", () => {
+    window.location.href = "html/checkout.html";
+  });
 };
 
 function displayDropdownRows() {
