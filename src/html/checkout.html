@@ -95,19 +95,20 @@
         <div class="info-con">
           <h3>Personlig information</h3>
 
-          <i class="fa fa-user"></i><label for="fnamn">Förnamn</label>
+          <i class="fa fa-user"></i><label for="fnamn">Firstname</label>
           <input id="fnamn" type="text" placeholder="N" required />
           <!-- value="n" -->
 
-          <i class="fa fa-user"></i><label for="enamn">Efternamn</label>
+          <i class="fa fa-user"></i><label for="enamn">Lastname</label>
           <input type="text" id="enamn" placeholder="N" required />
           <!-- value="n" -->
 
-          <i class="fa fa-address-card-o"></i><label for="adress">Adress</label>
+          <i class="fa fa-address-card-o"></i
+          ><label for="adress">Address</label>
           <input type="text" id="adress" placeholder="adress" required />
           <!-- value="s" -->
 
-          <i class="fa fa-home"></i><label for="postnr">Postnr</label>
+          <i class="fa fa-home"></i><label for="postnr">Postalnr</label>
           <input
             type="text"
             id="postnr"
@@ -117,15 +118,15 @@
           />
           <!-- value="11122" -->
 
-          <i class="fa fa-building"></i><label for="stad">Stad</label>
+          <i class="fa fa-building"></i><label for="stad">City</label>
           <input type="text" id="stad" placeholder="stad" required />
           <!-- value="s" -->
 
-          <i class="fa fa-envelope"></i><label for="epost">Epost</label>
+          <i class="fa fa-envelope"></i><label for="epost">Email</label>
           <input type="email" id="epost" placeholder="N@N.com" required />
           <!-- value="n@n.com" -->
 
-          <i class="fa fa-mobile"></i><label for="mobil">Mobil</label>
+          <i class="fa fa-mobile"></i><label for="mobil">Mobile</label>
           <input
             type="text"
             id="mobil"
@@ -135,26 +136,26 @@
           />
           <!-- value="0701700272" -->
           <div class="infoControlCon">
-            <button type="button" id="firstPrev">Föregående</button>
-            <button type="button" id="secondNext">Nästa</button>
+            <button type="button" id="firstPrev">Previous</button>
+            <button type="button" id="secondNext">Next</button>
           </div>
         </div>
       </div>
       <div id="form_part3">
         <!--form elements 3-->
         <div class="pay-con">
-          <h3>Betalning</h3>
+          <h3>Payment</h3>
           <div class="card-cont">
             <i class="fa fa-cc-mastercard"></i>
             <i class="fa fa-cc-visa"></i>
             <i class="fa fa-cc-amex"></i>
           </div>
-          <label for="kortnamn">Namnet på kortet</label>
+          <label for="kortnamn">Name on card</label>
           <input type="text" id="kortnamn" placeholder="namn" required />
           <!-- value="n" -->
 
           <i class="fa fa-credit-card"></i
-          ><label for="kortnummer">Kortnummer</label>
+          ><label for="kortnummer">Card number</label>
           <input
             type="text"
             id="kortnummer"
@@ -163,7 +164,7 @@
           />
           <!-- value="1234567812345678" -->
 
-          <label for="utgångsdatum">Utgångsdatum</label>
+          <label for="utgångsdatum">Expiry date</label>
           <input type="text" id="utgångsdatum" placeholder="MM/ÅÅ" required />
           <!-- value="01/01" -->
           <label for="cvc">CVC</label>
@@ -177,10 +178,10 @@
           <!-- value="123" -->
           <div class="termsCon">
             <input type="checkbox" id="checkbox" checked required />
-            <label for="checkbox">Godkänn våra villkor</label>
+            <label for="checkbox">Accept our terms and conditions</label>
           </div>
-          <button type="button" id="lastPrev">Föregående</button>
-          <input type="button" id="submit" value="Slutför köp" class="btn" />
+          <button type="button" id="lastPrev">Previous</button>
+          <input type="button" id="submit" value="Complete order" class="btn" />
         </div>
       </div>
     </form>
