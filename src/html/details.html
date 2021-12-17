@@ -20,7 +20,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap"rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playball&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="details">
     <div class="line"></div>
@@ -60,18 +63,18 @@
         </div>
       </div>
       <div class="product-container">
-        <h5>Produktinformation</h5>
+        <h5>Product information</h5>
         <div class="wrapper">
           <div class="info-container">
             <div class="description-container">
               <ul>
                 <li>Artist:</li>
-                <li>Titel:</li>
-                <li>År:</li>
-                <li>Typ:</li>
-                <li>Genre:</li>
-                <li>Låtar:</li>
-                <li>Längd:</li>
+                <li>Title:</li>
+                <li>Year:</li>
+                <li>Type:</li>
+                <li>Category:</li>
+                <li>Tracklist:</li>
+                <li>Length:</li>
               </ul>
             </div>
             <div class="facts-container">
@@ -89,24 +92,26 @@
           <div class="price-container">
             <div class="article-container">
               <ul>
-                <li>Artikelnummer: #082526229</li>
-                <li>Leveransstatus: Finns i lager</li>
-                <li>Beräknad leveranstid: 1-3 dagar</li>
+                <li>Article number: #082526229</li>
+                <li>Order status: In stock</li>
+                <li>Expected delivery: 1-3 days</li>
               </ul>
             </div>
             <div class="button-container">
               <p id="price"></p>
-              <button class="buy-button" id="buyButton" type="button"><i class="fa fa-plus"></i> Lägg i Varukorg</button>
+              <button class="buy-button" id="buyButton" type="button">
+                <i class="fa fa-plus"></i> Add to cart
+              </button>
             </div>
           </div>
         </div>
       </div>
     </main>
-    <div class="cart-modal" id="cartModal" style="display: none;">
+    <div class="cart-modal" id="cartModal" style="display: none">
       <div class="cart-list" id="cartList">
         <div class="cart-item">
           <div class="item-thumb">
-            <img src="../assets/covers/rock/nirvana-nevermind.png">
+            <img src="../assets/covers/rock/nirvana-nevermind.png" />
           </div>
           <div class="item-text">
             <span class="item-title">Nevermind - Nirvana</span>
@@ -120,10 +125,8 @@
           <span class="item-cost" id="itemCost">219kr</span>
         </div>
       </div>
-      <button id="toCheckout">
-        Till Kassan
-      </button>
-      <span id="cartCost">219kr</span>
+      <button id="toCheckout">To checkout</button>
+      <span id="cartCost">219:-</span>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
