@@ -239,3 +239,52 @@ albums.push(new Release("Elvis' Christmas Album", "Elvis Presley", 1957, "christ
     new Track("Take My Hand, Precious Lord", "3:18"),
     new Track("It Is No Secret (What God Can Do)", "3:56"),
 ]));
+
+//We Like It Here
+albums.push(new Release("We Like It Here", "Snarky Puppy", 2014, "jazz", "54:40", 259, "LP", [
+    new Track("Shofukan", "6:33"),
+    new Track("What About Me?", "6:42"),
+    new Track("Sleeper", "6:51"),
+    new Track("Jambone", "5:07"),
+    new Track("Kite", "6:12"),
+    new Track("Outlier", "6:45"),
+    new Track("Tio Macaco", "5:43"),
+    new Track("Lingus", "10:45"),
+]));
+
+//Empyrean
+albums.push(new Release("Empyrean Isles", "Herbie Hancock", 1964, "jazz", "35:20", 259, "LP", [
+    new Track("One Finger Snap", "7:21"),
+    new Track("Oliloqui Valley", "8:30"),
+    new Track("Cantaloupe Island", "5:33"),
+    new Track("The Egg", "14:01"),
+]));
+
+//Wazoo
+albums.push(new Release("The Grand Wazoo", "Frank Zappa", 1972, "jazz", "37:01", 259, "LP", [
+    new Track("The Grand Wazoo", "13:18"),
+    new Track("For Calvin (and His Next Two Hitchhikers", "6:05"),
+    new Track("Cletu Awreetus Awrightus", "2:56"),
+    new Track("Eat That Question", "6:40"),
+    new Track("Blessed Relief", "7:56"),
+]));
+
+//Satchidananda
+albums.push(new Release("Journey in Satchidananda", "Alice Coltrane", 1971, "jazz", "37:15", 259, "LP", [
+    new Track("Journey in Satchidananda", "6:36"),
+    new Track("Shiva-Loka", "6:33"),
+    new Track("Stopover Bombay", "2:52"),
+    new Track("Something About John Coltrane", "9:40"),
+    new Track("Isis And Osiris - Live At Village Gate", "11:32"),
+]));
+
+//Giant Steps
+albums.push(new Release("Giant Steps", "John Coltrane", 1960, "jazz", "37:32", 259, "LP", [
+    new Track("Giant Steps", "4:47"),
+    new Track("Cousin Mary", "5:50"),
+    new Track("Countdown", "2:25"),
+    new Track("Spiral", "6:00"),
+    new Track("Syeeda's Song flute", "7:05"),
+    new Track("Naima", "4:25"),
+    new Track("Mr. P.C.", "6:58"),
+]));
